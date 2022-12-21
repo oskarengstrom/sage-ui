@@ -2,12 +2,6 @@ import { ThemeContext, useTheme } from "@emotion/react";
 import { remToPx, stripUnit } from "polished";
 import React, { useEffect, useState } from "react";
 
-// USAGE:
-// const { isMobile, breakpoint } = useResponsive()
-//
-// isMobile = Is the device an actual phone,
-// breakpoint = shows the current screen width in sm/md/lr/xl,
-
 export const useResponsive = () => {
   let { bp } = useTheme(ThemeContext);
 

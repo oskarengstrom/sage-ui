@@ -1,19 +1,77 @@
 # SAGE UI
 
-UI library for [insert name here] projects
+UI library for [insert name here] projects.
 
-## Available Scripts
+## Usage
 
-### Build locally
+Install via `npm i @oskarengstrom/sage-ui`
 
-`npm run dev`
+```
+import { Grid } from "@oskarengstrom/sage-ui"
 
-### Build with `npm link`
+export default function Home() {
+  return (
+      <Grid base={12}>
+        <Grid.Item span={10}>...</Grid.Item>
+        <Grid.Item>...</Grid.Item>
+        <Grid.Item>...f</Grid.Item>
+      </Grid>
+  )
+}
+```
 
-`build-watch` (in this project)
+## Develop
 
-`npm link` (in this project)
+`npm run dev` fires up both rollup with -watch parallel to playground react app in dev mode.
 
-`npm link @oskarengstrom/sage-ui` (in user project)
+`npm run build-watch` fires up rollup with -watch.
 
-`npm run build-watch`
+### NPM Link
+
+Currently, there's some bug with NPM Link, so you must uninstall the dependency beofre linking can work.
+
+In the package project, run `npm link`.
+
+In the reciever project, run `npm link @oskarengstrom/sage-ui`
+
+In the reciever project, add this to `next.config.json`:
+
+```
+const path = require("path")
+
+const nextConfig = {
+  webpack: (config, options) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@emotion/core": path.resolve("./node_modules/@emotion/core"),
+      "@emotion/react": path.resolve("./node_modules/@emotion/react"),
+      react: path.resolve("./node_modules/react"),
+    }
+
+    return config
+  },
+}
+
+module.exports = nextConfig
+```
+
+#### Unlinking
+
+Order is important:
+
+1. sage-ui: `npm link`
+2. project: `npm unlink --no-save @oskarengstrom/sage-ui`
+
+### Publish
+
+1. Bump version in package.json
+2. `npm publish`
+3. push to git
+
+### Notes
+
+Good resource when stuck with bugs on NPM Link:  
+https://codebuckets.com/2022/02/20/npm-link-set-up-and-troubleshooting/
+
+TODO: versioning with tags:  
+https://dev.to/nop33/using-npm-distribution-tags-the-right-way-562f

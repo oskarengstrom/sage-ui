@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { useResponsive } from "../hooks/useResponsive";
+import { useResponsive } from "../../hooks/useResponsive/useResponsive";
 import { ThemeContext, useTheme } from "@emotion/react";
-import { arrayifyProp } from "../utils/arrayifyProp";
+import { arrayifyProp } from "../../utils/arrayifyProp";
+import devMixins from "../../mixins/responsiveProps/devMixins";
+import { interpolatedProp } from "../../utils/responsiveProp";
 
 // requires theme with bp and section
 
@@ -11,9 +13,10 @@ const Section = React.forwardRef((props, ref) => {
   const theme = useTheme(ThemeContext);
 
   const xPadArr = arrayifyProp(theme?.section?.xPadding || 0);
+  // console.log(xPadArr);
 
   return (
-    <SectionStyled ref={ref} xPad={xPadArr[breakpointIndex]}>
+    <SectionStyled ref={ref} xPad={xPadArr[breakpointIndex]} {...props}>
       {props.children}
     </SectionStyled>
   );
@@ -29,4 +32,6 @@ const SectionStyled = styled.section`
 
   background-color: ${(props) => props.theme?.palette.background};
   color: ${(props) => props.theme?.text.primary};
+
+  ${devMixins}
 `;
