@@ -6,10 +6,6 @@ export const defaultTheme = {
   },
   palette: {
     background: "#fff",
-  },
-  text: {
-    primary: "#000",
-    secondary: "#666666",
-    disabled: "#999999",
+    textPrimary: "#000",
   },
 };

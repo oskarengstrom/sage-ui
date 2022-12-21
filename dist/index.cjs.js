@@ -492,12 +492,8 @@ var defaultTheme = {
     xPadding: ["1rem", "2rem"]
   },
   palette: {
-    background: "#fff"
-  },
-  text: {
-    primary: "#000",
-    secondary: "#666666",
-    disabled: "#999999"
+    background: "#fff",
+    textPrimary: "#000"
   }
 };
 
@@ -804,8 +800,6 @@ var Section = /*#__PURE__*/React__default["default"].forwardRef(function (props,
     breakpointIndex = _useResponsive.breakpointIndex;
   var theme = react.useTheme(react.ThemeContext);
   var xPadArr = arrayifyProp((theme === null || theme === void 0 ? void 0 : (_theme$section = theme.section) === null || _theme$section === void 0 ? void 0 : _theme$section.xPadding) || 0);
-  // console.log(xPadArr);
-
   return react.jsx(SectionStyled, _extends({
     ref: ref,
     xPad: xPadArr[breakpointIndex]
@@ -825,12 +819,9 @@ var SectionStyled = /*#__PURE__*/_styled__default["default"]("section", process.
   var xPad = _ref2.xPad;
   return "0 ".concat(xPad);
 }, ";background-color:", function (props) {
-  var _props$theme;
-  return (_props$theme = props.theme) === null || _props$theme === void 0 ? void 0 : _props$theme.palette.background;
-}, ";color:", function (props) {
-  var _props$theme2;
-  return (_props$theme2 = props.theme) === null || _props$theme2 === void 0 ? void 0 : _props$theme2.text.primary;
-}, ";", devMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNlY3Rpb24uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMEJvQyIsImZpbGUiOiJTZWN0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyB1c2VSZXNwb25zaXZlIH0gZnJvbSBcIi4uLy4uL2hvb2tzL3VzZVJlc3BvbnNpdmUvdXNlUmVzcG9uc2l2ZVwiO1xuaW1wb3J0IHsgVGhlbWVDb250ZXh0LCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgYXJyYXlpZnlQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL2FycmF5aWZ5UHJvcFwiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcbmltcG9ydCB7IGludGVycG9sYXRlZFByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvcmVzcG9uc2l2ZVByb3BcIjtcblxuLy8gcmVxdWlyZXMgdGhlbWUgd2l0aCBicCBhbmQgc2VjdGlvblxuXG5jb25zdCBTZWN0aW9uID0gUmVhY3QuZm9yd2FyZFJlZigocHJvcHMsIHJlZikgPT4ge1xuICBjb25zdCB7IGJyZWFrcG9pbnRJbmRleCB9ID0gdXNlUmVzcG9uc2l2ZSgpO1xuICBjb25zdCB0aGVtZSA9IHVzZVRoZW1lKFRoZW1lQ29udGV4dCk7XG5cbiAgY29uc3QgeFBhZEFyciA9IGFycmF5aWZ5UHJvcCh0aGVtZT8uc2VjdGlvbj8ueFBhZGRpbmcgfHwgMCk7XG4gIC8vIGNvbnNvbGUubG9nKHhQYWRBcnIpO1xuXG4gIHJldHVybiAoXG4gICAgPFNlY3Rpb25TdHlsZWQgcmVmPXtyZWZ9IHhQYWQ9e3hQYWRBcnJbYnJlYWtwb2ludEluZGV4XX0gey4uLnByb3BzfT5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICA8L1NlY3Rpb25TdHlsZWQ+XG4gICk7XG59KTtcblxuZXhwb3J0IGRlZmF1bHQgU2VjdGlvbjtcblxuY29uc3QgU2VjdGlvblN0eWxlZCA9IHN0eWxlZC5zZWN0aW9uYFxuICBtYXJnaW46IDAgYXV0bztcbiAgbWF4LXdpZHRoOiAkeyh7IHRoZW1lLCB4UGFkIH0pID0+XG4gICAgYGNhbGMoJHt0aGVtZT8uc2VjdGlvbj8ubWF4V2lkdGh9ICsgJHt4UGFkfSArICR7eFBhZH0pYH07XG4gIHBhZGRpbmc6ICR7KHsgeFBhZCB9KSA9PiBgMCAke3hQYWR9YH07XG5cbiAgYmFja2dyb3VuZC1jb2xvcjogJHsocHJvcHMpID0+IHByb3BzLnRoZW1lPy5wYWxldHRlLmJhY2tncm91bmR9O1xuICBjb2xvcjogJHsocHJvcHMpID0+IHByb3BzLnRoZW1lPy50ZXh0LnByaW1hcnl9O1xuXG4gICR7ZGV2TWl4aW5zfVxuYDtcbiJdfQ== */"));
+  var _props$theme, _props$theme$palette;
+  return props.backgroundColor || ((_props$theme = props.theme) === null || _props$theme === void 0 ? void 0 : (_props$theme$palette = _props$theme.palette) === null || _props$theme$palette === void 0 ? void 0 : _props$theme$palette.background);
+}, ";", devMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNlY3Rpb24uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBc0JvQyIsImZpbGUiOiJTZWN0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyB1c2VSZXNwb25zaXZlIH0gZnJvbSBcIi4uLy4uL2hvb2tzL3VzZVJlc3BvbnNpdmUvdXNlUmVzcG9uc2l2ZVwiO1xuaW1wb3J0IHsgVGhlbWVDb250ZXh0LCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgYXJyYXlpZnlQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL2FycmF5aWZ5UHJvcFwiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcblxuY29uc3QgU2VjdGlvbiA9IFJlYWN0LmZvcndhcmRSZWYoKHByb3BzLCByZWYpID0+IHtcbiAgY29uc3QgeyBicmVha3BvaW50SW5kZXggfSA9IHVzZVJlc3BvbnNpdmUoKTtcbiAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuXG4gIGNvbnN0IHhQYWRBcnIgPSBhcnJheWlmeVByb3AodGhlbWU/LnNlY3Rpb24/LnhQYWRkaW5nIHx8IDApO1xuXG4gIHJldHVybiAoXG4gICAgPFNlY3Rpb25TdHlsZWQgcmVmPXtyZWZ9IHhQYWQ9e3hQYWRBcnJbYnJlYWtwb2ludEluZGV4XX0gey4uLnByb3BzfT5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICA8L1NlY3Rpb25TdHlsZWQ+XG4gICk7XG59KTtcblxuZXhwb3J0IGRlZmF1bHQgU2VjdGlvbjtcblxuY29uc3QgU2VjdGlvblN0eWxlZCA9IHN0eWxlZC5zZWN0aW9uYFxuICBtYXJnaW46IDAgYXV0bztcbiAgbWF4LXdpZHRoOiAkeyh7IHRoZW1lLCB4UGFkIH0pID0+XG4gICAgYGNhbGMoJHt0aGVtZT8uc2VjdGlvbj8ubWF4V2lkdGh9ICsgJHt4UGFkfSArICR7eFBhZH0pYH07XG4gIHBhZGRpbmc6ICR7KHsgeFBhZCB9KSA9PiBgMCAke3hQYWR9YH07XG5cbiAgYmFja2dyb3VuZC1jb2xvcjogJHsocHJvcHMpID0+XG4gICAgcHJvcHMuYmFja2dyb3VuZENvbG9yIHx8IHByb3BzLnRoZW1lPy5wYWxldHRlPy5iYWNrZ3JvdW5kfTtcblxuICAke2Rldk1peGluc31cbmA7XG4iXX0= */"));
 
 var fontFamily = function fontFamily(_ref) {
   var fontFamily = _ref.fontFamily;
@@ -908,17 +899,25 @@ var textTransform = function textTransform(_ref8) {
 };
 var typographyMixins = [fontFamily, fontSize, fontWeight, lineHeight, color, textAlign, textDecoration, textTransform];
 
-var _excluded = ["variant", "children"];
+var _excluded = ["variant", "children", "color"];
 var Typography = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
-  var _theme$text;
+  var _theme$typography, _varsFrTheme$default, _theme$palette;
   var variantFromProps = _ref.variant,
     children = _ref.children,
+    color = _ref.color,
     restProps = _objectWithoutProperties(_ref, _excluded);
   var theme = react.useTheme(react.ThemeContext);
-  var varsFrTheme = theme === null || theme === void 0 ? void 0 : (_theme$text = theme.text) === null || _theme$text === void 0 ? void 0 : _theme$text.variants;
+  var varsFrTheme = theme === null || theme === void 0 ? void 0 : (_theme$typography = theme.typography) === null || _theme$typography === void 0 ? void 0 : _theme$typography.variants;
   return react.jsx(TypographyStyled, _extends({
     ref: ref
-  }, varsFrTheme && varsFrTheme.default, variantFromProps && varsFrTheme[variantFromProps], restProps), children);
+  }, varsFrTheme && varsFrTheme.default, variantFromProps && varsFrTheme[variantFromProps], {
+    color: color ||
+    // if color is passed as prop, use it
+    variantFromProps && varsFrTheme[variantFromProps].color ||
+    // if variant is passed as prop, use its color
+    varsFrTheme && ((_varsFrTheme$default = varsFrTheme.default) === null || _varsFrTheme$default === void 0 ? void 0 : _varsFrTheme$default.color) || ( // if variants exist, use default color
+    theme === null || theme === void 0 ? void 0 : (_theme$palette = theme.palette) === null || _theme$palette === void 0 ? void 0 : _theme$palette.textPrimary) // if no variants exist, use theme's textPrimary
+  }, restProps), children);
 });
 var props = ["fontSize", "fontWeight", "lineHeight", "fontFamily", "color", "textAlign", "textDecoration", "textTransform"];
 var TypographyStyled = /*#__PURE__*/_styled__default["default"]("p", process.env.NODE_ENV === "production" ? {
@@ -932,7 +931,7 @@ var TypographyStyled = /*#__PURE__*/_styled__default["default"]("p", process.env
   },
   target: "e14iioxq0",
   label: "TypographyStyled"
-})(devMixins, " ", typographyMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlR5cG9ncmFwaHkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBdUNFIiwiZmlsZSI6IlR5cG9ncmFwaHkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IFRoZW1lQ29udGV4dCwgdXNlVGhlbWUgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiO1xuaW1wb3J0IHR5cG9ncmFwaHlNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvdHlwb2dyYXBoeU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcblxuY29uc3QgVHlwb2dyYXBoeSA9IFJlYWN0LmZvcndhcmRSZWYoXG4gICh7IHZhcmlhbnQ6IHZhcmlhbnRGcm9tUHJvcHMsIGNoaWxkcmVuLCAuLi5yZXN0UHJvcHMgfSwgcmVmKSA9PiB7XG4gICAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuXG4gICAgY29uc3QgdmFyc0ZyVGhlbWUgPSB0aGVtZT8udGV4dD8udmFyaWFudHM7XG5cbiAgICByZXR1cm4gKFxuICAgICAgPFR5cG9ncmFwaHlTdHlsZWRcbiAgICAgICAgcmVmPXtyZWZ9XG4gICAgICAgIHsuLi4odmFyc0ZyVGhlbWUgJiYgdmFyc0ZyVGhlbWUuZGVmYXVsdCl9XG4gICAgICAgIHsuLi4odmFyaWFudEZyb21Qcm9wcyAmJiB2YXJzRnJUaGVtZVt2YXJpYW50RnJvbVByb3BzXSl9XG4gICAgICAgIHsuLi5yZXN0UHJvcHN9XG4gICAgICA+XG4gICAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDwvVHlwb2dyYXBoeVN0eWxlZD5cbiAgICApO1xuICB9XG4pO1xuXG5jb25zdCBwcm9wcyA9IFtcbiAgXCJmb250U2l6ZVwiLFxuICBcImZvbnRXZWlnaHRcIixcbiAgXCJsaW5lSGVpZ2h0XCIsXG4gIFwiZm9udEZhbWlseVwiLFxuICBcImNvbG9yXCIsXG4gIFwidGV4dEFsaWduXCIsXG4gIFwidGV4dERlY29yYXRpb25cIixcbiAgXCJ0ZXh0VHJhbnNmb3JtXCIsXG5dO1xuXG5jb25zdCBUeXBvZ3JhcGh5U3R5bGVkID0gc3R5bGVkKFwicFwiLCB7XG4gIHNob3VsZEZvcndhcmRQcm9wOiAocHJvcCkgPT4gaXNQcm9wVmFsaWQocHJvcCkgJiYgIXByb3BzLmluY2x1ZGVzKHByb3ApLFxufSlgXG4gICR7ZGV2TWl4aW5zfVxuICAke3R5cG9ncmFwaHlNaXhpbnN9XG5gO1xuXG4vLyBjb25zdCBUeXBvZ3JhcGh5U3R5bGVkID0gc3R5bGVkLnBgXG4vLyAgICR7ZGV2TWl4aW5zfVxuLy8gICAke3R5cG9ncmFwaHlNaXhpbnN9XG4vLyBgO1xuXG5leHBvcnQgZGVmYXVsdCBUeXBvZ3JhcGh5O1xuIl19 */"));
+})(devMixins, " ", typographyMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlR5cG9ncmFwaHkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNkNFIiwiZmlsZSI6IlR5cG9ncmFwaHkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IFRoZW1lQ29udGV4dCwgdXNlVGhlbWUgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiO1xuaW1wb3J0IHR5cG9ncmFwaHlNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvdHlwb2dyYXBoeU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcblxuY29uc3QgVHlwb2dyYXBoeSA9IFJlYWN0LmZvcndhcmRSZWYoXG4gICh7IHZhcmlhbnQ6IHZhcmlhbnRGcm9tUHJvcHMsIGNoaWxkcmVuLCBjb2xvciwgLi4ucmVzdFByb3BzIH0sIHJlZikgPT4ge1xuICAgIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoVGhlbWVDb250ZXh0KTtcblxuICAgIGNvbnN0IHZhcnNGclRoZW1lID0gdGhlbWU/LnR5cG9ncmFwaHk/LnZhcmlhbnRzO1xuXG4gICAgcmV0dXJuIChcbiAgICAgIDxUeXBvZ3JhcGh5U3R5bGVkXG4gICAgICAgIHJlZj17cmVmfVxuICAgICAgICB7Li4uKHZhcnNGclRoZW1lICYmIHZhcnNGclRoZW1lLmRlZmF1bHQpfVxuICAgICAgICB7Li4uKHZhcmlhbnRGcm9tUHJvcHMgJiYgdmFyc0ZyVGhlbWVbdmFyaWFudEZyb21Qcm9wc10pfVxuICAgICAgICBjb2xvcj17XG4gICAgICAgICAgY29sb3IgfHwgLy8gaWYgY29sb3IgaXMgcGFzc2VkIGFzIHByb3AsIHVzZSBpdFxuICAgICAgICAgICh2YXJpYW50RnJvbVByb3BzICYmIHZhcnNGclRoZW1lW3ZhcmlhbnRGcm9tUHJvcHNdLmNvbG9yKSB8fCAvLyBpZiB2YXJpYW50IGlzIHBhc3NlZCBhcyBwcm9wLCB1c2UgaXRzIGNvbG9yXG4gICAgICAgICAgKHZhcnNGclRoZW1lICYmIHZhcnNGclRoZW1lLmRlZmF1bHQ/LmNvbG9yKSB8fCAvLyBpZiB2YXJpYW50cyBleGlzdCwgdXNlIGRlZmF1bHQgY29sb3JcbiAgICAgICAgICB0aGVtZT8ucGFsZXR0ZT8udGV4dFByaW1hcnkgLy8gaWYgbm8gdmFyaWFudHMgZXhpc3QsIHVzZSB0aGVtZSdzIHRleHRQcmltYXJ5XG4gICAgICAgIH1cbiAgICAgICAgey4uLnJlc3RQcm9wc31cbiAgICAgID5cbiAgICAgICAge2NoaWxkcmVufVxuICAgICAgPC9UeXBvZ3JhcGh5U3R5bGVkPlxuICAgICk7XG4gIH1cbik7XG5cbmNvbnN0IHByb3BzID0gW1xuICBcImZvbnRTaXplXCIsXG4gIFwiZm9udFdlaWdodFwiLFxuICBcImxpbmVIZWlnaHRcIixcbiAgXCJmb250RmFtaWx5XCIsXG4gIFwiY29sb3JcIixcbiAgXCJ0ZXh0QWxpZ25cIixcbiAgXCJ0ZXh0RGVjb3JhdGlvblwiLFxuICBcInRleHRUcmFuc2Zvcm1cIixcbl07XG5cbmNvbnN0IFR5cG9ncmFwaHlTdHlsZWQgPSBzdHlsZWQoXCJwXCIsIHtcbiAgc2hvdWxkRm9yd2FyZFByb3A6IChwcm9wKSA9PiBpc1Byb3BWYWxpZChwcm9wKSAmJiAhcHJvcHMuaW5jbHVkZXMocHJvcCksXG59KWBcbiAgJHtkZXZNaXhpbnN9XG4gICR7dHlwb2dyYXBoeU1peGluc31cbmA7XG5cbmV4cG9ydCBkZWZhdWx0IFR5cG9ncmFwaHk7XG4iXX0= */"));
 
 // exchanging all chars to spaces so that it doesn't load with the sentence
 var createSpaces = function createSpaces(sentence) {

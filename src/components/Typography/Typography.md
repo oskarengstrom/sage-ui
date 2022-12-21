@@ -29,7 +29,7 @@
 
 `lineHeight` unit | number ("rem")[]
 
-`color` string[]
+`color` string[] (defaults to theme.palette.textPrimary)
 
 `textAlign` string[]
 
@@ -37,14 +37,13 @@
 
 `textTransform` string[]
 
-## Variants
+## Variants from theme
 
-You can define pre-built variants in theme. Start by making sure the `variants` object is available in the theme:
+You can define pre-built variants in theme. Add a `typography.variants` object in theme, and create variants: (The `default` variant props are added on all Typography elements, but can be overridden by variants or component props.)
 
 ```
 const theme = {
-  text: {
-    ...
+  typography: {
     variants: {
       default: {
         fontSize: "1rem",
@@ -61,5 +60,3 @@ Then you can use them like so:
 ```
 <Typography variant="h1">asdf</Typography>
 ```
-
-The `default` variant props are added on all Typography elements, but can be overridden by variants or component props.

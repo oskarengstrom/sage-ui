@@ -6,16 +6,22 @@ import typographyMixins from "../../mixins/responsiveProps/typographyMixins";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 
 const Typography = React.forwardRef(
-  ({ variant: variantFromProps, children, ...restProps }, ref) => {
+  ({ variant: variantFromProps, children, color, ...restProps }, ref) => {
     const theme = useTheme(ThemeContext);
 
-    const varsFrTheme = theme?.text?.variants;
+    const varsFrTheme = theme?.typography?.variants;
 
     return (
       <TypographyStyled
         ref={ref}
         {...(varsFrTheme && varsFrTheme.default)}
         {...(variantFromProps && varsFrTheme[variantFromProps])}
+        color={
+          color || // if color is passed as prop, use it
+          (variantFromProps && varsFrTheme[variantFromProps].color) || // if variant is passed as prop, use its color
+          (varsFrTheme && varsFrTheme.default?.color) || // if variants exist, use default color
+          theme?.palette?.textPrimary // if no variants exist, use theme's textPrimary
+        }
         {...restProps}
       >
         {children}
@@ -41,10 +47,5 @@ const TypographyStyled = styled("p", {
   ${devMixins}
   ${typographyMixins}
 `;
-
-// const TypographyStyled = styled.p`
-//   ${devMixins}
-//   ${typographyMixins}
-// `;
 
 export default Typography;

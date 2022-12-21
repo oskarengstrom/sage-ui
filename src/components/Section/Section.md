@@ -1,11 +1,31 @@
 # Section
 
-Requires ThemeContext with `bp` and `section`.
+Looks in theme to automatically add x-padding and background color
+
+Required in theme:
+
+```
+theme = {
+  bp: ["0rem", "36rem", "62rem", "75rem"],
+  section: {
+    maxWidth: "62rem",
+    xPadding: ["1rem", "2rem"],
+  },
+  palette: {
+    background: "black"
+  }
+}
+```
 
 Usage:
 
 ```
 <Section>
+    ...
+</Section>
+
+// With background color
+<Section backgroundColor="red">
     ...
 </Section>
 ```
@@ -14,6 +34,8 @@ Usage:
 
 `dev` true | false
 
+`backgroundColor` string (overrides background color from theme)
+
 ### TODO
 
-⬜️ Build support for no theme + pad override via props
+⬜️ Build pad override via props

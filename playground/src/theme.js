@@ -16,14 +16,9 @@ export const playgroundTheme = {
   },
   palette: {
     background: constants.colors.white,
-    primary: {
-      main: constants.colors.green,
-    },
+    textPrimary: constants.colors.black,
   },
-  text: {
-    primary: constants.colors.black,
-    secondary: constants.colors.black,
-    disabled: constants.colors.black,
+  typography: {
     variants: {
       default: {
         fontSize: "2rem",
