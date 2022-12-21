@@ -421,6 +421,33 @@ function _extends() {
   };
   return _extends.apply(this, arguments);
 }
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
@@ -559,6 +586,7 @@ var responsiveProp = function responsiveProp(_ref) {
     interpolation = _ref$interpolation === void 0 ? false : _ref$interpolation;
   var _useTheme = react.useTheme(react.ThemeContext),
     bp = _useTheme.bp;
+  var bpFb = defaultTheme.bp;
   if (val === undefined || val === null) return;
   if (interpolation) {
     if (typeof val === "number") val = interpolatedProp(val, interpolation);
@@ -567,7 +595,7 @@ var responsiveProp = function responsiveProp(_ref) {
     });
   }
   val = Array.isArray(val) ? val : [val];
-  return /*#__PURE__*/react.css(func(val[0]), "@media screen and (min-width: ", bp[1], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", bp[2], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", bp[3], "){", val[3] && func(val[3]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTBCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuXG5leHBvcnQgY29uc3QgaW50ZXJwb2xhdGVkUHJvcCA9ICh2LCBpbnRlcnBvbGF0aW9uKSA9PiB7XG4gIGlmICh0eXBlb2YgdiA9PT0gXCJudW1iZXJcIikge1xuICAgIHJldHVybiB2ICsgaW50ZXJwb2xhdGlvbjtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gdjtcbiAgfVxufTtcblxuZXhwb3J0IGNvbnN0IHJlc3BvbnNpdmVQcm9wID0gKHsgZnVuYywgdmFsLCBpbnRlcnBvbGF0aW9uID0gZmFsc2UgfSkgPT4ge1xuICBjb25zdCB7IGJwIH0gPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuXG4gIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwpIHJldHVybjtcblxuICBpZiAoaW50ZXJwb2xhdGlvbikge1xuICAgIGlmICh0eXBlb2YgdmFsID09PSBcIm51bWJlclwiKSB2YWwgPSBpbnRlcnBvbGF0ZWRQcm9wKHZhbCwgaW50ZXJwb2xhdGlvbik7XG4gICAgaWYgKEFycmF5LmlzQXJyYXkodmFsKSlcbiAgICAgIHZhbC5mb3JFYWNoKCh4LCBpbmRleCkgPT4ge1xuICAgICAgICBpZiAodHlwZW9mIHggPT09IFwibnVtYmVyXCIpXG4gICAgICAgICAgdmFsW2luZGV4XSA9IGludGVycG9sYXRlZFByb3AoeCwgaW50ZXJwb2xhdGlvbik7XG4gICAgICB9KTtcbiAgfVxuXG4gIHZhbCA9IEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbCA6IFt2YWxdO1xuXG4gIHJldHVybiBjc3NgXG4gICAgJHtmdW5jKHZhbFswXSl9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwWzFdfSkge1xuICAgICAgJHt2YWxbMV0gJiYgZnVuYyh2YWxbMV0pfVxuICAgIH1cblxuICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6ICR7YnBbMl19KSB7XG4gICAgICAke3ZhbFsyXSAmJiBmdW5jKHZhbFsyXSl9XG4gICAgfVxuXG4gICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogJHticFszXX0pIHtcbiAgICAgICR7dmFsWzNdICYmIGZ1bmModmFsWzNdKX1cbiAgICB9XG4gIGA7XG59O1xuIl19 */");
+  return /*#__PURE__*/react.css(func(val[0]), "@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[1]) || bpFb[1], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[2]) || bpFb[2], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[3]) || bpFb[3], "){", val[3] && func(val[3]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgZGVmYXVsdFRoZW1lIH0gZnJvbSBcIi4uL3RoZW1pbmcvZGVmYXVsdFRoZW1lXCI7XG5cbmV4cG9ydCBjb25zdCBpbnRlcnBvbGF0ZWRQcm9wID0gKHYsIGludGVycG9sYXRpb24pID0+IHtcbiAgaWYgKHR5cGVvZiB2ID09PSBcIm51bWJlclwiKSB7XG4gICAgcmV0dXJuIHYgKyBpbnRlcnBvbGF0aW9uO1xuICB9IGVsc2Uge1xuICAgIHJldHVybiB2O1xuICB9XG59O1xuXG5leHBvcnQgY29uc3QgcmVzcG9uc2l2ZVByb3AgPSAoeyBmdW5jLCB2YWwsIGludGVycG9sYXRpb24gPSBmYWxzZSB9KSA9PiB7XG4gIGNvbnN0IHsgYnAgfSA9IHVzZVRoZW1lKFRoZW1lQ29udGV4dCk7XG4gIGNvbnN0IGJwRmIgPSBkZWZhdWx0VGhlbWUuYnA7XG5cbiAgaWYgKHZhbCA9PT0gdW5kZWZpbmVkIHx8IHZhbCA9PT0gbnVsbCkgcmV0dXJuO1xuXG4gIGlmIChpbnRlcnBvbGF0aW9uKSB7XG4gICAgaWYgKHR5cGVvZiB2YWwgPT09IFwibnVtYmVyXCIpIHZhbCA9IGludGVycG9sYXRlZFByb3AodmFsLCBpbnRlcnBvbGF0aW9uKTtcbiAgICBpZiAoQXJyYXkuaXNBcnJheSh2YWwpKVxuICAgICAgdmFsLmZvckVhY2goKHgsIGluZGV4KSA9PiB7XG4gICAgICAgIGlmICh0eXBlb2YgeCA9PT0gXCJudW1iZXJcIilcbiAgICAgICAgICB2YWxbaW5kZXhdID0gaW50ZXJwb2xhdGVkUHJvcCh4LCBpbnRlcnBvbGF0aW9uKTtcbiAgICAgIH0pO1xuICB9XG5cbiAgdmFsID0gQXJyYXkuaXNBcnJheSh2YWwpID8gdmFsIDogW3ZhbF07XG5cbiAgcmV0dXJuIGNzc2BcbiAgICAke2Z1bmModmFsWzBdKX1cblxuICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6ICR7YnA/LlsxXSB8fCBicEZiWzFdfSkge1xuICAgICAgJHt2YWxbMV0gJiYgZnVuYyh2YWxbMV0pfVxuICAgIH1cblxuICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6ICR7YnA/LlsyXSB8fCBicEZiWzJdfSkge1xuICAgICAgJHt2YWxbMl0gJiYgZnVuYyh2YWxbMl0pfVxuICAgIH1cblxuICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6ICR7YnA/LlszXSB8fCBicEZiWzNdfSkge1xuICAgICAgJHt2YWxbM10gJiYgZnVuYyh2YWxbM10pfVxuICAgIH1cbiAgYDtcbn07XG4iXX0= */");
 };
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
@@ -880,13 +908,17 @@ var textTransform = function textTransform(_ref8) {
 };
 var typographyMixins = [fontFamily, fontSize, fontWeight, lineHeight, color, textAlign, textDecoration, textTransform];
 
-var Typography = /*#__PURE__*/React__default["default"].forwardRef(function (props, ref) {
+var _excluded = ["variant", "children"];
+var Typography = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
+  var _theme$text;
+  var variantFromProps = _ref.variant,
+    children = _ref.children,
+    restProps = _objectWithoutProperties(_ref, _excluded);
   var theme = react.useTheme(react.ThemeContext);
-  var variant = props.variant;
-  var variantsFromTheme = theme.text.variants;
+  var varsFrTheme = theme === null || theme === void 0 ? void 0 : (_theme$text = theme.text) === null || _theme$text === void 0 ? void 0 : _theme$text.variants;
   return react.jsx(TypographyStyled, _extends({
     ref: ref
-  }, variantsFromTheme && variantsFromTheme["default"], variant && variantsFromTheme && variantsFromTheme[variant], props), props.children);
+  }, varsFrTheme && varsFrTheme.default, variantFromProps && varsFrTheme[variantFromProps], restProps), children);
 });
 var props = ["fontSize", "fontWeight", "lineHeight", "fontFamily", "color", "textAlign", "textDecoration", "textTransform"];
 var TypographyStyled = /*#__PURE__*/_styled__default["default"]("p", process.env.NODE_ENV === "production" ? {
@@ -900,7 +932,7 @@ var TypographyStyled = /*#__PURE__*/_styled__default["default"]("p", process.env
   },
   target: "e14iioxq0",
   label: "TypographyStyled"
-})(devMixins, " ", typographyMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlR5cG9ncmFwaHkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcUNFIiwiZmlsZSI6IlR5cG9ncmFwaHkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IFRoZW1lQ29udGV4dCwgdXNlVGhlbWUgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiO1xuaW1wb3J0IHR5cG9ncmFwaHlNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvdHlwb2dyYXBoeU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcblxuY29uc3QgVHlwb2dyYXBoeSA9IFJlYWN0LmZvcndhcmRSZWYoKHByb3BzLCByZWYpID0+IHtcbiAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuICBsZXQgeyB2YXJpYW50IH0gPSBwcm9wcztcbiAgY29uc3QgeyB2YXJpYW50czogdmFyaWFudHNGcm9tVGhlbWUgfSA9IHRoZW1lLnRleHQ7XG5cbiAgcmV0dXJuIChcbiAgICA8VHlwb2dyYXBoeVN0eWxlZFxuICAgICAgcmVmPXtyZWZ9XG4gICAgICB7Li4uKHZhcmlhbnRzRnJvbVRoZW1lICYmIHZhcmlhbnRzRnJvbVRoZW1lW1wiZGVmYXVsdFwiXSl9XG4gICAgICB7Li4uKHZhcmlhbnQgJiYgdmFyaWFudHNGcm9tVGhlbWUgJiYgdmFyaWFudHNGcm9tVGhlbWVbdmFyaWFudF0pfVxuICAgICAgey4uLnByb3BzfVxuICAgID5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICA8L1R5cG9ncmFwaHlTdHlsZWQ+XG4gICk7XG59KTtcblxuY29uc3QgcHJvcHMgPSBbXG4gIFwiZm9udFNpemVcIixcbiAgXCJmb250V2VpZ2h0XCIsXG4gIFwibGluZUhlaWdodFwiLFxuICBcImZvbnRGYW1pbHlcIixcbiAgXCJjb2xvclwiLFxuICBcInRleHRBbGlnblwiLFxuICBcInRleHREZWNvcmF0aW9uXCIsXG4gIFwidGV4dFRyYW5zZm9ybVwiLFxuXTtcblxuY29uc3QgVHlwb2dyYXBoeVN0eWxlZCA9IHN0eWxlZChcInBcIiwge1xuICBzaG91bGRGb3J3YXJkUHJvcDogKHByb3ApID0+IGlzUHJvcFZhbGlkKHByb3ApICYmICFwcm9wcy5pbmNsdWRlcyhwcm9wKSxcbn0pYFxuICAke2Rldk1peGluc31cbiAgJHt0eXBvZ3JhcGh5TWl4aW5zfVxuYDtcblxuZXhwb3J0IGRlZmF1bHQgVHlwb2dyYXBoeTtcbiJdfQ== */"));
+})(devMixins, " ", typographyMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlR5cG9ncmFwaHkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBdUNFIiwiZmlsZSI6IlR5cG9ncmFwaHkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IFRoZW1lQ29udGV4dCwgdXNlVGhlbWUgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiO1xuaW1wb3J0IHR5cG9ncmFwaHlNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvdHlwb2dyYXBoeU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcblxuY29uc3QgVHlwb2dyYXBoeSA9IFJlYWN0LmZvcndhcmRSZWYoXG4gICh7IHZhcmlhbnQ6IHZhcmlhbnRGcm9tUHJvcHMsIGNoaWxkcmVuLCAuLi5yZXN0UHJvcHMgfSwgcmVmKSA9PiB7XG4gICAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuXG4gICAgY29uc3QgdmFyc0ZyVGhlbWUgPSB0aGVtZT8udGV4dD8udmFyaWFudHM7XG5cbiAgICByZXR1cm4gKFxuICAgICAgPFR5cG9ncmFwaHlTdHlsZWRcbiAgICAgICAgcmVmPXtyZWZ9XG4gICAgICAgIHsuLi4odmFyc0ZyVGhlbWUgJiYgdmFyc0ZyVGhlbWUuZGVmYXVsdCl9XG4gICAgICAgIHsuLi4odmFyaWFudEZyb21Qcm9wcyAmJiB2YXJzRnJUaGVtZVt2YXJpYW50RnJvbVByb3BzXSl9XG4gICAgICAgIHsuLi5yZXN0UHJvcHN9XG4gICAgICA+XG4gICAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDwvVHlwb2dyYXBoeVN0eWxlZD5cbiAgICApO1xuICB9XG4pO1xuXG5jb25zdCBwcm9wcyA9IFtcbiAgXCJmb250U2l6ZVwiLFxuICBcImZvbnRXZWlnaHRcIixcbiAgXCJsaW5lSGVpZ2h0XCIsXG4gIFwiZm9udEZhbWlseVwiLFxuICBcImNvbG9yXCIsXG4gIFwidGV4dEFsaWduXCIsXG4gIFwidGV4dERlY29yYXRpb25cIixcbiAgXCJ0ZXh0VHJhbnNmb3JtXCIsXG5dO1xuXG5jb25zdCBUeXBvZ3JhcGh5U3R5bGVkID0gc3R5bGVkKFwicFwiLCB7XG4gIHNob3VsZEZvcndhcmRQcm9wOiAocHJvcCkgPT4gaXNQcm9wVmFsaWQocHJvcCkgJiYgIXByb3BzLmluY2x1ZGVzKHByb3ApLFxufSlgXG4gICR7ZGV2TWl4aW5zfVxuICAke3R5cG9ncmFwaHlNaXhpbnN9XG5gO1xuXG4vLyBjb25zdCBUeXBvZ3JhcGh5U3R5bGVkID0gc3R5bGVkLnBgXG4vLyAgICR7ZGV2TWl4aW5zfVxuLy8gICAke3R5cG9ncmFwaHlNaXhpbnN9XG4vLyBgO1xuXG5leHBvcnQgZGVmYXVsdCBUeXBvZ3JhcGh5O1xuIl19 */"));
 
 // exchanging all chars to spaces so that it doesn't load with the sentence
 var createSpaces = function createSpaces(sentence) {

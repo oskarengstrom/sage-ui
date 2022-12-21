@@ -1,6 +1,6 @@
 {
   "name": "@oskarengstrom/sage-ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "files": [
     "./dist"
   ],
@@ -28,11 +28,11 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "build": "rollup -c",
     "build-watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel build-watch start-playground",
+    "build": "rollup -c",
     "start-playground": "cd playground && npm run start",
     "i-all": "npm i && cd playground && npm i",
-    "dev": "npm-run-all --parallel build-watch start-playground",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

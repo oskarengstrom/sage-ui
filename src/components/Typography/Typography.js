@@ -5,22 +5,24 @@ import isPropValid from "@emotion/is-prop-valid";
 import typographyMixins from "../../mixins/responsiveProps/typographyMixins";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 
-const Typography = React.forwardRef((props, ref) => {
-  const theme = useTheme(ThemeContext);
-  let { variant } = props;
-  const { variants: variantsFromTheme } = theme.text;
+const Typography = React.forwardRef(
+  ({ variant: variantFromProps, children, ...restProps }, ref) => {
+    const theme = useTheme(ThemeContext);
 
-  return (
-    <TypographyStyled
-      ref={ref}
-      {...(variantsFromTheme && variantsFromTheme["default"])}
-      {...(variant && variantsFromTheme && variantsFromTheme[variant])}
-      {...props}
-    >
-      {props.children}
-    </TypographyStyled>
-  );
-});
+    const varsFrTheme = theme?.text?.variants;
+
+    return (
+      <TypographyStyled
+        ref={ref}
+        {...(varsFrTheme && varsFrTheme.default)}
+        {...(variantFromProps && varsFrTheme[variantFromProps])}
+        {...restProps}
+      >
+        {children}
+      </TypographyStyled>
+    );
+  }
+);
 
 const props = [
   "fontSize",
@@ -39,5 +41,10 @@ const TypographyStyled = styled("p", {
   ${devMixins}
   ${typographyMixins}
 `;
+
+// const TypographyStyled = styled.p`
+//   ${devMixins}
+//   ${typographyMixins}
+// `;
 
 export default Typography;

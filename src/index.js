@@ -9,5 +9,6 @@ export { default as Section } from "./components/Section/Section";
 // export { default as Typography } from "./components/Typography/Typography";
 import Typography from "./components/Typography/Typography";
 export { Typography };
+
 export { useResponsive } from "./hooks/useResponsive/useResponsive";
 export { default as useScramble } from "./hooks/useScramble/useScramble";
