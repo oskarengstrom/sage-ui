@@ -4,7 +4,7 @@ export const defaultTheme = {
     maxWidth: "62rem",
     xPadding: ["1rem", "2rem"],
   },
-  colors: {
+  palette: {
     background: "#fff",
   },
   text: {
