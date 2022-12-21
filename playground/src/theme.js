@@ -8,17 +8,21 @@ export const constants = {
   },
 };
 
-export const baseTheme = {
+export const playgroundTheme = {
   bp: ["0rem", "36rem", "62rem", "75rem"],
-  colors: {
-    background: constants.colors.black,
+  section: {
+    maxWidth: "62rem",
+    xPadding: ["1rem", "2rem"],
+  },
+  palette: {
+    background: constants.colors.white,
     primary: {
-      main: constants.colors.white,
+      main: constants.colors.green,
     },
   },
   text: {
-    primary: constants.colors.white,
-    secondary: constants.colors.white,
-    disabled: constants.colors.white,
+    primary: constants.colors.black,
+    secondary: constants.colors.black,
+    disabled: constants.colors.black,
   },
 };

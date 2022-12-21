@@ -9,7 +9,10 @@ import React, { useEffect, useState } from "react";
 // breakpoint = shows the current screen width in sm/md/lr/xl,
 
 export const useResponsive = () => {
-  const { bp } = useTheme(ThemeContext);
+  let { bp } = useTheme(ThemeContext);
+
+  // fallback if theme is not present
+  bp = bp ? bp : ["0rem", "36rem", "62rem", "75rem"];
 
   const [isMobile, setMobile] = useState(false);
   const [breakpoint, setBreakpoint] = useState(false);
