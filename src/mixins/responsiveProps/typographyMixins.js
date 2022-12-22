@@ -1,6 +1,16 @@
 import { css } from "@emotion/react";
 import { responsiveProp } from "../../utils/responsiveProp";
 
+const color = ({ color }) =>
+  color &&
+  responsiveProp({
+    func: (x) =>
+      css`
+        color: ${x};
+      `,
+    val: color,
+  });
+
 const fontFamily = ({ fontFamily }) =>
   fontFamily &&
   responsiveProp({
@@ -41,16 +51,6 @@ const lineHeight = ({ lineHeight }) =>
       `,
     val: lineHeight,
     interpolation: "rem",
-  });
-
-const color = ({ color }) =>
-  color &&
-  responsiveProp({
-    func: (x) =>
-      css`
-        color: ${x};
-      `,
-    val: color,
   });
 
 const textAlign = ({ textAlign }) =>

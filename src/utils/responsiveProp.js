@@ -1,5 +1,5 @@
 import { ThemeContext, css, useTheme } from "@emotion/react";
-import { defaultTheme } from "../theming/defaultTheme";
+import { defaultTheme } from "../components/SageProvider/defaultTheme";
 
 export const interpolatedProp = (v, interpolation) => {
   if (typeof v === "number") {

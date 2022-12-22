@@ -1,4 +1,4 @@
-import { defaultTheme } from "../theming/defaultTheme";
+import { defaultTheme } from "../components/SageProvider/defaultTheme";
 
 const fallback = defaultTheme.bp;
 

@@ -2,25 +2,13 @@
 
 UI library for [insert name here] projects.
 
-## Usage
+## Install
 
-Install via `npm i @oskarengstrom/sage-ui`
-
-```
-import { Grid } from "@oskarengstrom/sage-ui"
-
-export default function Home() {
-  return (
-      <Grid base={12}>
-        <Grid.Item span={10}>...</Grid.Item>
-        <Grid.Item>...</Grid.Item>
-        <Grid.Item>...f</Grid.Item>
-      </Grid>
-  )
-}
-```
+`npm i @oskarengstrom/sage-ui`
 
 ## Develop
+
+Run `npm run i-all` first time.
 
 `npm run dev` fires up both rollup with -watch parallel to playground react app in dev mode.
 
@@ -28,13 +16,9 @@ export default function Home() {
 
 ### NPM Link
 
-Currently, there's some bug with NPM Link, so you must uninstall the dependency beofre linking can work.
-
-In the package project, run `npm link`.
-
-In the reciever project, run `npm link @oskarengstrom/sage-ui`
-
-In the reciever project, add this to `next.config.json`:
+1. In the package project, run `npm link`.
+2. In the reciever project, run `npm link @oskarengstrom/sage-ui`
+3. In the reciever project, add this to `next.config.json`:
 
 ```
 const path = require("path")

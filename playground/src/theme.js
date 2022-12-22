@@ -21,7 +21,7 @@ export const playgroundTheme = {
   typography: {
     variants: {
       default: {
-        fontSize: "2rem",
+        fontSize: "1rem",
       },
       h1: {
         fontSize: "4rem",

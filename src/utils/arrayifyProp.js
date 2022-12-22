@@ -1,3 +1,5 @@
+// takes a prop and returns an array of 4 items, with interpolation
+
 export const arrayifyProp = (val, interpolation) => {
   val = Array.isArray(val) ? val : [val];
 
