@@ -18,12 +18,12 @@ const Spacer = styled.div`
   ${devMixins}
 
   // adds a default background color from theme
-${(props) =>
+  ${(props) =>
     props.theme?.palette?.background &&
     `background-color: ${props.theme.palette.background}`}
 
-// overrides background color from props
-${backgroundColor}
+  // overrides background color from props
+  ${backgroundColor}
 
   ${sizeMixins}
 `;

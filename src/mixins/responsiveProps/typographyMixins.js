@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import { responsiveProp } from "../../utils/responsiveProp";
 
 const color = ({ color }) =>
-  color &&
   responsiveProp({
     func: (x) =>
       css`
@@ -12,7 +11,6 @@ const color = ({ color }) =>
   });
 
 const fontFamily = ({ fontFamily }) =>
-  fontFamily &&
   responsiveProp({
     func: (x) =>
       css`
@@ -22,7 +20,6 @@ const fontFamily = ({ fontFamily }) =>
   });
 
 const fontSize = ({ fontSize }) =>
-  fontSize &&
   responsiveProp({
     func: (x) =>
       css`
@@ -33,7 +30,6 @@ const fontSize = ({ fontSize }) =>
   });
 
 const fontWeight = ({ fontWeight }) =>
-  fontWeight &&
   responsiveProp({
     func: (x) =>
       css`
@@ -43,7 +39,6 @@ const fontWeight = ({ fontWeight }) =>
   });
 
 const lineHeight = ({ lineHeight }) =>
-  lineHeight &&
   responsiveProp({
     func: (x) =>
       css`
@@ -54,7 +49,6 @@ const lineHeight = ({ lineHeight }) =>
   });
 
 const textAlign = ({ textAlign }) =>
-  textAlign &&
   responsiveProp({
     func: (x) =>
       css`
@@ -64,7 +58,6 @@ const textAlign = ({ textAlign }) =>
   });
 
 const textDecoration = ({ textDecoration }) =>
-  textDecoration &&
   responsiveProp({
     func: (x) =>
       css`
@@ -74,7 +67,6 @@ const textDecoration = ({ textDecoration }) =>
   });
 
 const textTransform = ({ textTransform }) =>
-  textTransform &&
   responsiveProp({
     func: (x) =>
       css`

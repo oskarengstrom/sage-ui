@@ -2,7 +2,7 @@
 
 Looks in theme to automatically add x-padding and background color
 
-Required in theme:
+These are the theme keys it uses:
 
 ```
 theme = {
@@ -28,14 +28,25 @@ Usage:
 <Section backgroundColor="red">
     ...
 </Section>
+
+// Use without theme || Override theme
+<Section maxWidth="80rem" xPadding={[1, 1, 2]}>
+    ...
+</Section>
 ```
 
 ### Props
 
-`dev` true | false
+`backgroundColor` string (default: props.theme.palette.background)
 
-`backgroundColor` string (overrides background color from theme)
+`maxWidth` unit[] | number[] (rem) (default: props.theme.section.maxWidth)
 
-### TODO
+`xPadding` unit[] | number[] (rem) (default: props.theme.section.xPadding)
 
-⬜️ Build pad override via props
+`dev` bool
+
+`as` element
+
+{sizeMixins}
+
+{spaceMixins}

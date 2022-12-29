@@ -1,64 +1,68 @@
 import { css } from "@emotion/react";
 import { responsiveProp } from "../../utils/responsiveProp";
 
-const width = ({ width }) =>
+const m = ({ m }) =>
   responsiveProp({
     func: (x) =>
       css`
-        width: ${x};
+        margin: ${x};
       `,
-    val: width,
+    val: m,
     interpolation: "rem",
   });
 
-const maxWidth = ({ maxWidth }) =>
+const mx = ({ mx }) =>
   responsiveProp({
     func: (x) =>
       css`
-        max-width: ${x};
+        margin-left: ${x};
+        margin-right: ${x};
       `,
-    val: maxWidth,
+    val: mx,
     interpolation: "rem",
   });
 
-const minWidth = ({ minWidth }) =>
+const my = ({ my }) =>
   responsiveProp({
     func: (x) =>
       css`
-        min-width: ${x};
+        margin-top: ${x};
+        margin-bottom: ${x};
       `,
-    val: minWidth,
+    val: my,
     interpolation: "rem",
   });
 
-const height = ({ height }) =>
+const p = ({ p }) =>
   responsiveProp({
     func: (x) =>
       css`
-        height: ${x};
+        padding: ${x};
       `,
-    val: height,
+    val: p,
     interpolation: "rem",
   });
 
-const maxHeight = ({ maxHeight }) =>
+const px = ({ px }) =>
   responsiveProp({
     func: (x) =>
       css`
-        max-height: ${x};
+        padding-left: ${x};
+        padding-right: ${x};
       `,
-    val: maxHeight,
+    val: px,
     interpolation: "rem",
   });
 
-const minHeight = ({ minHeight }) =>
+const py = ({ py }) =>
   responsiveProp({
     func: (x) =>
       css`
-        min-height: ${x};
+        padding-top: ${x};
+        padding-bottom: ${x};
       `,
-    val: minHeight,
+    val: py,
     interpolation: "rem",
   });
 
-export default [width, maxWidth, minWidth, height, maxHeight, minHeight];
+export default [m, mx, my, my, p, px, py, py];

@@ -12,8 +12,6 @@
 
 ### Props
 
-`dev` true | false
-
 `base` number[]
 
 `gap` number[] (rem) | css value[]
@@ -31,3 +29,11 @@ Not required, but handy to do spanning, alignment and col placement.
 `span` number[]
 
 `placeSelf` string[], ex: "start center" (css grid shorthand)
+
+`dev` bool
+
+`as` element
+
+{sizeMixins}
+
+{spaceMixins}

@@ -13,3 +13,4 @@ export { default as Section } from "./components/Section/Section";
 export { default as Spacer } from "./components/Spacer/Spacer";
 import Typography from "./components/Typography/Typography";
 export { Typography };
+export { default as Stack } from "./components/Stack/Stack";

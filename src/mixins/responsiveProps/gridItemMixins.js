@@ -8,7 +8,6 @@ import { responsiveProp } from "../../utils/responsiveProp";
 // grid-column: ${x};
 
 const span = ({ span }) =>
-  span &&
   responsiveProp({
     func: (x) =>
       css`
@@ -18,7 +17,6 @@ const span = ({ span }) =>
   });
 
 const placeSelf = ({ placeSelf }) =>
-  placeSelf &&
   responsiveProp({
     func: (x) =>
       css`

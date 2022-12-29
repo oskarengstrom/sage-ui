@@ -17,10 +17,6 @@
 
 ## Props
 
-`dev` bool
-
-`as` element
-
 `fontFamily` string[]
 
 `fontSize` unit | number ("rem")[]
@@ -36,6 +32,12 @@
 `textDecoration` string[]
 
 `textTransform` string[]
+
+`dev` bool
+
+`as` element
+
+{spaceMixins}
 
 ## Variants from theme
 

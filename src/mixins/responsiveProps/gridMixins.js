@@ -4,16 +4,16 @@ import { responsiveProp } from "../../utils/responsiveProp";
 // grid,
 // base,
 // gap,
-// gapx,
-// gapy,
+// columnGap,
+// rowGap,
 // placeItems,
+// gridColumn,
 
 const grid = css`
   display: grid;
 `;
 
 const base = ({ base }) =>
-  base &&
   responsiveProp({
     func: (x) =>
       css`
@@ -23,7 +23,6 @@ const base = ({ base }) =>
   });
 
 const gap = ({ gap }) =>
-  gap &&
   responsiveProp({
     func: (x) =>
       css`
@@ -33,30 +32,27 @@ const gap = ({ gap }) =>
     interpolation: "rem",
   });
 
-const gapx = ({ gapx }) =>
-  gapx &&
+const columnGap = ({ columnGap }) =>
   responsiveProp({
     func: (x) =>
       css`
         column-gap: ${x};
       `,
-    val: gapx,
+    val: columnGap,
     interpolation: "rem",
   });
 
-const gapy = ({ gapy }) =>
-  gapy &&
+const rowGap = ({ rowGap }) =>
   responsiveProp({
     func: (x) =>
       css`
         row-gap: ${x};
       `,
-    val: gapy,
+    val: rowGap,
     interpolation: "rem",
   });
 
 const placeItems = ({ placeItems }) =>
-  placeItems &&
   responsiveProp({
     func: (x) =>
       css`
@@ -65,4 +61,13 @@ const placeItems = ({ placeItems }) =>
     val: placeItems,
   });
 
-export default [grid, base, gap, gapx, gapy, placeItems];
+const gridColumn = ({ gridColumn }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-column: ${x};
+      `,
+    val: gridColumn,
+  });
+
+export default [grid, base, gap, columnGap, rowGap, placeItems, gridColumn];

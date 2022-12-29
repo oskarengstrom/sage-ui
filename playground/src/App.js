@@ -5,22 +5,27 @@ import {
   SageProvider,
   Section,
   Spacer,
+  Stack,
 } from "@oskarengstrom/sage-ui";
 
 const App = () => {
   return (
     <>
-      <SageProvider theme={playgroundTheme}>
-        <Section>
-          <Typography variant="h1" color="blue">
-            asdf
-          </Typography>
-        </Section>
-        <Spacer height={4} />
-        <Typography>asdf</Typography>
-      </SageProvider>
-      <Spacer height={4} />
-      <Typography>asdf</Typography>
+      {/* <SageProvider theme={playgroundTheme}> */}
+      <Section
+        backgroundColor="red"
+        maxWidth="80rem"
+        xPadding={["1rem", "5rem"]}
+      >
+        <Stack>
+          <div>asdf</div>
+          <div>asdf</div>
+          <div>
+            <Typography m={1}>asdf</Typography>
+          </div>
+        </Stack>
+      </Section>
+      {/* </SageProvider> */}
     </>
   );
 };

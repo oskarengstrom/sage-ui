@@ -6,6 +6,6 @@ export const defaultTheme = {
   },
   palette: {
     background: "#fff",
-    textPrimary: "#000",
+    textPrimary: "white",
   },
 };
