@@ -14,6 +14,46 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 var isPropValid__default = /*#__PURE__*/_interopDefaultLegacy(isPropValid);
 
+var useSSRLayoutEffect = typeof window !== "undefined" ? React.useLayoutEffect : function () {};
+
+var defaultTheme = {
+  bp: ["0rem", "36rem", "62rem", "75rem"],
+  section: {
+    maxWidth: "62rem",
+    xPadding: ["1rem", "2rem"]
+  },
+  palette: {
+    background: "#fff",
+    textPrimary: "white"
+  }
+};
+
+var interpolatedProp = function interpolatedProp(v, interpolation) {
+  if (typeof v === "number") {
+    return v + interpolation;
+  } else {
+    return v;
+  }
+};
+var responsiveProp = function responsiveProp(_ref) {
+  var func = _ref.func,
+    val = _ref.val,
+    _ref$interpolation = _ref.interpolation,
+    interpolation = _ref$interpolation === void 0 ? false : _ref$interpolation;
+  var _useTheme = react.useTheme(react.ThemeContext),
+    bp = _useTheme.bp;
+  var bpFb = defaultTheme.bp;
+  if (val === undefined || val === null) return;
+  if (interpolation) {
+    if (typeof val === "number") val = interpolatedProp(val, interpolation);
+    if (Array.isArray(val)) val.forEach(function (x, index) {
+      if (typeof x === "number") val[index] = interpolatedProp(x, interpolation);
+    });
+  }
+  val = Array.isArray(val) ? val : [val];
+  return /*#__PURE__*/react.css(func(val[0]), "@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[1]) || bpFb[1], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[2]) || bpFb[2], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[3]) || bpFb[3], "){", val[3] && func(val[3]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgZGVmYXVsdFRoZW1lIH0gZnJvbSBcIi4uL2NvbXBvbmVudHMvU2FnZVByb3ZpZGVyL2RlZmF1bHRUaGVtZVwiO1xuXG5leHBvcnQgY29uc3QgaW50ZXJwb2xhdGVkUHJvcCA9ICh2LCBpbnRlcnBvbGF0aW9uKSA9PiB7XG4gIGlmICh0eXBlb2YgdiA9PT0gXCJudW1iZXJcIikge1xuICAgIHJldHVybiB2ICsgaW50ZXJwb2xhdGlvbjtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gdjtcbiAgfVxufTtcblxuZXhwb3J0IGNvbnN0IHJlc3BvbnNpdmVQcm9wID0gKHsgZnVuYywgdmFsLCBpbnRlcnBvbGF0aW9uID0gZmFsc2UgfSkgPT4ge1xuICBjb25zdCB7IGJwIH0gPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuICBjb25zdCBicEZiID0gZGVmYXVsdFRoZW1lLmJwO1xuXG4gIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwpIHJldHVybjtcblxuICBpZiAoaW50ZXJwb2xhdGlvbikge1xuICAgIGlmICh0eXBlb2YgdmFsID09PSBcIm51bWJlclwiKSB2YWwgPSBpbnRlcnBvbGF0ZWRQcm9wKHZhbCwgaW50ZXJwb2xhdGlvbik7XG4gICAgaWYgKEFycmF5LmlzQXJyYXkodmFsKSlcbiAgICAgIHZhbC5mb3JFYWNoKCh4LCBpbmRleCkgPT4ge1xuICAgICAgICBpZiAodHlwZW9mIHggPT09IFwibnVtYmVyXCIpXG4gICAgICAgICAgdmFsW2luZGV4XSA9IGludGVycG9sYXRlZFByb3AoeCwgaW50ZXJwb2xhdGlvbik7XG4gICAgICB9KTtcbiAgfVxuXG4gIHZhbCA9IEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbCA6IFt2YWxdO1xuXG4gIHJldHVybiBjc3NgXG4gICAgJHtmdW5jKHZhbFswXSl9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMV0gfHwgYnBGYlsxXX0pIHtcbiAgICAgICR7dmFsWzFdICYmIGZ1bmModmFsWzFdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMl0gfHwgYnBGYlsyXX0pIHtcbiAgICAgICR7dmFsWzJdICYmIGZ1bmModmFsWzJdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bM10gfHwgYnBGYlszXX0pIHtcbiAgICAgICR7dmFsWzNdICYmIGZ1bmModmFsWzNdKX1cbiAgICB9XG4gIGA7XG59O1xuIl19 */");
+};
+
 function _iterableToArrayLimit(arr, i) {
   var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
   if (null != _i) {
@@ -485,85 +525,6 @@ function _toPropertyKey(arg) {
   return typeof key === "symbol" ? key : String(key);
 }
 
-function SageProvider(_ref) {
-  var children = _ref.children,
-    theme = _ref.theme;
-  return react.jsx(react.ThemeProvider, {
-    theme: _objectSpread2({}, theme)
-  }, children);
-}
-
-var defaultTheme = {
-  bp: ["0rem", "36rem", "62rem", "75rem"],
-  section: {
-    maxWidth: "62rem",
-    xPadding: ["1rem", "2rem"]
-  },
-  palette: {
-    background: "#fff",
-    textPrimary: "white"
-  }
-};
-
-var fallback = defaultTheme.bp;
-var mq = {
-  only: {
-    sm: function sm(_ref) {
-      var theme = _ref.theme;
-      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
-    },
-    md: function md(_ref2) {
-      var theme = _ref2.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ") and (max-width: calc(").concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
-    },
-    lr: function lr(_ref3) {
-      var theme = _ref3.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ") and (max-width: calc(").concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
-    },
-    xl: function xl(_ref4) {
-      var theme = _ref4.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
-    },
-    computer: "@media (hover: hover) and (pointer: fine)",
-    touchDevice: "@media (hover: none) and (pointer: coarse)",
-    stylus: "@media (hover: none) and (pointer: fine)",
-    retina: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
-  },
-  up: {
-    md: function md(_ref5) {
-      var theme = _ref5.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ")");
-    },
-    lr: function lr(_ref6) {
-      var theme = _ref6.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ")");
-    },
-    xl: function xl(_ref7) {
-      var theme = _ref7.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
-    }
-  },
-  down: {
-    sm: function sm(_ref8) {
-      var theme = _ref8.theme;
-      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
-    },
-    md: function md(_ref9) {
-      var theme = _ref9.theme;
-      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
-    },
-    lr: function lr(_ref10) {
-      var theme = _ref10.theme;
-      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
-    }
-  },
-  supports: {
-    hover: "@media (hover: hover)"
-  }
-};
-
-var useSSRLayoutEffect = typeof window !== "undefined" ? React.useLayoutEffect : function () {};
-
 var useResponsive = function useResponsive() {
   var _useTheme = react.useTheme(react.ThemeContext),
     bp = _useTheme.bp;
@@ -707,35 +668,50 @@ var useScramble = function useScramble(_ref) {
   };
 };
 
-var Test = function Test() {
-  return react.jsx("div", null, "Working okey ");
-};
+function SageProvider(_ref) {
+  var children = _ref.children,
+    theme = _ref.theme;
+  return react.jsx(react.ThemeProvider, {
+    theme: _objectSpread2({}, theme)
+  }, children);
+}
 
-var interpolatedProp = function interpolatedProp(v, interpolation) {
-  if (typeof v === "number") {
-    return v + interpolation;
-  } else {
-    return v;
-  }
-};
-var responsiveProp = function responsiveProp(_ref) {
-  var func = _ref.func,
-    val = _ref.val,
-    _ref$interpolation = _ref.interpolation,
-    interpolation = _ref$interpolation === void 0 ? false : _ref$interpolation;
-  var _useTheme = react.useTheme(react.ThemeContext),
-    bp = _useTheme.bp;
-  var bpFb = defaultTheme.bp;
-  if (val === undefined || val === null) return;
+// takes a prop and returns an array of 4 items, with interpolation
+
+var arrayifyProp = function arrayifyProp(val, interpolation) {
+  val = Array.isArray(val) ? val : [val];
+  val.forEach(function (item, index) {
+    var isLast = val.length === index + 1;
+    if (isLast) {
+      var loop = 4 - (index + 1);
+      for (var i = 0; i < loop; i++) {
+        val.push(item);
+      }
+    }
+  });
   if (interpolation) {
-    if (typeof val === "number") val = interpolatedProp(val, interpolation);
-    if (Array.isArray(val)) val.forEach(function (x, index) {
-      if (typeof x === "number") val[index] = interpolatedProp(x, interpolation);
+    val.forEach(function (item, index) {
+      return val[index] = item + interpolation;
     });
   }
-  val = Array.isArray(val) ? val : [val];
-  return /*#__PURE__*/react.css(func(val[0]), "@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[1]) || bpFb[1], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[2]) || bpFb[2], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[3]) || bpFb[3], "){", val[3] && func(val[3]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgZGVmYXVsdFRoZW1lIH0gZnJvbSBcIi4uL2NvbXBvbmVudHMvU2FnZVByb3ZpZGVyL2RlZmF1bHRUaGVtZVwiO1xuXG5leHBvcnQgY29uc3QgaW50ZXJwb2xhdGVkUHJvcCA9ICh2LCBpbnRlcnBvbGF0aW9uKSA9PiB7XG4gIGlmICh0eXBlb2YgdiA9PT0gXCJudW1iZXJcIikge1xuICAgIHJldHVybiB2ICsgaW50ZXJwb2xhdGlvbjtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gdjtcbiAgfVxufTtcblxuZXhwb3J0IGNvbnN0IHJlc3BvbnNpdmVQcm9wID0gKHsgZnVuYywgdmFsLCBpbnRlcnBvbGF0aW9uID0gZmFsc2UgfSkgPT4ge1xuICBjb25zdCB7IGJwIH0gPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuICBjb25zdCBicEZiID0gZGVmYXVsdFRoZW1lLmJwO1xuXG4gIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwpIHJldHVybjtcblxuICBpZiAoaW50ZXJwb2xhdGlvbikge1xuICAgIGlmICh0eXBlb2YgdmFsID09PSBcIm51bWJlclwiKSB2YWwgPSBpbnRlcnBvbGF0ZWRQcm9wKHZhbCwgaW50ZXJwb2xhdGlvbik7XG4gICAgaWYgKEFycmF5LmlzQXJyYXkodmFsKSlcbiAgICAgIHZhbC5mb3JFYWNoKCh4LCBpbmRleCkgPT4ge1xuICAgICAgICBpZiAodHlwZW9mIHggPT09IFwibnVtYmVyXCIpXG4gICAgICAgICAgdmFsW2luZGV4XSA9IGludGVycG9sYXRlZFByb3AoeCwgaW50ZXJwb2xhdGlvbik7XG4gICAgICB9KTtcbiAgfVxuXG4gIHZhbCA9IEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbCA6IFt2YWxdO1xuXG4gIHJldHVybiBjc3NgXG4gICAgJHtmdW5jKHZhbFswXSl9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMV0gfHwgYnBGYlsxXX0pIHtcbiAgICAgICR7dmFsWzFdICYmIGZ1bmModmFsWzFdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMl0gfHwgYnBGYlsyXX0pIHtcbiAgICAgICR7dmFsWzJdICYmIGZ1bmModmFsWzJdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bM10gfHwgYnBGYlszXX0pIHtcbiAgICAgICR7dmFsWzNdICYmIGZ1bmModmFsWzNdKX1cbiAgICB9XG4gIGA7XG59O1xuIl19 */");
+  return val;
 };
+
+var backgroundColor$1 = function backgroundColor(_ref) {
+  var backgroundColor = _ref.backgroundColor;
+  return responsiveProp({
+    func: function func(x) {
+      return /*#__PURE__*/react.css("background-color:", x, ";" + (process.env.NODE_ENV === "production" ? "" : ";label:func;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRlc3QuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUVMiLCJmaWxlIjoiVGVzdC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSBcIkBlbW90aW9uL3N0eWxlZFwiO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSBcIkBlbW90aW9uL3JlYWN0XCI7XG5pbXBvcnQgeyBhcnJheWlmeVByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvYXJyYXlpZnlQcm9wXCI7XG5pbXBvcnQgeyByZXNwb25zaXZlUHJvcCB9IGZyb20gXCIuLi8uLi91dGlscy9yZXNwb25zaXZlUHJvcFwiO1xuXG5jb25zdCBiYWNrZ3JvdW5kQ29sb3IgPSAoeyBiYWNrZ3JvdW5kQ29sb3IgfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAke3h9O1xuICAgICAgYCxcbiAgICB2YWw6IGJhY2tncm91bmRDb2xvcixcbiAgfSk7XG5cbmNvbnN0IFRlc3QgPSBzdHlsZWQuZGl2YFxuICAke1tiYWNrZ3JvdW5kQ29sb3JdfTtcbmA7XG5cbmV4cG9ydCBkZWZhdWx0IFRlc3Q7XG4iXX0= */");
+    },
+    val: backgroundColor
+  });
+};
+var Test = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
+  target: "e1qpk7bb0"
+} : {
+  target: "e1qpk7bb0",
+  label: "Test"
+})([backgroundColor$1], ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRlc3QuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY3VCIiwiZmlsZSI6IlRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IGNzcyB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgYXJyYXlpZnlQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL2FycmF5aWZ5UHJvcFwiO1xuaW1wb3J0IHsgcmVzcG9uc2l2ZVByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvcmVzcG9uc2l2ZVByb3BcIjtcblxuY29uc3QgYmFja2dyb3VuZENvbG9yID0gKHsgYmFja2dyb3VuZENvbG9yIH0pID0+XG4gIHJlc3BvbnNpdmVQcm9wKHtcbiAgICBmdW5jOiAoeCkgPT5cbiAgICAgIGNzc2BcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJHt4fTtcbiAgICAgIGAsXG4gICAgdmFsOiBiYWNrZ3JvdW5kQ29sb3IsXG4gIH0pO1xuXG5jb25zdCBUZXN0ID0gc3R5bGVkLmRpdmBcbiAgJHtbYmFja2dyb3VuZENvbG9yXX07XG5gO1xuXG5leHBvcnQgZGVmYXVsdCBUZXN0O1xuIl19 */"));
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
@@ -999,27 +975,6 @@ var Item = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV 
 })(devMixins, " ", gridItemMixins, " ", sizeMixins, " ", spaceMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdyaWQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY3VCIiwiZmlsZSI6IkdyaWQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCBncmlkTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL2dyaWRNaXhpbnNcIjtcbmltcG9ydCBncmlkSXRlbU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9ncmlkSXRlbU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcbmltcG9ydCBzaXplTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL3NpemVNaXhpbnNcIjtcbmltcG9ydCBzcGFjZU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9zcGFjZU1peGluc1wiO1xuXG5jb25zdCBHcmlkID0gc3R5bGVkLmRpdmBcbiAgJHtkZXZNaXhpbnN9XG4gICR7Z3JpZE1peGluc31cbiAgJHtzaXplTWl4aW5zfVxuICAke3NwYWNlTWl4aW5zfVxuYDtcblxuY29uc3QgSXRlbSA9IHN0eWxlZC5kaXZgXG4gICR7ZGV2TWl4aW5zfVxuICAke2dyaWRJdGVtTWl4aW5zfVxuICAke3NpemVNaXhpbnN9XG4gICR7c3BhY2VNaXhpbnN9XG5gO1xuXG5HcmlkLkl0ZW0gPSBJdGVtO1xuZXhwb3J0IGRlZmF1bHQgR3JpZDtcbiJdfQ== */"));
 Grid.Item = Item;
 
-// takes a prop and returns an array of 4 items, with interpolation
-
-var arrayifyProp = function arrayifyProp(val, interpolation) {
-  val = Array.isArray(val) ? val : [val];
-  val.forEach(function (item, index) {
-    var isLast = val.length === index + 1;
-    if (isLast) {
-      var loop = 4 - (index + 1);
-      for (var i = 0; i < loop; i++) {
-        val.push(item);
-      }
-    }
-  });
-  if (interpolation) {
-    val.forEach(function (item, index) {
-      return val[index] = item + interpolation;
-    });
-  }
-  return val;
-};
-
 var _excluded$1 = ["maxWidth", "xPadding", "backgroundColor", "children", "as"];
 var Section = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
   var _theme$section, _theme$section2;
@@ -1246,6 +1201,63 @@ var Stack = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV
   label: "Stack"
 })("display:flex;", devMixins, " ", sizeMixins, " ", spaceMixins, " ", stackMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlN0YWNrLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU13QiIsImZpbGUiOiJTdGFjay5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSBcIkBlbW90aW9uL3N0eWxlZFwiO1xuaW1wb3J0IHN0YWNrTWl4aW5zIGZyb20gXCIuL3N0YWNrTWl4aW5zXCI7XG5pbXBvcnQgZGV2TWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL2Rldk1peGluc1wiO1xuaW1wb3J0IHNpemVNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvc2l6ZU1peGluc1wiO1xuaW1wb3J0IHNwYWNlTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL3NwYWNlTWl4aW5zXCI7XG5cbmNvbnN0IFN0YWNrID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgJHtkZXZNaXhpbnN9XG4gICR7c2l6ZU1peGluc31cbiAgJHtzcGFjZU1peGluc31cbiAgJHtzdGFja01peGluc31cbmA7XG5cbi8vIFN0YWNrLmRlZmF1bHRQcm9wcyA9IHtcbi8vICAganVzdGlmeUNvbnRlbnQ6IFwiY2VudGVyXCIsXG4vLyB9O1xuXG5leHBvcnQgZGVmYXVsdCBTdGFjaztcbiJdfQ== */"));
 
+var fallback = defaultTheme.bp;
+var mq = {
+  only: {
+    sm: function sm(_ref) {
+      var theme = _ref.theme;
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
+    },
+    md: function md(_ref2) {
+      var theme = _ref2.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ") and (max-width: calc(").concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
+    },
+    lr: function lr(_ref3) {
+      var theme = _ref3.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ") and (max-width: calc(").concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
+    },
+    xl: function xl(_ref4) {
+      var theme = _ref4.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
+    },
+    computer: "@media (hover: hover) and (pointer: fine)",
+    touchDevice: "@media (hover: none) and (pointer: coarse)",
+    stylus: "@media (hover: none) and (pointer: fine)",
+    retina: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+  },
+  up: {
+    md: function md(_ref5) {
+      var theme = _ref5.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ")");
+    },
+    lr: function lr(_ref6) {
+      var theme = _ref6.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ")");
+    },
+    xl: function xl(_ref7) {
+      var theme = _ref7.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
+    }
+  },
+  down: {
+    sm: function sm(_ref8) {
+      var theme = _ref8.theme;
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
+    },
+    md: function md(_ref9) {
+      var theme = _ref9.theme;
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
+    },
+    lr: function lr(_ref10) {
+      var theme = _ref10.theme;
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
+    }
+  },
+  supports: {
+    hover: "@media (hover: hover)"
+  }
+};
+
 exports.Grid = Grid;
 exports.SageProvider = SageProvider;
 exports.Section = Section;
@@ -1254,7 +1266,14 @@ exports.Stack = Stack;
 exports.Test = Test;
 exports.Typography = Typography;
 exports.defaultTheme = defaultTheme;
+exports.devMixins = devMixins;
+exports.gridItemMixins = gridItemMixins;
+exports.gridMixins = gridMixins;
 exports.mq = mq;
+exports.responsiveProp = responsiveProp;
+exports.sizeMixins = sizeMixins;
+exports.spaceMixins = spaceMixins;
+exports.typographyMixins = typographyMixins;
 exports.useResponsive = useResponsive;
 exports.useSSRLayoutEffect = useSSRLayoutEffect;
 exports.useScramble = useScramble;
