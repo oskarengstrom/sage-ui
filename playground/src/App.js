@@ -14,7 +14,7 @@ const App = () => {
     <>
       <SageProvider theme={playgroundTheme}>
         <Section id="asdf">
-          <Test backgroundColor={"red"}>asdf</Test>
+          <Test>asdf</Test>
           <Test backgroundColor={["red", "blue", "green"]}>asdf</Test>
           <Typography variant="h1">asdf</Typography>
         </Section>

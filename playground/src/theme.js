@@ -6,6 +6,9 @@ export const constants = {
     red: "#923838",
     orange: "#E48130",
   },
+  gradients: {
+    primary: "linear-gradient(150.67deg, #8D50E1 7.04%, #E15870 82.01%);",
+  },
 };
 
 export const playgroundTheme = {

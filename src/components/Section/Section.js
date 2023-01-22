@@ -62,7 +62,7 @@ const Inner = styled.div`
 `;
 
 const Outer = styled.section`
-  background-color: ${(props) =>
+  background: ${(props) =>
     props.backgroundColor || props.theme?.palette?.background};
 
   ${devMixins}
