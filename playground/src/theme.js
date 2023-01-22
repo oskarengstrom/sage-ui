@@ -11,7 +11,7 @@ export const constants = {
 export const playgroundTheme = {
   bp: ["0rem", "36rem", "62rem", "75rem"],
   section: {
-    maxWidth: "20rem",
+    maxWidth: "50rem",
     xPadding: "1rem",
   },
   palette: {
@@ -24,7 +24,7 @@ export const playgroundTheme = {
         fontSize: "1rem",
       },
       h1: {
-        fontSize: "4rem",
+        fontSize: ["1rem", "2rem", "4rem"],
       },
     },
   },

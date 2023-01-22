@@ -9,7 +9,16 @@ import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 
 const Section = React.forwardRef(
   (
-    { maxWidth, xPadding, backgroundColor, children, as, ...restProps },
+    {
+      maxWidth,
+      xPadding,
+      backgroundColor,
+      children,
+      as,
+      id,
+      className,
+      ...restProps
+    },
     ref
   ) => {
     const { breakpointIndex } = useResponsive();
@@ -18,7 +27,12 @@ const Section = React.forwardRef(
     const xPadArr = arrayifyProp(theme?.section?.xPadding || 0);
 
     return (
-      <Outer backgroundColor={backgroundColor} as={as}>
+      <Outer
+        backgroundColor={backgroundColor}
+        as={as}
+        id={id}
+        className={className}
+      >
         <Inner
           ref={ref}
           maxWidth={maxWidth || theme?.section?.maxWidth}

@@ -12,11 +12,13 @@ import {
 const App = () => {
   return (
     <>
-      {/* <SageProvider theme={playgroundTheme}> */}
-      <Test backgroundColor={"red"}>asdf</Test>
-      <Test backgroundColor={["red", "blue", "green"]}>asdf</Test>
-      <Test>asdf</Test>
-      {/* </SageProvider> */}
+      <SageProvider theme={playgroundTheme}>
+        <Section id="asdf">
+          <Test backgroundColor={"red"}>asdf</Test>
+          <Test backgroundColor={["red", "blue", "green"]}>asdf</Test>
+          <Typography variant="h1">asdf</Typography>
+        </Section>
+      </SageProvider>
     </>
   );
 };
