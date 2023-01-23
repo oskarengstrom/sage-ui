@@ -7,7 +7,9 @@ const KeepAspectRatio = React.forwardRef(
   ({ ratio = 1, children, ...restProps }, ref) => {
     return (
       <Outer ratio={ratio}>
-        <Inner ref={ref}>{children}</Inner>
+        <Inner ref={ref} {...restProps}>
+          {children}
+        </Inner>
       </Outer>
     );
   }
