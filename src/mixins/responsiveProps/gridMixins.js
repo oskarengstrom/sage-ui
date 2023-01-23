@@ -61,13 +61,4 @@ const placeItems = ({ placeItems }) =>
     val: placeItems,
   });
 
-const gridColumn = ({ gridColumn }) =>
-  responsiveProp({
-    func: (x) =>
-      css`
-        grid-column: ${x};
-      `,
-    val: gridColumn,
-  });
-
-export default [grid, base, gap, columnGap, rowGap, placeItems, gridColumn];
+export default [grid, base, gap, columnGap, rowGap, placeItems];

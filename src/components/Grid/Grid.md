@@ -22,11 +22,21 @@
 
 `placeItems` string[], ex: "center center" (css grid shorthand)
 
+`gridColumn` string[]
+
+{sizeMixins}
+
+{spaceMixins}
+
 ## Grid.Item
 
 Not required, but handy to do spanning, alignment and col placement.
 
+### Props
+
 `span` number[]
+
+`order` number[]
 
 `placeSelf` string[], ex: "start center" (css grid shorthand)
 

@@ -25,4 +25,22 @@ const placeSelf = ({ placeSelf }) =>
     val: placeSelf,
   });
 
-export default [span, placeSelf];
+const order = ({ order }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        order: ${x};
+      `,
+    val: order,
+  });
+
+const gridColumn = ({ gridColumn }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-column: ${x};
+      `,
+    val: gridColumn,
+  });
+
+export default [span, placeSelf, order, gridColumn];
