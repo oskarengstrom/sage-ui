@@ -14,6 +14,7 @@ export { default as Spacer } from "./components/Spacer/Spacer";
 import Typography from "./components/Typography/Typography";
 export { Typography };
 export { default as Stack } from "./components/Stack/Stack";
+export { default as KeepAspectRatio } from "./components/KeepAspectRatio/KeepAspectRatio";
 
 // mixin exports
 export { default as mq } from "./mixins/mq";

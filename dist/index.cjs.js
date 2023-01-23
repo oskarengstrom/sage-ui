@@ -713,7 +713,7 @@ var Test = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV 
   label: "Test"
 })([backgroundColor$1], ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRlc3QuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY3VCIiwiZmlsZSI6IlRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCB7IGNzcyB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgYXJyYXlpZnlQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL2FycmF5aWZ5UHJvcFwiO1xuaW1wb3J0IHsgcmVzcG9uc2l2ZVByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvcmVzcG9uc2l2ZVByb3BcIjtcblxuY29uc3QgYmFja2dyb3VuZENvbG9yID0gKHsgYmFja2dyb3VuZENvbG9yIH0pID0+XG4gIHJlc3BvbnNpdmVQcm9wKHtcbiAgICBmdW5jOiAoeCkgPT5cbiAgICAgIGNzc2BcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJHt4fTtcbiAgICAgIGAsXG4gICAgdmFsOiBiYWNrZ3JvdW5kQ29sb3IsXG4gIH0pO1xuXG5jb25zdCBUZXN0ID0gc3R5bGVkLmRpdmBcbiAgJHtbYmFja2dyb3VuZENvbG9yXX07XG5gO1xuXG5leHBvcnQgZGVmYXVsdCBUZXN0O1xuIl19 */"));
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function _EMOTION_STRINGIFIED_CSS_ERROR__$2() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 // grid,
 // base,
@@ -730,7 +730,7 @@ var grid = process.env.NODE_ENV === "production" ? {
   name: "wmhzsl-grid",
   styles: "display:grid;label:grid;",
   map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyaWRNaXhpbnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBV2dCIiwiZmlsZSI6ImdyaWRNaXhpbnMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjc3MgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCB7IHJlc3BvbnNpdmVQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL3Jlc3BvbnNpdmVQcm9wXCI7XG5cbi8vIGdyaWQsXG4vLyBiYXNlLFxuLy8gZ2FwLFxuLy8gY29sdW1uR2FwLFxuLy8gcm93R2FwLFxuLy8gcGxhY2VJdGVtcyxcbi8vIGdyaWRDb2x1bW4sXG5cbmNvbnN0IGdyaWQgPSBjc3NgXG4gIGRpc3BsYXk6IGdyaWQ7XG5gO1xuXG5jb25zdCBiYXNlID0gKHsgYmFzZSB9KSA9PlxuICByZXNwb25zaXZlUHJvcCh7XG4gICAgZnVuYzogKHgpID0+XG4gICAgICBjc3NgXG4gICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KCR7eH0sIDFmcik7XG4gICAgICBgLFxuICAgIHZhbDogYmFzZSxcbiAgfSk7XG5cbmNvbnN0IGdhcCA9ICh7IGdhcCB9KSA9PlxuICByZXNwb25zaXZlUHJvcCh7XG4gICAgZnVuYzogKHgpID0+XG4gICAgICBjc3NgXG4gICAgICAgIGdhcDogJHt4fTtcbiAgICAgIGAsXG4gICAgdmFsOiBnYXAsXG4gICAgaW50ZXJwb2xhdGlvbjogXCJyZW1cIixcbiAgfSk7XG5cbmNvbnN0IGNvbHVtbkdhcCA9ICh7IGNvbHVtbkdhcCB9KSA9PlxuICByZXNwb25zaXZlUHJvcCh7XG4gICAgZnVuYzogKHgpID0+XG4gICAgICBjc3NgXG4gICAgICAgIGNvbHVtbi1nYXA6ICR7eH07XG4gICAgICBgLFxuICAgIHZhbDogY29sdW1uR2FwLFxuICAgIGludGVycG9sYXRpb246IFwicmVtXCIsXG4gIH0pO1xuXG5jb25zdCByb3dHYXAgPSAoeyByb3dHYXAgfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICByb3ctZ2FwOiAke3h9O1xuICAgICAgYCxcbiAgICB2YWw6IHJvd0dhcCxcbiAgICBpbnRlcnBvbGF0aW9uOiBcInJlbVwiLFxuICB9KTtcblxuY29uc3QgcGxhY2VJdGVtcyA9ICh7IHBsYWNlSXRlbXMgfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICBwbGFjZS1pdGVtczogJHt4fTtcbiAgICAgIGAsXG4gICAgdmFsOiBwbGFjZUl0ZW1zLFxuICB9KTtcblxuY29uc3QgZ3JpZENvbHVtbiA9ICh7IGdyaWRDb2x1bW4gfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICBncmlkLWNvbHVtbjogJHt4fTtcbiAgICAgIGAsXG4gICAgdmFsOiBncmlkQ29sdW1uLFxuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgW2dyaWQsIGJhc2UsIGdhcCwgY29sdW1uR2FwLCByb3dHYXAsIHBsYWNlSXRlbXMsIGdyaWRDb2x1bW5dO1xuIl19 */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$2
 };
 var base = function base(_ref) {
   var base = _ref.base;
@@ -817,7 +817,7 @@ var placeSelf = function placeSelf(_ref2) {
 };
 var gridItemMixins = [span, placeSelf];
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 var _ref = process.env.NODE_ENV === "production" ? {
   name: "1ubad42",
   styles: "box-sizing:border-box;background-color:rgba(255, 0, 0, 0.1);box-shadow:inset 0px 0px 0px 1px rgba(255, 0, 0, 0.2)"
@@ -825,7 +825,7 @@ var _ref = process.env.NODE_ENV === "production" ? {
   name: "ugh45g-func",
   styles: "box-sizing:border-box;background-color:rgba(255, 0, 0, 0.1);box-shadow:inset 0px 0px 0px 1px rgba(255, 0, 0, 0.2);label:func;",
   map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRldk1peGlucy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFNUyIsImZpbGUiOiJkZXZNaXhpbnMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjc3MgfSBmcm9tIFwiQGVtb3Rpb24vcmVhY3RcIjtcbmltcG9ydCB7IHJlc3BvbnNpdmVQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL3Jlc3BvbnNpdmVQcm9wXCI7XG5cbmNvbnN0IGRldk1peGlucyA9ICh7IGRldiB9KSA9PlxuICByZXNwb25zaXZlUHJvcCh7XG4gICAgZnVuYzogKCkgPT5cbiAgICAgIGNzc2BcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDAsIDAsIDAuMSk7XG4gICAgICAgIGJveC1zaGFkb3c6IGluc2V0IDBweCAwcHggMHB4IDFweCByZ2JhKDI1NSwgMCwgMCwgMC4yKTtcbiAgICAgIGAsXG4gICAgdmFsOiBkZXYsXG4gIH0pO1xuXG5leHBvcnQgZGVmYXVsdCBkZXZNaXhpbnM7XG4iXX0= */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
 };
 var devMixins = function devMixins(_ref2) {
   var dev = _ref2.dev;
@@ -975,7 +975,7 @@ var Item = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV 
 })(devMixins, " ", gridItemMixins, " ", sizeMixins, " ", spaceMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdyaWQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY3VCIiwiZmlsZSI6IkdyaWQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCBncmlkTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL2dyaWRNaXhpbnNcIjtcbmltcG9ydCBncmlkSXRlbU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9ncmlkSXRlbU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcbmltcG9ydCBzaXplTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL3NpemVNaXhpbnNcIjtcbmltcG9ydCBzcGFjZU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9zcGFjZU1peGluc1wiO1xuXG5jb25zdCBHcmlkID0gc3R5bGVkLmRpdmBcbiAgJHtkZXZNaXhpbnN9XG4gICR7Z3JpZE1peGluc31cbiAgJHtzaXplTWl4aW5zfVxuICAke3NwYWNlTWl4aW5zfVxuYDtcblxuY29uc3QgSXRlbSA9IHN0eWxlZC5kaXZgXG4gICR7ZGV2TWl4aW5zfVxuICAke2dyaWRJdGVtTWl4aW5zfVxuICAke3NpemVNaXhpbnN9XG4gICR7c3BhY2VNaXhpbnN9XG5gO1xuXG5HcmlkLkl0ZW0gPSBJdGVtO1xuZXhwb3J0IGRlZmF1bHQgR3JpZDtcbiJdfQ== */"));
 Grid.Item = Item;
 
-var _excluded$1 = ["maxWidth", "xPadding", "backgroundColor", "children", "as", "id", "className"];
+var _excluded$2 = ["maxWidth", "xPadding", "backgroundColor", "children", "as", "id", "className"];
 var Section = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
   var _theme$section, _theme$section2;
   var maxWidth = _ref.maxWidth,
@@ -985,23 +985,23 @@ var Section = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, 
     as = _ref.as,
     id = _ref.id,
     className = _ref.className,
-    restProps = _objectWithoutProperties(_ref, _excluded$1);
+    restProps = _objectWithoutProperties(_ref, _excluded$2);
   var _useResponsive = useResponsive(),
     breakpointIndex = _useResponsive.breakpointIndex;
   var theme = react.useTheme(react.ThemeContext);
   var xPadArr = arrayifyProp((theme === null || theme === void 0 ? void 0 : (_theme$section = theme.section) === null || _theme$section === void 0 ? void 0 : _theme$section.xPadding) || 0);
-  return react.jsx(Outer, {
+  return react.jsx(Outer$1, {
     backgroundColor: backgroundColor,
     as: as,
     id: id,
     className: className
-  }, react.jsx(Inner, _extends({
+  }, react.jsx(Inner$1, _extends({
     ref: ref,
     maxWidth: maxWidth || (theme === null || theme === void 0 ? void 0 : (_theme$section2 = theme.section) === null || _theme$section2 === void 0 ? void 0 : _theme$section2.maxWidth),
     xPadding: arrayifyProp(xPadding)[breakpointIndex] || xPadArr[breakpointIndex]
   }, restProps), children));
 });
-var Inner = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
+var Inner$1 = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
   target: "ebf42ix1"
 } : {
   target: "ebf42ix1",
@@ -1014,7 +1014,7 @@ var Inner = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV
   var xPadding = _ref3.xPadding;
   return "0 ".concat(xPadding);
 }, ";", devMixins, " ", sizeMixins, " ", spaceMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNlY3Rpb24uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBb0R3QiIsImZpbGUiOiJTZWN0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyB1c2VSZXNwb25zaXZlIH0gZnJvbSBcIi4uLy4uL2hvb2tzL3VzZVJlc3BvbnNpdmUvdXNlUmVzcG9uc2l2ZVwiO1xuaW1wb3J0IHsgVGhlbWVDb250ZXh0LCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgYXJyYXlpZnlQcm9wIH0gZnJvbSBcIi4uLy4uL3V0aWxzL2FycmF5aWZ5UHJvcFwiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcbmltcG9ydCBzcGFjZU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9zcGFjZU1peGluc1wiO1xuaW1wb3J0IHNpemVNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvc2l6ZU1peGluc1wiO1xuXG5jb25zdCBTZWN0aW9uID0gUmVhY3QuZm9yd2FyZFJlZihcbiAgKFxuICAgIHtcbiAgICAgIG1heFdpZHRoLFxuICAgICAgeFBhZGRpbmcsXG4gICAgICBiYWNrZ3JvdW5kQ29sb3IsXG4gICAgICBjaGlsZHJlbixcbiAgICAgIGFzLFxuICAgICAgaWQsXG4gICAgICBjbGFzc05hbWUsXG4gICAgICAuLi5yZXN0UHJvcHNcbiAgICB9LFxuICAgIHJlZlxuICApID0+IHtcbiAgICBjb25zdCB7IGJyZWFrcG9pbnRJbmRleCB9ID0gdXNlUmVzcG9uc2l2ZSgpO1xuICAgIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoVGhlbWVDb250ZXh0KTtcblxuICAgIGNvbnN0IHhQYWRBcnIgPSBhcnJheWlmeVByb3AodGhlbWU/LnNlY3Rpb24/LnhQYWRkaW5nIHx8IDApO1xuXG4gICAgcmV0dXJuIChcbiAgICAgIDxPdXRlclxuICAgICAgICBiYWNrZ3JvdW5kQ29sb3I9e2JhY2tncm91bmRDb2xvcn1cbiAgICAgICAgYXM9e2FzfVxuICAgICAgICBpZD17aWR9XG4gICAgICAgIGNsYXNzTmFtZT17Y2xhc3NOYW1lfVxuICAgICAgPlxuICAgICAgICA8SW5uZXJcbiAgICAgICAgICByZWY9e3JlZn1cbiAgICAgICAgICBtYXhXaWR0aD17bWF4V2lkdGggfHwgdGhlbWU/LnNlY3Rpb24/Lm1heFdpZHRofVxuICAgICAgICAgIHhQYWRkaW5nPXtcbiAgICAgICAgICAgIGFycmF5aWZ5UHJvcCh4UGFkZGluZylbYnJlYWtwb2ludEluZGV4XSB8fCB4UGFkQXJyW2JyZWFrcG9pbnRJbmRleF1cbiAgICAgICAgICB9XG4gICAgICAgICAgey4uLnJlc3RQcm9wc31cbiAgICAgICAgPlxuICAgICAgICAgIHtjaGlsZHJlbn1cbiAgICAgICAgPC9Jbm5lcj5cbiAgICAgIDwvT3V0ZXI+XG4gICAgKTtcbiAgfVxuKTtcblxuZXhwb3J0IGRlZmF1bHQgU2VjdGlvbjtcblxuY29uc3QgSW5uZXIgPSBzdHlsZWQuZGl2YFxuICBtYXJnaW46IDAgYXV0bztcbiAgbWF4LXdpZHRoOiAkeyh7IG1heFdpZHRoLCB4UGFkZGluZyB9KSA9PlxuICAgIGBjYWxjKCR7bWF4V2lkdGh9ICsgJHt4UGFkZGluZ30gKyAke3hQYWRkaW5nfSlgfTtcbiAgcGFkZGluZzogJHsoeyB4UGFkZGluZyB9KSA9PiBgMCAke3hQYWRkaW5nfWB9O1xuXG4gICR7ZGV2TWl4aW5zfVxuICAke3NpemVNaXhpbnN9XG4gICR7c3BhY2VNaXhpbnN9XG5gO1xuXG5jb25zdCBPdXRlciA9IHN0eWxlZC5zZWN0aW9uYFxuICBiYWNrZ3JvdW5kOiAkeyhwcm9wcykgPT5cbiAgICBwcm9wcy5iYWNrZ3JvdW5kQ29sb3IgfHwgcHJvcHMudGhlbWU/LnBhbGV0dGU/LmJhY2tncm91bmR9O1xuXG4gICR7ZGV2TWl4aW5zfVxuYDtcbiJdfQ== */"));
-var Outer = /*#__PURE__*/_styled__default["default"]("section", process.env.NODE_ENV === "production" ? {
+var Outer$1 = /*#__PURE__*/_styled__default["default"]("section", process.env.NODE_ENV === "production" ? {
   target: "ebf42ix0"
 } : {
   target: "ebf42ix0",
@@ -1123,13 +1123,13 @@ var textTransform = function textTransform(_ref8) {
 };
 var typographyMixins = [fontFamily, fontSize, fontWeight, lineHeight, color, textAlign, textDecoration, textTransform];
 
-var _excluded = ["variant", "children", "color"];
+var _excluded$1 = ["variant", "children", "color"];
 var Typography = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
   var _theme$typography, _varsFrTheme$default, _theme$palette;
   var variantFromProps = _ref.variant,
     children = _ref.children,
     color = _ref.color,
-    restProps = _objectWithoutProperties(_ref, _excluded);
+    restProps = _objectWithoutProperties(_ref, _excluded$1);
   var theme = react.useTheme(react.ThemeContext);
   var varsFrTheme = theme === null || theme === void 0 ? void 0 : (_theme$typography = theme.typography) === null || _theme$typography === void 0 ? void 0 : _theme$typography.variants;
   var colorPriority = color ||
@@ -1205,6 +1205,49 @@ var Stack = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV
   label: "Stack"
 })("display:flex;", devMixins, " ", sizeMixins, " ", spaceMixins, " ", stackMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlN0YWNrLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU13QiIsImZpbGUiOiJTdGFjay5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSBcIkBlbW90aW9uL3N0eWxlZFwiO1xuaW1wb3J0IHN0YWNrTWl4aW5zIGZyb20gXCIuL3N0YWNrTWl4aW5zXCI7XG5pbXBvcnQgZGV2TWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL2Rldk1peGluc1wiO1xuaW1wb3J0IHNpemVNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvc2l6ZU1peGluc1wiO1xuaW1wb3J0IHNwYWNlTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL3NwYWNlTWl4aW5zXCI7XG5cbmNvbnN0IFN0YWNrID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgJHtkZXZNaXhpbnN9XG4gICR7c2l6ZU1peGluc31cbiAgJHtzcGFjZU1peGluc31cbiAgJHtzdGFja01peGluc31cbmA7XG5cbi8vIFN0YWNrLmRlZmF1bHRQcm9wcyA9IHtcbi8vICAganVzdGlmeUNvbnRlbnQ6IFwiY2VudGVyXCIsXG4vLyB9O1xuXG5leHBvcnQgZGVmYXVsdCBTdGFjaztcbiJdfQ== */"));
 
+var _excluded = ["ratio", "children"];
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+var KeepAspectRatio = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
+  var _ref$ratio = _ref.ratio,
+    ratio = _ref$ratio === void 0 ? 1 : _ref$ratio,
+    children = _ref.children;
+    _objectWithoutProperties(_ref, _excluded);
+  return react.jsx(Outer, {
+    ratio: ratio
+  }, react.jsx(Inner, {
+    ref: ref
+  }, children));
+});
+var ratio = function ratio(_ref2) {
+  var ratio = _ref2.ratio;
+  return responsiveProp({
+    func: function func(x) {
+      return /*#__PURE__*/react.css("padding-bottom:", 1 / x * 100, "%;" + (process.env.NODE_ENV === "production" ? "" : ";label:func;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIktlZXBBc3BlY3RSYXRpby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFvQlMiLCJmaWxlIjoiS2VlcEFzcGVjdFJhdGlvLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyByZXNwb25zaXZlUHJvcCB9IGZyb20gXCIuLi8uLi91dGlscy9yZXNwb25zaXZlUHJvcFwiO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSBcIkBlbW90aW9uL3JlYWN0XCI7XG5cbmNvbnN0IEtlZXBBc3BlY3RSYXRpbyA9IFJlYWN0LmZvcndhcmRSZWYoXG4gICh7IHJhdGlvID0gMSwgY2hpbGRyZW4sIC4uLnJlc3RQcm9wcyB9LCByZWYpID0+IHtcbiAgICByZXR1cm4gKFxuICAgICAgPE91dGVyIHJhdGlvPXtyYXRpb30+XG4gICAgICAgIDxJbm5lciByZWY9e3JlZn0+e2NoaWxkcmVufTwvSW5uZXI+XG4gICAgICA8L091dGVyPlxuICAgICk7XG4gIH1cbik7XG5cbmV4cG9ydCBkZWZhdWx0IEtlZXBBc3BlY3RSYXRpbztcblxuY29uc3QgcmF0aW8gPSAoeyByYXRpbyB9KSA9PlxuICByZXNwb25zaXZlUHJvcCh7XG4gICAgZnVuYzogKHgpID0+XG4gICAgICBjc3NgXG4gICAgICAgIHBhZGRpbmctYm90dG9tOiAkeygxIC8geCkgKiAxMDB9JTtcbiAgICAgIGAsXG4gICAgdmFsOiByYXRpbyxcbiAgfSk7XG5cbmNvbnN0IE91dGVyID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAwO1xuICAke3JhdGlvfVxuYDtcblxuY29uc3QgSW5uZXIgPSBzdHlsZWQuZGl2YFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyLXJhZGl1czogMC41cmVtO1xuYDtcbiJdfQ== */");
+    },
+    val: ratio
+  });
+};
+var Outer = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
+  target: "elrxxr01"
+} : {
+  target: "elrxxr01",
+  label: "Outer"
+})("position:relative;width:100%;height:0;", ratio, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIktlZXBBc3BlY3RSYXRpby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEwQndCIiwiZmlsZSI6IktlZXBBc3BlY3RSYXRpby5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSBcIkBlbW90aW9uL3N0eWxlZFwiO1xuaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgcmVzcG9uc2l2ZVByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvcmVzcG9uc2l2ZVByb3BcIjtcbmltcG9ydCB7IGNzcyB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuXG5jb25zdCBLZWVwQXNwZWN0UmF0aW8gPSBSZWFjdC5mb3J3YXJkUmVmKFxuICAoeyByYXRpbyA9IDEsIGNoaWxkcmVuLCAuLi5yZXN0UHJvcHMgfSwgcmVmKSA9PiB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxPdXRlciByYXRpbz17cmF0aW99PlxuICAgICAgICA8SW5uZXIgcmVmPXtyZWZ9PntjaGlsZHJlbn08L0lubmVyPlxuICAgICAgPC9PdXRlcj5cbiAgICApO1xuICB9XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBLZWVwQXNwZWN0UmF0aW87XG5cbmNvbnN0IHJhdGlvID0gKHsgcmF0aW8gfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogJHsoMSAvIHgpICogMTAwfSU7XG4gICAgICBgLFxuICAgIHZhbDogcmF0aW8sXG4gIH0pO1xuXG5jb25zdCBPdXRlciA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMDtcbiAgJHtyYXRpb31cbmA7XG5cbmNvbnN0IElubmVyID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcbmA7XG4iXX0= */"));
+var Inner = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
+  target: "elrxxr00"
+} : {
+  target: "elrxxr00",
+  label: "Inner"
+})(process.env.NODE_ENV === "production" ? {
+  name: "je4esf",
+  styles: "position:absolute;top:0;left:0;width:100%;height:100%;border-radius:0.5rem"
+} : {
+  name: "je4esf",
+  styles: "position:absolute;top:0;left:0;width:100%;height:100%;border-radius:0.5rem",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIktlZXBBc3BlY3RSYXRpby5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFpQ3dCIiwiZmlsZSI6IktlZXBBc3BlY3RSYXRpby5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSBcIkBlbW90aW9uL3N0eWxlZFwiO1xuaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgcmVzcG9uc2l2ZVByb3AgfSBmcm9tIFwiLi4vLi4vdXRpbHMvcmVzcG9uc2l2ZVByb3BcIjtcbmltcG9ydCB7IGNzcyB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuXG5jb25zdCBLZWVwQXNwZWN0UmF0aW8gPSBSZWFjdC5mb3J3YXJkUmVmKFxuICAoeyByYXRpbyA9IDEsIGNoaWxkcmVuLCAuLi5yZXN0UHJvcHMgfSwgcmVmKSA9PiB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxPdXRlciByYXRpbz17cmF0aW99PlxuICAgICAgICA8SW5uZXIgcmVmPXtyZWZ9PntjaGlsZHJlbn08L0lubmVyPlxuICAgICAgPC9PdXRlcj5cbiAgICApO1xuICB9XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBLZWVwQXNwZWN0UmF0aW87XG5cbmNvbnN0IHJhdGlvID0gKHsgcmF0aW8gfSkgPT5cbiAgcmVzcG9uc2l2ZVByb3Aoe1xuICAgIGZ1bmM6ICh4KSA9PlxuICAgICAgY3NzYFxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogJHsoMSAvIHgpICogMTAwfSU7XG4gICAgICBgLFxuICAgIHZhbDogcmF0aW8sXG4gIH0pO1xuXG5jb25zdCBPdXRlciA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMDtcbiAgJHtyYXRpb31cbmA7XG5cbmNvbnN0IElubmVyID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcbmA7XG4iXX0= */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+});
+
 var fallback = defaultTheme.bp;
 var mq = {
   only: {
@@ -1263,6 +1306,7 @@ var mq = {
 };
 
 exports.Grid = Grid;
+exports.KeepAspectRatio = KeepAspectRatio;
 exports.SageProvider = SageProvider;
 exports.Section = Section;
 exports.Spacer = Spacer;

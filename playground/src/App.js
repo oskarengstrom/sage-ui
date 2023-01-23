@@ -4,6 +4,7 @@ import {
   Typography,
   SageProvider,
   Section,
+  KeepAspectRatio,
   Spacer,
   Stack,
   Test,
@@ -18,6 +19,9 @@ const App = () => {
           <Test backgroundColor={["red", "blue", "green"]}>asdf</Test>
           <Typography variant="h1">asdf</Typography>
         </Section>
+        <KeepAspectRatio ratio={[1, 16 / 12]}>
+          <div style={{ backgroundColor: "red", height: "100%" }}>asdf</div>
+        </KeepAspectRatio>
       </SageProvider>
     </>
   );
