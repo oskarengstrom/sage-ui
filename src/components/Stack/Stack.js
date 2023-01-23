@@ -12,8 +12,8 @@ const Stack = styled.div`
   ${stackMixins}
 `;
 
-// Stack.defaultProps = {
-//   justifyContent: "center",
-// };
+Stack.defaultProps = {
+  flexDirection: "column",
+};
 
 export default Stack;
