@@ -16,9 +16,9 @@
 
 `gap` number[] (rem) | css value[]
 
-`gapx`number[] (rem) | css value[]
+`rowGap`number[] (rem) | css value[]
 
-`gapy`number[] (rem) | css value[]
+`columnGap`number[] (rem) | css value[]
 
 `placeItems` string[], ex: "center center" (css grid shorthand)
 
