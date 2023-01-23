@@ -22,8 +22,6 @@
 
 `placeItems` string[], ex: "center center" (css grid shorthand)
 
-`gridColumn` string[]
-
 {sizeMixins}
 
 {spaceMixins}
@@ -35,6 +33,8 @@ Not required, but handy to do spanning, alignment and col placement.
 ### Props
 
 `span` number[]
+
+`gridColumn` string[]
 
 `order` number[]
 
