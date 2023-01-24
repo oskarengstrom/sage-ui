@@ -19,7 +19,9 @@ export const playgroundTheme = {
   },
   palette: {
     background: constants.colors.white,
-    textPrimary: constants.colors.black,
+    text: {
+      primary: "blue",
+    },
   },
   typography: {
     variants: {

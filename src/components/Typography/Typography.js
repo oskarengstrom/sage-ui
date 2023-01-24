@@ -16,6 +16,7 @@ const Typography = React.forwardRef(
       color || // if color is passed as prop, use it
       (variantFromProps && varsFrTheme[variantFromProps].color) || // if variant is passed as prop, use its color
       (varsFrTheme && varsFrTheme.default?.color) || // if variants exist, use default color
+      theme?.palette?.text.primary ||
       theme?.palette?.textPrimary; // if no variants exist, use theme's textPrimary
 
     return (
