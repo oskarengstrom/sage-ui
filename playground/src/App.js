@@ -16,8 +16,10 @@ const App = () => {
   return (
     <>
       <SageProvider theme={playgroundTheme}>
-        <Typography color="aqua">asdf</Typography>
-        <Box dev>asdf</Box>
+        <Section backgroundColor="palette.primary.main">
+          <Typography color="aqua">asdf</Typography>
+          <Box dev>asdf</Box>
+        </Section>
       </SageProvider>
     </>
   );

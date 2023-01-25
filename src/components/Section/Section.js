@@ -6,6 +6,7 @@ import { arrayifyProp } from "../../utils/arrayifyProp";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
+import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 
 const Section = React.forwardRef(
   (
@@ -28,9 +29,9 @@ const Section = React.forwardRef(
 
     return (
       <Outer
-        backgroundColor={backgroundColor}
-        as={as}
         id={id}
+        backgroundColor={backgroundColor || theme?.palette?.background}
+        as={as}
         className={className}
       >
         <Inner
@@ -62,8 +63,9 @@ const Inner = styled.div`
 `;
 
 const Outer = styled.section`
-  background: ${(props) =>
-    props.backgroundColor || props.theme?.palette?.background};
+  /* background: ${(props) =>
+    props.backgroundColor || props.theme?.palette?.background}; */
 
   ${devMixins}
+  ${backgroundColorMixins}
 `;

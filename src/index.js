@@ -27,3 +27,4 @@ export { default as gridMixins } from "./mixins/responsiveProps/gridMixins";
 export { default as sizeMixins } from "./mixins/responsiveProps/sizeMixins";
 export { default as spaceMixins } from "./mixins/responsiveProps/spaceMixins";
 export { default as typographyMixins } from "./mixins/responsiveProps/typographyMixins";
+export { default as backgroundColorMixins } from "./mixins/responsiveProps/backgroundColorMixins";

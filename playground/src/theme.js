@@ -18,10 +18,13 @@ export const playgroundTheme = {
     xPadding: "1rem",
   },
   palette: {
-    background: constants.colors.white,
+    background: constants.colors.red,
     text: {
       primary: "blue",
       secondary: "red",
+    },
+    primary: {
+      main: constants.colors.orange,
     },
   },
   typography: {
