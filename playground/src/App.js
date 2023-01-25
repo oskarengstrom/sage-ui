@@ -9,6 +9,7 @@ import {
   Stack,
   Test,
   Grid,
+  Box,
 } from "@oskarengstrom/sage-ui";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
     <>
       <SageProvider theme={playgroundTheme}>
         <Typography color="aqua">asdf</Typography>
+        <Box dev>asdf</Box>
       </SageProvider>
     </>
   );

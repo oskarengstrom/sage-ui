@@ -27,7 +27,7 @@
 
 `color` string[] (default: theme.palette.text.primary || theme.palette.textPrimary)
 
-_(the color string can be either a valid CSS color, or a lookup-string that searches the theme for values, ex: "palette.text.primary")_
+_(the color string can be either a valid CSS color (only hex-regex supported rn), or a lookup-string that searches the theme for values, ex: "palette.text.primary")_
 
 `textAlign` string[]
 

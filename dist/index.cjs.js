@@ -1103,6 +1103,13 @@ var Item = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV 
 })(devMixins, " ", gridItemMixins, " ", sizeMixins, " ", spaceMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdyaWQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBY3VCIiwiZmlsZSI6IkdyaWQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCBncmlkTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL2dyaWRNaXhpbnNcIjtcbmltcG9ydCBncmlkSXRlbU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9ncmlkSXRlbU1peGluc1wiO1xuaW1wb3J0IGRldk1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9kZXZNaXhpbnNcIjtcbmltcG9ydCBzaXplTWl4aW5zIGZyb20gXCIuLi8uLi9taXhpbnMvcmVzcG9uc2l2ZVByb3BzL3NpemVNaXhpbnNcIjtcbmltcG9ydCBzcGFjZU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9zcGFjZU1peGluc1wiO1xuXG5jb25zdCBHcmlkID0gc3R5bGVkLmRpdmBcbiAgJHtkZXZNaXhpbnN9XG4gICR7Z3JpZE1peGluc31cbiAgJHtzaXplTWl4aW5zfVxuICAke3NwYWNlTWl4aW5zfVxuYDtcblxuY29uc3QgSXRlbSA9IHN0eWxlZC5kaXZgXG4gICR7ZGV2TWl4aW5zfVxuICAke2dyaWRJdGVtTWl4aW5zfVxuICAke3NpemVNaXhpbnN9XG4gICR7c3BhY2VNaXhpbnN9XG5gO1xuXG5HcmlkLkl0ZW0gPSBJdGVtO1xuZXhwb3J0IGRlZmF1bHQgR3JpZDtcbiJdfQ== */"));
 Grid.Item = Item;
 
+var Box = /*#__PURE__*/_styled__default["default"]("div", process.env.NODE_ENV === "production" ? {
+  target: "emo2p3z0"
+} : {
+  target: "emo2p3z0",
+  label: "Box"
+})(devMixins, " ", gridItemMixins, " ", sizeMixins, " ", spaceMixins, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkJveC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFNc0IiLCJmaWxlIjoiQm94LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgZ3JpZEl0ZW1NaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvZ3JpZEl0ZW1NaXhpbnNcIjtcbmltcG9ydCBkZXZNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvZGV2TWl4aW5zXCI7XG5pbXBvcnQgc2l6ZU1peGlucyBmcm9tIFwiLi4vLi4vbWl4aW5zL3Jlc3BvbnNpdmVQcm9wcy9zaXplTWl4aW5zXCI7XG5pbXBvcnQgc3BhY2VNaXhpbnMgZnJvbSBcIi4uLy4uL21peGlucy9yZXNwb25zaXZlUHJvcHMvc3BhY2VNaXhpbnNcIjtcblxuY29uc3QgQm94ID0gc3R5bGVkLmRpdmBcbiAgJHtkZXZNaXhpbnN9XG4gICR7Z3JpZEl0ZW1NaXhpbnN9XG4gICR7c2l6ZU1peGluc31cbiAgJHtzcGFjZU1peGluc31cbmA7XG5cbmV4cG9ydCBkZWZhdWx0IEJveDtcbiJdfQ== */"));
+
 var _excluded$2 = ["maxWidth", "xPadding", "backgroundColor", "children", "as", "id", "className"];
 var Section = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
   var _theme$section, _theme$section2;
@@ -1437,6 +1444,7 @@ var mq = {
   }
 };
 
+exports.Box = Box;
 exports.Grid = Grid;
 exports.KeepAspectRatio = KeepAspectRatio;
 exports.SageProvider = SageProvider;
