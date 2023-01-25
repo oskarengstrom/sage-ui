@@ -25,7 +25,9 @@
 
 `lineHeight` unit | number ("rem")[]
 
-`color` string[] (defaults to theme.palette.textPrimary)
+`color` string[] (default: theme.palette.text.primary || theme.palette.textPrimary)
+
+_(the color string can be either a valid CSS color, or a lookup-string that searches the theme for values, ex: "palette.text.primary")_
 
 `textAlign` string[]
 

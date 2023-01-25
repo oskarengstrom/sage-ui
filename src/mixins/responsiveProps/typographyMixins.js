@@ -1,14 +1,17 @@
 import { css } from "@emotion/react";
 import { responsiveProp } from "../../utils/responsiveProp";
+import { isValidColor } from "../../utils/isValidColor";
+import { findValueInObject } from "../../utils/findValueInObject";
 
-const color = ({ color }) =>
-  responsiveProp({
+const color = ({ color, theme }) => {
+  return responsiveProp({
     func: (x) =>
       css`
-        color: ${x};
+        color: ${isValidColor(x) ? x : findValueInObject(x, theme)};
       `,
     val: color,
   });
+};
 
 const fontFamily = ({ fontFamily }) =>
   responsiveProp({

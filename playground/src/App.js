@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <SageProvider theme={playgroundTheme}>
-        <Typography>asdf</Typography>
+        <Typography color="palette.text.secondary">asdf</Typography>
       </SageProvider>
     </>
   );

@@ -1,6 +1,8 @@
 // helpers exports
 export { default as useSSRLayoutEffect } from "./utils/useSSRLayoutEffect";
 export { responsiveProp } from "./utils/responsiveProp";
+export { isValidColor } from "./utils/isValidColor";
+export { findValueInObject } from "./utils/findValueInObject";
 export { useResponsive } from "./hooks/useResponsive/useResponsive";
 export { default as useScramble } from "./hooks/useScramble/useScramble";
 

@@ -21,12 +21,14 @@ export const playgroundTheme = {
     background: constants.colors.white,
     text: {
       primary: "blue",
+      secondary: "red",
     },
   },
   typography: {
     variants: {
       default: {
         fontSize: "1rem",
+        color: "palette.text.primary",
       },
       h1: {
         fontSize: ["1rem", "2rem", "4rem"],
