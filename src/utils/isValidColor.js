@@ -1,3 +1,5 @@
+import chroma from "chroma-js";
+
 // export const isValidColor = (strColor) => {
 //   if (typeof window === "undefined") return;
 //   var s = new Option().style;
@@ -19,7 +21,16 @@
 //   }
 // };
 
-export function isValidColor(strColor) {
-  // Use a regular expression to check if the string matches a valid color format
-  return /^(#[0-9a-f]{3}|#[0-9a-f]{6}|(rgb|hsl)a?\([^\)]*\))$/i.test(strColor);
+// export function isValidColor(strColor) {
+//   // Use a regular expression to check if the string matches a valid color format
+//   return /^(#[0-9a-f]{3}|#[0-9a-f]{6}|(rgb|hsl)a?\([^\)]*\))$/i.test(strColor);
+// }
+
+export function isValidColor(color) {
+  try {
+    chroma(color);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }

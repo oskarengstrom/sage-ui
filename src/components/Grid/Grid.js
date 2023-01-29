@@ -4,12 +4,14 @@ import gridItemMixins from "../../mixins/responsiveProps/gridItemMixins";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
+import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 
 const Grid = styled.div`
   ${devMixins}
   ${gridMixins}
   ${sizeMixins}
   ${spaceMixins}
+  ${backgroundColorMixins}
 `;
 
 const Item = styled.div`
@@ -17,6 +19,7 @@ const Item = styled.div`
   ${gridItemMixins}
   ${sizeMixins}
   ${spaceMixins}
+  ${backgroundColorMixins}
 `;
 
 Grid.Item = Item;

@@ -26,6 +26,8 @@
 
 {spaceMixins}
 
+{backgroundColorMixins}
+
 ## Grid.Item
 
 Not required, but handy to do spanning, alignment and col placement.
@@ -47,3 +49,5 @@ Not required, but handy to do spanning, alignment and col placement.
 {sizeMixins}
 
 {spaceMixins}
+
+{backgroundColorMixins}

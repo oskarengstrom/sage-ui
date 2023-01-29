@@ -14,6 +14,7 @@ const Section = React.forwardRef(
       maxWidth,
       xPadding,
       backgroundColor,
+      background,
       children,
       as,
       id,
@@ -31,6 +32,7 @@ const Section = React.forwardRef(
       <Outer
         id={id}
         backgroundColor={backgroundColor || theme?.palette?.background}
+        background={background}
         as={as}
         className={className}
       >

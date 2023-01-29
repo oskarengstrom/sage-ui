@@ -3,6 +3,15 @@ import { responsiveProp } from "../../utils/responsiveProp";
 import { isValidColor } from "../../utils/isValidColor";
 import { findValueInObject } from "../../utils/findValueInObject";
 
+const background = ({ background, theme }) => {
+  return responsiveProp({
+    func: (x) =>
+      css`
+        background: ${isValidColor(x) ? x : findValueInObject(x, theme)};
+      `,
+    val: background,
+  });
+};
 const backgroundColor = ({ backgroundColor, theme }) => {
   return responsiveProp({
     func: (x) =>
@@ -13,4 +22,4 @@ const backgroundColor = ({ backgroundColor, theme }) => {
   });
 };
 
-export default [backgroundColor];
+export default [backgroundColor, background];

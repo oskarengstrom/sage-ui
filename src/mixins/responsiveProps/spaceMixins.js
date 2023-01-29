@@ -145,4 +145,4 @@ const pl = ({ pl }) =>
     interpolation: "rem",
   });
 
-export default [m, mx, my, my, mt, mr, mb, ml, p, px, py, py, pt, pr, pb, pl];
+export default [m, mx, my, mt, mr, mb, ml, p, px, py, pt, pr, pb, pl];

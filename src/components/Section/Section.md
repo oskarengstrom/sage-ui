@@ -1,6 +1,8 @@
 # Section
 
-Looks in theme to automatically add x-padding and background color
+Looks in theme to automatically add x-padding and background color.
+
+_Warning: produces 2 elements; an outer section and an inner div. Restprops are spread on the inner div, and some keyword props are sent to the outer section (like id, className, as, background and backgroundColor)._
 
 These are the theme keys it uses:
 
@@ -39,6 +41,8 @@ Usage:
 
 `backgroundColor` string (default: props.theme.palette.background)
 
+`background` string (has higher priority then backgroundColor)
+
 `maxWidth` unit[] | number[] (rem) (default: props.theme.section.maxWidth)
 
 `xPadding` unit[] | number[] (rem) (default: props.theme.section.xPadding)
@@ -50,3 +54,5 @@ Usage:
 {sizeMixins}
 
 {spaceMixins}
+
+{backgroundColorMixins}

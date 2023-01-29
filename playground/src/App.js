@@ -7,22 +7,34 @@ import {
   KeepAspectRatio,
   Spacer,
   Stack,
-  Test,
   Grid,
   Box,
+  mq,
+  backgroundColorMixins,
 } from "@oskarengstrom/sage-ui";
+import styled from "@emotion/styled";
 
 const App = () => {
   return (
     <>
       <SageProvider theme={playgroundTheme}>
-        <Section backgroundColor="palette.primary.main">
-          <Typography color="aqua">asdf</Typography>
-          <Box dev>asdf</Box>
-        </Section>
+        <Spacer />
+        <Box
+          // py={[1, 2, 3, 4]}
+          css={{
+            backgroundColor: "red",
+          }}
+        >
+          asdf
+        </Box>
+        <Test backgroundColor={["red", "blue"]}>asdfa sdf asd fa</Test>
       </SageProvider>
     </>
   );
 };
 
 export default App;
+
+const Test = styled.div`
+  /* ${backgroundColorMixins} */
+`;
