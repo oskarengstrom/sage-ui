@@ -1,6 +1,6 @@
 {
   "name": "@oskarengstrom/sage-ui",
-  "version": "0.3.3-beta1",
+  "version": "0.3.3-beta2",
   "files": [
     "./dist"
   ],
