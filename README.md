@@ -43,11 +43,11 @@ A simple div with most responsive props available
 
 ### Props
 
-[gridItemMixins](#gridItemMixins)  
-[sizeMixins](#sizeMixins)  
-[spaceMixins](#spaceMixins)  
-[backgroundColorMixins](#backgroundColorMixins)  
-[devMixins](#devMixins)
+[gridItemMixins](#griditemmixins-)  
+[sizeMixins](#sizemixins-)  
+[spaceMixins](#spacemixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
+[devMixins](#devmixins-)
 
 ---
 
@@ -66,19 +66,19 @@ Creates responsive grids using CSS Grid
 ### Props Grid
 
 display: grid;  
-[gridMixins](#gridMixins)  
-[sizeMixins](#sizeMixins)  
-[spaceMixins](#spaceMixins)  
-[backgroundColorMixins](#backgroundColorMixins)  
-[devMixins](#devMixins)
+[gridMixins](#gridmixins-)  
+[sizeMixins](#sizemixins-)  
+[spaceMixins](#spacemixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
+[devMixins](#devmixins-)
 
 ### Props Grid.Item
 
-[gridItemMixins](#gridItemMixins)  
-[sizeMixins](#sizeMixins)  
-[spaceMixins](#spaceMixins)  
-[backgroundColorMixins](#backgroundColorMixins)  
-[devMixins](#devMixins)
+[gridItemMixins](#griditemmixins-)  
+[sizeMixins](#sizemixins-)  
+[spaceMixins](#spacemixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
+[devMixins](#devmixins-)
 
 ---
 
@@ -167,10 +167,10 @@ theme = {
 
 `maxWidth` unit[] | number(rem)[] (default: props.theme.section.maxWidth)  
 `xPadding` unit[] | number(rem)[] (default: props.theme.section.xPadding)  
-[sizeMixins](#sizeMixins)  
-[spaceMixins](#spaceMixins)  
-[backgroundColorMixins](#backgroundColorMixins)  
-[devMixins](#devMixins)
+[sizeMixins](#sizemixins-)  
+[spaceMixins](#spacemixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
+[devMixins](#devmixins-)
 
 ---
 
@@ -185,8 +185,8 @@ Simple spacer-component.
 
 ### Props
 
-[sizeMixins](#sizeMixins)  
-[devMixins](#devMixins)
+[sizeMixins](#sizemixins-)  
+[devMixins](#devmixins-)
 
 ---
 
@@ -205,11 +205,11 @@ Uses Flexbox under the hood. Great for controlling gap and alignment of horizont
 ### Props
 
 display: flex;  
-[sizeMixins](#sizeMixins)  
-[spaceMixins](#spaceMixins)  
-[stackMixins](#stackMixins)  
-[backgroundColorMixins](#backgroundColorMixins)  
-[devMixins](#devMixins)
+[sizeMixins](#sizemixins-)  
+[spaceMixins](#spacemixins-)  
+[stackMixins](#stackmixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
+[devMixins](#devmixins-)
 
 ---
 
@@ -246,9 +246,9 @@ Then you can use them like so:
 
 ### Props
 
-[typographyMixins](#typographyMixins)  
-[spaceMixins](#spaceMixins)  
-[devMixins](#devMixins)
+[typographyMixins](#typographymixins-)  
+[spaceMixins](#spacemixins-)  
+[devMixins](#devmixins-)
 
 ---
 
