@@ -5,6 +5,7 @@ import isPropValid from "@emotion/is-prop-valid";
 import typographyMixins from "../../mixins/responsiveProps/typographyMixins";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
+import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 
 const Typography = React.forwardRef(
   ({ variant: variantFromProps, children, color, ...restProps }, ref) => {
@@ -50,6 +51,7 @@ const TypographyStyled = styled("p", {
   ${devMixins}
   ${typographyMixins}
   ${spaceMixins}
+  ${backgroundColorMixins}
 `;
 
 export default Typography;

@@ -20,8 +20,8 @@ export const playgroundTheme = {
   palette: {
     background: constants.colors.red,
     text: {
-      primary: "blue",
-      secondary: "red",
+      primary: "black",
+      secondary: "grey",
     },
     primary: {
       main: constants.colors.orange,
@@ -31,10 +31,19 @@ export const playgroundTheme = {
     variants: {
       default: {
         fontSize: "1rem",
-        color: "palette.text.primary",
+        fontFamily: "sans-serif",
       },
-      h1: {
-        fontSize: ["1rem", "2rem", "4rem"],
+      pre: {
+        fontSize: "0.85rem",
+        fontFamily: "monospace",
+        color: "RoyalBlue",
+        backgroundColor: "aliceblue",
+        style: {
+          width: "min-content",
+          height: "min-content",
+          padding: "0.15rem",
+          borderRadius: "0.25rem",
+        },
       },
     },
   },

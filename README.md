@@ -246,8 +246,10 @@ Then you can use them like so:
 
 ### Props
 
+`variant` string (default: "default")  
 [typographyMixins](#typographymixins-)  
 [spaceMixins](#spacemixins-)  
+[backgroundColorMixins](#backgroundcolormixins-)  
 [devMixins](#devmixins-)
 
 ---
@@ -388,14 +390,14 @@ const Card = styled.div`
 
 ## backgroundColorMixins <a id="backgroundColorMixins"></a>
 
-`background` string[] (valid css color || theme key, ex: "palette.text.secondary")
+`background` string[] (valid css color || theme key, ex: "palette.text.secondary")  
 `backgroundColor` string[] (valid css color || theme key, ex: "palette.text.secondary")
 
 ## stackMixins <a id="stackMixins"></a>
 
-`flexDirection` string("row")[]
+`flexDirection` string("row")[]  
 `gap` unit[] | number(rem)[]  
-`alignItems` string("start")[]
+`alignItems` string("start")[]  
 `justifyContent` string("start")[]
 
 ## typographyMixins <a id="typographyMixins"></a>
