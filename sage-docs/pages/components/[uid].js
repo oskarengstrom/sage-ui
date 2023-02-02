@@ -5,7 +5,6 @@ import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
 
 export default function Component({ data, props, mixinGroups, navBarData }) {
-  console.log(props);
   return (
     <Layout data={navBarData}>
       <Stack gap={2}>
@@ -16,14 +15,11 @@ export default function Component({ data, props, mixinGroups, navBarData }) {
         <T>{data.description}</T>
         <Stack gap={0.25}>
           <T variant="caption">Mixin groups:</T>
-          {mixinGroups.map(
-            (mixin) =>
-              mixin && (
-                <T key={mixin.data.name}>
-                  <Link href={`/mixins/${mixin.uid}`}>{mixin.data.name}</Link>
-                </T>
-              )
-          )}
+          {mixinGroups.map((mixin) => (
+            <T key={mixin.data.name}>
+              <Link href={`/mixins/${mixin.uid}`}>{mixin.data.name}</Link>
+            </T>
+          ))}
         </Stack>
         <Stack gap={0.25}>
           <T variant="caption">Props:</T>
@@ -61,25 +57,14 @@ export async function getStaticProps({ params }) {
   component.data.props.map(async ({ prop }) => {
     // console.log(prop.type);
     if (prop.type === "prop") {
-      const propData = await client.getByUID("prop", prop.uid);
-      props.push(propData);
+      const result = await client.getByUID("prop", prop.uid);
+      props.push(result);
     } else if (prop.type === "mixin_group") {
       const mixinGroupData = await client.getByUID("mixin_group", prop.uid);
       mixinGroups.push(mixinGroupData);
     }
   });
 
-  // const props = await Promise.all(
-  //   component.data.props.map(async ({ prop }) => {
-  //     // console.log(prop.type);
-  //     if (prop.type === "prop") {
-  //       const propData = await client.getByUID("prop", prop.uid);
-  //       return propData;
-  //     } else {
-  //       return null;
-  //     }
-  //   })
-  // );
   const allComponents = await client.getAllByType("component");
   const allProps = await client.getAllByType("prop");
   const allMixinGroups = await client.getAllByType("mixin_group");

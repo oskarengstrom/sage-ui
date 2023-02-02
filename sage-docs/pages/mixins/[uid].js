@@ -41,12 +41,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const client = createClient();
   const mixin = await client.getByUID("mixin_group", params.uid);
-  const props = await Promise.all(
-    mixin.data.props.map(async ({ prop }) => {
-      const propData = await client.getByUID("prop", prop.uid);
-      return propData;
-    })
-  );
+  const props = [];
+  mixin.data.props.map(async ({ prop }) => {
+    if (prop.uid) {
+      const result = await client.getByUID("prop", prop.uid);
+      props.push(result);
+    }
+  });
+
   const allComponents = await client.getAllByType("component");
   const allProps = await client.getAllByType("prop");
   const allMixinGroups = await client.getAllByType("mixin_group");

@@ -13,12 +13,6 @@ export default function Input({ data, navBarData }) {
           <T color="palette.text.secondary">Input</T>
         </Stack>
         <T>Description: {data.description}</T>
-        {/* <Stack gap={0.25}>
-          <T variant="caption">Input types:</T>
-          {inputs.map((input) => (
-            <T>{input.data.name}</T>
-          ))}
-        </Stack> */}
       </Stack>
     </Layout>
   );
