@@ -46,7 +46,8 @@
                 "label": "Prop",
                 "select": "document",
                 "customtypes": [
-                  "prop"
+                  "prop",
+                  "mixin_group"
                 ]
               }
             }

@@ -67,7 +67,7 @@ export interface ComponentDocumentDataPropsItem {
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    prop: prismicT.RelationField<"prop">;
+    prop: prismicT.RelationField<"prop" | "mixin_group">;
 }
 /**
  * Component document from Prismic
