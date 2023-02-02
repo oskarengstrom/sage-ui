@@ -1,21 +1,33 @@
-import NavBar from "@/components/NavBar";
 import { docsTheme } from "@/docs-theme";
 import "@/styles/globals.css";
-import { Grid, SageProvider, Section } from "@oskarengstrom/sage-ui";
+import { SageProvider } from "@oskarengstrom/sage-ui";
+import { PrismicProvider } from "@prismicio/react";
+import Link from "next/link";
 
 export default function App({ Component, pageProps }) {
   return (
     <SageProvider theme={docsTheme}>
-      <Section as="div" py={2}>
-        <Grid base={12} gap={2}>
-          <Grid.Item span={[12, 3, 3, 2]}>
-            <NavBar />
-          </Grid.Item>
-          <Grid.Item span={[12, 9, 9, 10]}>
-            <Component {...pageProps} />
-          </Grid.Item>
-        </Grid>
-      </Section>
+      <PrismicProvider
+        // linkResolver={linkResolver}
+        internalLinkComponent={Link}
+        externalLinkComponent={(props) => (
+          <a target="_blank" rel="noopener noreferrer" {...props} />
+        )}
+        richTextComponents={{
+          hyperlink: (props) => (
+            <a
+              href={props.node.data.url}
+              className="inline-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {props.children}
+            </a>
+          ),
+        }}
+      >
+        <Component {...pageProps} />
+      </PrismicProvider>
     </SageProvider>
   );
 }

@@ -1,0 +1,35 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "drive"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "additional",
+    "type": "Text"
+  },
+  "props": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "prop",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": []
+  }
+}

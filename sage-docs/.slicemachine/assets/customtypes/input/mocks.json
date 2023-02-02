@@ -1,0 +1,16 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "mighty"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "population",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "FieldContent",
+    "value": "statement",
+    "type": "Text"
+  }
+}

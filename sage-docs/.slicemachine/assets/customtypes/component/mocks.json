@@ -1,0 +1,47 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "replied"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "like",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "FieldContent",
+    "value": "art",
+    "type": "Text"
+  },
+  "code_examples": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Deserunt mollit occaecat nisi commodo nulla quis esse velit aliquip deserunt cillum dolore. Culpa ad sunt id sunt excepteur nulla."
+        }
+      }
+    ]
+  },
+  "props": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "prop",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}
