@@ -2,9 +2,9 @@ import React from "react";
 import { Stack, Typography as T } from "@oskarengstrom/sage-ui";
 import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
+import Link from "next/link";
 
 export default function Prop({ data, inputs, navBarData }) {
-  console.log(inputs);
   return (
     <Layout data={navBarData}>
       <Stack gap={2}>
@@ -16,7 +16,9 @@ export default function Prop({ data, inputs, navBarData }) {
         <Stack gap={0.25}>
           <T variant="caption">Input types:</T>
           {inputs.map((input) => (
-            <T>{input.data.name}</T>
+            <T>
+              <Link href={`/inputs/${input.uid}`}>{input.data.name}</Link>
+            </T>
           ))}
         </Stack>
       </Stack>
