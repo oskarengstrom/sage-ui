@@ -3,8 +3,16 @@ import Link from "next/link";
 import { Stack, Typography as T } from "@oskarengstrom/sage-ui";
 import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
+import CustomRichText from "@/utils/CustomRichText";
+import IconArrowReturnRight from "@/components/icons/IconArrowReturnRight";
 
-export default function Component({ data, props, mixinGroups, navBarData }) {
+export default function Component({
+  data,
+  props,
+  allProps,
+  mixinGroups,
+  navBarData,
+}) {
   return (
     <Layout data={navBarData}>
       <Stack gap={2}>
@@ -12,21 +20,46 @@ export default function Component({ data, props, mixinGroups, navBarData }) {
           <T variant="h1">{data.name}</T>
           <T color="palette.text.secondary">Component</T>
         </Stack>
-        <T>{data.description}</T>
-        <Stack gap={0.25}>
-          <T variant="caption">Mixin groups:</T>
-          {mixinGroups.map((mixin) => (
-            <T key={mixin.data.name}>
-              <Link href={`/mixins/${mixin.uid}`}>{mixin.data.name}</Link>
-            </T>
-          ))}
+
+        <Stack gap={1}>
+          <CustomRichText field={data.description_rt} />
         </Stack>
-        <Stack gap={0.25}>
-          <T variant="caption">Props:</T>
+
+        <Stack>
+          <T variant="caption">Props</T>
+          {mixinGroups.map((mixin) => (
+            <React.Fragment key={mixin.uid}>
+              <T key={mixin.data.name} color="palette.text.secondary">
+                <Link href={`/mixins/${mixin.uid}`}>[{mixin.data.name}]</Link>
+              </T>
+              {mixin.data.props.map((prop) => {
+                const thisProp = allProps.find((p) => p.uid === prop.prop.uid);
+
+                return (
+                  thisProp && (
+                    <Stack
+                      key={thisProp.uid}
+                      flexDirection="row"
+                      alignItems="center"
+                      gap={0.5}
+                    >
+                      <IconArrowReturnRight />
+
+                      <T>
+                        <Link href={`/props/${thisProp.uid}`}>
+                          {thisProp.data.name}
+                        </Link>
+                      </T>
+                    </Stack>
+                  )
+                );
+              })}
+            </React.Fragment>
+          ))}
           {props.map(
             (prop) =>
               prop && (
-                <T key={prop.data.name}>
+                <T key={prop.uid}>
                   <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
                 </T>
               )
@@ -52,10 +85,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const client = createClient();
   const component = await client.getByUID("component", params.uid);
+
   const props = [];
   const mixinGroups = [];
   component.data.props.map(async ({ prop }) => {
-    // console.log(prop.type);
     if (prop.type === "prop") {
       const result = await client.getByUID("prop", prop.uid);
       props.push(result);
@@ -66,16 +99,13 @@ export async function getStaticProps({ params }) {
   });
 
   const allComponents = await client.getAllByType("component");
-  const allProps = await client.getAllByType("prop");
   const allMixinGroups = await client.getAllByType("mixin_group");
-  const allInputs = await client.getAllByType("input");
+  const allProps = await client.getAllByType("prop");
   const navBarData = {
     components: allComponents,
-    props: allProps,
     mixinGroups: allMixinGroups,
-    inputs: allInputs,
   };
   return {
-    props: { data: component.data, props, mixinGroups, navBarData }, // will be passed to the page component as props
+    props: { data: component.data, allProps, props, mixinGroups, navBarData }, // will be passed to the page component as props
   };
 }

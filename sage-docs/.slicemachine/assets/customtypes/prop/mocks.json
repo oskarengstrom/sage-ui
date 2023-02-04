@@ -1,17 +1,21 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "fun"
+    "value": "fur"
   },
   "name": {
     "__TYPE__": "FieldContent",
-    "value": "foreign",
+    "value": "musical",
     "type": "Text"
   },
   "description": {
     "__TYPE__": "FieldContent",
-    "value": "combine",
+    "value": "closely",
     "type": "Text"
+  },
+  "responsive": {
+    "__TYPE__": "BooleanContent",
+    "value": false
   },
   "inputs": {
     "__TYPE__": "GroupContentType",
@@ -28,13 +32,17 @@
                 "id": "mock_document_id"
               }
             }
+          ],
+          [
+            "interpolation",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "signal",
+              "type": "Text"
+            }
           ]
         ]
       }
     ]
-  },
-  "responsive": {
-    "__TYPE__": "BooleanContent",
-    "value": true
   }
 }

@@ -22,7 +22,10 @@ export const docsTheme = {
     background: constants.colors.white,
     text: {
       primary: constants.colors.black,
-      secondary: "rgba(0, 0, 0, 0.4)",
+      secondary: "rgba(0, 0, 0, 0.45)",
+    },
+    icon: {
+      primary: constants.colors.black,
     },
     primary: {
       main: constants.colors.blue,
@@ -33,7 +36,7 @@ export const docsTheme = {
       default: {
         fontFamily: "sans-serif",
         fontSize: "0.875rem",
-        lineHeight: "1rem",
+        lineHeight: 1.25,
       },
       h1: {
         fontSize: "2.5rem",
@@ -43,22 +46,27 @@ export const docsTheme = {
         fontSize: "1.75rem",
         lineHeight: "2rem",
       },
+      h3: {},
+      h4: {},
+      h5: {},
+      paragraph: {},
       caption: {
         fontSize: "0.75rem",
         textTransform: "uppercase",
         lineHeight: "1rem",
         color: "palette.primary.main",
-        fontWeight: "700",
+        fontWeight: "600",
+        letterSpacing: 0.1,
       },
       pre: {
         fontFamily: "monospace",
         color: "RoyalBlue",
         backgroundColor: "aliceblue",
         style: {
-          width: "min-content",
-          height: "min-content",
-          // padding: "0.15rem",
-          borderRadius: "0.25rem",
+          padding: "0.5rem 1rem",
+          borderRadius: "0.5rem",
+          // width: "min-content",
+          // height: "min-content",
         },
       },
     },

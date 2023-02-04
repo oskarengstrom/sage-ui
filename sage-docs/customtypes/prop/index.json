@@ -26,6 +26,15 @@
           "placeholder": ""
         }
       },
+      "responsive": {
+        "type": "Boolean",
+        "config": {
+          "label": "Responsive",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "inputs": {
         "type": "Group",
         "config": {
@@ -40,17 +49,15 @@
                   "input"
                 ]
               }
+            },
+            "interpolation": {
+              "type": "Text",
+              "config": {
+                "label": "Interpolation",
+                "placeholder": ""
+              }
             }
           }
-        }
-      },
-      "responsive": {
-        "type": "Boolean",
-        "config": {
-          "label": "Responsive",
-          "default_value": false,
-          "placeholder_true": "true",
-          "placeholder_false": "false"
         }
       }
     }

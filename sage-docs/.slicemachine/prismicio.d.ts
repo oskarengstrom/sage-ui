@@ -20,27 +20,16 @@ interface ComponentDocumentData {
      */
     name: prismicT.KeyTextField;
     /**
-     * Description field in *Component*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: component.description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    description: prismicT.KeyTextField;
-    /**
-     * Code examples field in *Component*
+     * Description RT field in *Component*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: component.code_examples
+     * - **API ID Path**: component.description_rt
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    code_examples: prismicT.RichTextField;
+    description_rt: prismicT.RichTextField;
     /**
      * Props field in *Component*
      *
@@ -206,17 +195,6 @@ interface PropDocumentData {
      */
     description: prismicT.KeyTextField;
     /**
-     * Inputs field in *Prop*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: prop.inputs[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    inputs: prismicT.GroupField<Simplify<PropDocumentDataInputsItem>>;
-    /**
      * Responsive field in *Prop*
      *
      * - **Field Type**: Boolean
@@ -228,6 +206,17 @@ interface PropDocumentData {
      *
      */
     responsive: prismicT.BooleanField;
+    /**
+     * Inputs field in *Prop*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: prop.inputs[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    inputs: prismicT.GroupField<Simplify<PropDocumentDataInputsItem>>;
 }
 /**
  * Item in Prop → Inputs
@@ -244,6 +233,16 @@ export interface PropDocumentDataInputsItem {
      *
      */
     input: prismicT.RelationField<"input">;
+    /**
+     * Interpolation field in *Prop → Inputs*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: prop.inputs[].interpolation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    interpolation: prismicT.KeyTextField;
 }
 /**
  * Prop document from Prismic

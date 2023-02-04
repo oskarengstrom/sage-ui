@@ -13,8 +13,8 @@ export default function Mixin({ data, props, navBarData }) {
           <T variant="h1">{data.name}</T>
           <T color="palette.text.secondary">Mixin group</T>
         </Stack>
-        <Stack gap={0.25}>
-          <T variant="caption">Props:</T>
+        <Stack>
+          <T variant="caption">Props</T>
           {props.map((prop) => (
             <T key={prop.data.name}>
               <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
@@ -50,14 +50,10 @@ export async function getStaticProps({ params }) {
   });
 
   const allComponents = await client.getAllByType("component");
-  const allProps = await client.getAllByType("prop");
   const allMixinGroups = await client.getAllByType("mixin_group");
-  const allInputs = await client.getAllByType("input");
   const navBarData = {
     components: allComponents,
-    props: allProps,
     mixinGroups: allMixinGroups,
-    inputs: allInputs,
   };
   return {
     props: { data: mixin.data, props, navBarData }, // will be passed to the page component as props

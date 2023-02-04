@@ -19,20 +19,13 @@
           "placeholder": ""
         }
       },
-      "description": {
-        "type": "Text",
-        "config": {
-          "label": "Description",
-          "placeholder": ""
-        }
-      },
-      "code_examples": {
+      "description_rt": {
         "type": "StructuredText",
         "config": {
-          "label": "Code examples",
+          "label": "Description RT",
           "placeholder": "",
-          "allowTargetBlank": false,
-          "multi": "embed"
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,strong,em"
         }
       },
       "props": {

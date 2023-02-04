@@ -13,11 +13,15 @@ export default function Prop({ data, inputs, navBarData }) {
           <T color="palette.text.secondary">Prop</T>
         </Stack>
         <T>Description: {data.description}</T>
-        <Stack gap={0.25}>
-          <T variant="caption">Input types:</T>
+
+        <Stack>
+          <T variant="caption">Input types</T>
           {inputs.map((input) => (
             <T>
-              <Link href={`/inputs/${input.uid}`}>{input.data.name}</Link>
+              <Link href={`/inputs/${input.uid}`}>
+                {input.data.name}
+                {data.responsive && "[]"}
+              </Link>
             </T>
           ))}
         </Stack>
@@ -49,14 +53,10 @@ export async function getStaticProps({ params }) {
     }
   });
   const allComponents = await client.getAllByType("component");
-  const allProps = await client.getAllByType("prop");
   const allMixinGroups = await client.getAllByType("mixin_group");
-  const allInputs = await client.getAllByType("input");
   const navBarData = {
     components: allComponents,
-    props: allProps,
     mixinGroups: allMixinGroups,
-    inputs: allInputs,
   };
   return {
     props: { data: prop.data, inputs, navBarData }, // will be passed to the page component as props
