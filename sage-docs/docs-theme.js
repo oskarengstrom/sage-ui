@@ -38,7 +38,7 @@ export const docsTheme = {
   bp: ["0rem", "36rem", "62rem", "75rem"],
   section: {
     maxWidth: "80rem",
-    xPadding: ["1rem", "2rem"],
+    xPadding: ["1rem"],
   },
   palette: {
     background: constants.colors.vulcan[900],
@@ -53,6 +53,7 @@ export const docsTheme = {
       main: constants.colors.persianBlue[500],
     },
   },
+  constants,
   typography: {
     variants: {
       default: {

@@ -51,6 +51,16 @@ const lineHeight = ({ lineHeight }) =>
     interpolation: "rem",
   });
 
+const letterSpacing = ({ letterSpacing }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        letter-spacing: ${x};
+      `,
+    val: letterSpacing,
+    interpolation: "em",
+  });
+
 const textAlign = ({ textAlign }) =>
   responsiveProp({
     func: (x) =>
@@ -83,6 +93,7 @@ export default [
   fontSize,
   fontWeight,
   lineHeight,
+  letterSpacing,
   color,
   textAlign,
   textDecoration,

@@ -1,10 +1,11 @@
 const inputTypes = {
   number: "number",
-  css_unit: "CSS unit",
-  html_element: "HTML elment",
+  css_unit: "unit",
+  html_element: "elment",
   string: "string",
   boolean: "boolean",
-  color: "CSS color",
+  color: "color",
+  themeObject: "object",
 };
 
 export const props = {
@@ -440,6 +441,189 @@ export const props = {
     ],
     responsive: true,
   },
+  ratio: {
+    name: "ratio",
+    description: "aspect ratio",
+    input_types: [
+      {
+        type: inputTypes.number,
+      },
+    ],
+    responsive: true,
+  },
+  theme: {
+    name: "theme",
+    description: "theme object",
+    input_types: [
+      {
+        type: inputTypes.themeObject,
+      },
+    ],
+    responsive: true,
+  },
+  xPadding: {
+    name: "xPadding",
+    description: "left/right padding",
+    input_types: [
+      {
+        type: inputTypes.number,
+        interpolation: "rem",
+      },
+      {
+        type: inputTypes.css_unit,
+      },
+    ],
+    responsive: true,
+  },
+  flexDirection: {
+    name: "flexDirection",
+    description: "flex-direction",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  gap: {
+    name: "gap",
+    description: "gap",
+    input_types: [
+      {
+        type: inputTypes.number,
+        interpolation: "rem",
+      },
+      {
+        type: inputTypes.css_unit,
+      },
+    ],
+    responsive: true,
+  },
+  alignItems: {
+    name: "alignItems",
+    description: "align-items",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  justifyContent: {
+    name: "justifyContent",
+    description: "justify-content",
+
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  variant: {
+    name: "variant",
+    description: "variant",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+  },
+
+  fontFamily: {
+    name: "fontFamily",
+    description: "font-family",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  fontSize: {
+    name: "fontSize",
+    description: "font-size",
+    input_types: [
+      {
+        type: inputTypes.number,
+        interpolation: "rem",
+      },
+      {
+        type: inputTypes.css_unit,
+      },
+    ],
+    responsive: true,
+  },
+  fontWeight: {
+    name: "fontWeight",
+    description: "font-weight",
+    input_types: [
+      {
+        type: inputTypes.number,
+      },
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  lineHeight: {
+    name: "lineHeight",
+    description: "line-height",
+    input_types: [
+      {
+        type: inputTypes.number,
+        interpolation: "rem",
+      },
+      {
+        type: inputTypes.css_unit,
+      },
+    ],
+    responsive: true,
+  },
+  color: {
+    name: "color",
+    description: "color",
+    input_types: [
+      {
+        type: inputTypes.color,
+      },
+      {
+        type: inputTypes.themeObject,
+      },
+    ],
+    responsive: true,
+  },
+  textAlign: {
+    name: "textAlign",
+    description: "text-align",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  textDecoration: {
+    name: "textDecoration",
+    description: "text-decoration",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
+  textTransform: {
+    name: "textTransform",
+    description: "text-transform",
+    input_types: [
+      {
+        type: inputTypes.string,
+      },
+    ],
+    responsive: true,
+  },
 };
 
 export const mixins = {
@@ -475,12 +659,29 @@ export const mixins = {
   ],
   gridItem: [props.span, props.gridColumn, props.order, props.placeSelf],
   backgroundColor: [props.backgroundColor, props.background],
+  stack: [
+    props.flexDirection,
+    props.gap,
+    props.alignItems,
+    props.justifyContent,
+  ],
+  typography: [
+    props.variant,
+    props.fontFamily,
+    props.fontSize,
+    props.fontWeight,
+    props.lineHeight,
+    props.color,
+    props.textAlign,
+    props.textDecoration,
+    props.textTransform,
+  ],
 };
 
 export const components = {
   Box: {
     name: "Box",
-    description: "Box component description",
+    description: "Simple base component with responsive props",
     propList: [
       ...mixins.size,
       ...mixins.space,
@@ -491,7 +692,7 @@ export const components = {
   },
   Grid: {
     name: "Grid",
-    description: "Grid component description",
+    description: "Parent container to create grids",
     propList: [
       ...mixins.grid,
       ...mixins.size,
@@ -503,7 +704,7 @@ export const components = {
   },
   "Grid.Item": {
     name: "Grid.Item",
-    description: "Grid.Item component description",
+    description: "Child component to create grid items",
     propList: [
       ...mixins.gridItem,
       ...mixins.size,
@@ -512,5 +713,48 @@ export const components = {
       props.as,
       props.dev,
     ],
+  },
+  KeepAspectRatio: {
+    name: "KeepAspectRatio",
+    description: "Keeping aspect ratio of child content",
+    propList: [props.ratio],
+  },
+  SageProvider: {
+    name: "SageProvider",
+    description: "Theme provider",
+    propList: [props.theme],
+  },
+  Section: {
+    name: "Section",
+    description: "Section with custom padding and max-width features",
+    propList: [
+      props.xPadding,
+      ...mixins.size,
+      ...mixins.space,
+      ...mixins.backgroundColor,
+      props.dev,
+    ],
+  },
+  Spacer: {
+    name: "Spacer",
+    description: "Simple spacer component",
+    propList: [...mixins.size, props.dev],
+  },
+  Stack: {
+    name: "Stack",
+    description: "Flexbox-based component to stack elements",
+    propList: [
+      ...mixins.stack,
+      ...mixins.size,
+      ...mixins.space,
+      ...mixins.backgroundColor,
+      props.dev,
+    ],
+  },
+  Typography: {
+    name: "Typography",
+    description:
+      "Typography component with responsive props and variant-support via theme",
+    propList: [...mixins.typography, props.as, props.dev],
   },
 };

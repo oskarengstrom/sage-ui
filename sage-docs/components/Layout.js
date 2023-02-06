@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 
 export default function Layout({ data, children }) {
   return (
-    <Section as="div" py={2}>
+    <Section as="div" py={1}>
       <Grid base={12} gap={2}>
         <Grid.Item span={[3, 3, 3, 2]}>
           <NavBar data={data} />

@@ -502,6 +502,9 @@ Order is important:
 2. `npm publish`
 3. push to git
 
+Create tokens:
+https://github.com/settings/tokens
+
 ### Notes
 
 Good resource when stuck with bugs on NPM Link:  

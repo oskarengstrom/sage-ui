@@ -1,5 +1,6 @@
 import { docsTheme } from "@/docs-theme";
 import "@/styles/globals.css";
+import "@/styles/code-theme.css";
 import { SageProvider } from "@oskarengstrom/sage-ui";
 import { PrismicProvider } from "@prismicio/react";
 import Link from "next/link";

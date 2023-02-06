@@ -61,4 +61,51 @@ const placeItems = ({ placeItems }) =>
     val: placeItems,
   });
 
-export default [grid, base, gap, columnGap, rowGap, placeItems];
+const gridTemplateAreas = ({ gridTemplateAreas }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-template-areas: ${x};
+      `,
+    val: gridTemplateAreas,
+  });
+
+const gridTemplateRows = ({ gridTemplateRows }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-template-rows: ${x};
+      `,
+    val: gridTemplateRows,
+  });
+
+const gridTemplateColumns = ({ gridTemplateColumns }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-template-columns: ${x};
+      `,
+    val: gridTemplateColumns,
+  });
+
+const gridTemplate = ({ gridTemplate }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-template: ${x};
+      `,
+    val: gridTemplate,
+  });
+
+export default [
+  grid,
+  base,
+  gap,
+  columnGap,
+  rowGap,
+  placeItems,
+  gridTemplateAreas,
+  gridTemplateRows,
+  gridTemplateColumns,
+  gridTemplate,
+];

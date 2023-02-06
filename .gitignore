@@ -2,6 +2,7 @@
 
 .npmrc
 playground/node_modules
+sage-docs/node_modules
 
 # dependencies
 /node_modules

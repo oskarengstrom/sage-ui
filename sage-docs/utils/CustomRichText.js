@@ -1,6 +1,7 @@
 import { PrismicRichText } from "@prismicio/react";
 import { Typography } from "@oskarengstrom/sage-ui";
 import Link from "next/link";
+import Highlight from "react-highlight";
 
 const CustomRichText = ({ field, ...rest }) => {
   if (typeof field === "string") {
@@ -49,9 +50,11 @@ const CustomRichText = ({ field, ...rest }) => {
           </Typography>
         ),
         preformatted: ({ children }) => (
-          <Typography variant="pre" as="pre" {...rest}>
-            {children}
-          </Typography>
+          <Highlight>
+            <Typography variant="pre" as="pre" {...rest}>
+              {children}
+            </Typography>
+          </Highlight>
         ),
         hyperlink: (props) => (
           <a

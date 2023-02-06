@@ -23,7 +23,8 @@
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom"
+    "react-dom": "file:../node_modules/react-dom",
+    "react-highlight": "^0.15.0"
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.7",

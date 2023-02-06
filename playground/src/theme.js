@@ -21,7 +21,7 @@ export const playgroundTheme = {
     background: constants.colors.red,
     text: {
       primary: "black",
-      secondary: "grey",
+      secondary: "rgba(0, 0, 0, 0.7)",
     },
     primary: {
       main: constants.colors.orange,

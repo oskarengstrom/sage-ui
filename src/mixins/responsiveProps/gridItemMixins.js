@@ -43,4 +43,22 @@ const gridColumn = ({ gridColumn }) =>
     val: gridColumn,
   });
 
-export default [span, placeSelf, order, gridColumn];
+const gridRow = ({ gridRow }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-row: ${x};
+      `,
+    val: gridRow,
+  });
+
+const gridArea = ({ gridArea }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        grid-area: ${x};
+      `,
+    val: gridArea,
+  });
+
+export default [span, placeSelf, order, gridColumn, gridRow, gridArea];

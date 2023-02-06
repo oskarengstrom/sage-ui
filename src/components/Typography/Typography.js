@@ -45,7 +45,7 @@ const props = [
   "textTransform",
 ];
 
-const TypographyStyled = styled("p", {
+const TypographyStyled = styled("div", {
   shouldForwardProp: (prop) => isPropValid(prop) && !props.includes(prop),
 })`
   ${devMixins}
