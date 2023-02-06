@@ -2,9 +2,6 @@ import Layout from "@/components/Layout";
 import { createClient } from "@/prismic-configuration";
 import { Typography, Grid } from "@oskarengstrom/sage-ui";
 
-// import { Inter } from "@next/font/google";
-// const inter = Inter({ subsets: ["latin"] });
-
 export default function Home({ navBarData }) {
   return (
     <Layout data={navBarData}>

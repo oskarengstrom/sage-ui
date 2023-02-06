@@ -57,7 +57,7 @@ export const docsTheme = {
   typography: {
     variants: {
       default: {
-        fontFamily: "sans-serif",
+        fontFamily: "var(--font-family-body)",
         fontSize: "0.875rem",
         lineHeight: 1.25,
       },
@@ -82,16 +82,16 @@ export const docsTheme = {
         letterSpacing: 0.1,
       },
       component: {
-        fontFamily: "monospace",
+        fontFamily: "var(--font-family-mono)",
       },
       prop: {
-        fontFamily: "monospace",
+        fontFamily: "var(--font-family-mono)",
       },
       mixin: {
-        fontFamily: "monospace",
+        fontFamily: "var(--font-family-mono)",
       },
       pre: {
-        fontFamily: "monospace",
+        fontFamily: "var(--font-family-mono)",
         color: constants.colors.vulcan[100],
         backgroundColor: constants.colors.vulcan[800],
         style: {

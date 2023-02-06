@@ -35,8 +35,8 @@ export default function NavBar({ data }) {
           </T>
         ))}
       </Stack>
-      <T variant="caption">All props</T>
-      <T variant="caption">All inputs</T>
+      {/* <T variant="caption">All props</T>
+      <T variant="caption">All inputs</T> */}
     </Stack>
   );
 }
