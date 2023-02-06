@@ -68,6 +68,30 @@ export interface ComponentDocumentDataPropsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ComponentDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ComponentDocumentData>, "component", Lang>;
+/** Content for Homepage documents */
+interface HomepageDocumentData {
+    /**
+     * Text RT field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.text_rt
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text_rt: prismicT.RichTextField;
+}
+/**
+ * Homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 /** Content for Input documents */
 interface InputDocumentData {
     /**
@@ -324,12 +348,12 @@ interface UtilityDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type UtilityDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<UtilityDocumentData>, "utility", Lang>;
-export type AllDocumentTypes = ComponentDocument | InputDocument | MixinGroupDocument | PropDocument | UtilitiesDocument | UtilityDocument;
+export type AllDocumentTypes = ComponentDocument | HomepageDocument | InputDocument | MixinGroupDocument | PropDocument | UtilitiesDocument | UtilityDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ComponentDocumentData, ComponentDocumentDataPropsItem, ComponentDocument, InputDocumentData, InputDocument, MixinGroupDocumentData, MixinGroupDocumentDataPropsItem, MixinGroupDocumentDataSlicesSlice, MixinGroupDocument, PropDocumentData, PropDocumentDataInputsItem, PropDocument, UtilitiesDocumentData, UtilitiesDocument, UtilityDocumentData, UtilityDocument, AllDocumentTypes };
+        export type { ComponentDocumentData, ComponentDocumentDataPropsItem, ComponentDocument, HomepageDocumentData, HomepageDocument, InputDocumentData, InputDocument, MixinGroupDocumentData, MixinGroupDocumentDataPropsItem, MixinGroupDocumentDataSlicesSlice, MixinGroupDocument, PropDocumentData, PropDocumentDataInputsItem, PropDocument, UtilitiesDocumentData, UtilitiesDocument, UtilityDocumentData, UtilityDocument, AllDocumentTypes };
     }
 }

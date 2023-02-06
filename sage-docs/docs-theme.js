@@ -7,6 +7,7 @@ export const constants = {
     orange: "#E48130",
     blue: "RoyalBlue",
     vulcan: {
+      950: "#0F1118",
       900: "#171921",
       800: "#232734",
       700: "#343B52",

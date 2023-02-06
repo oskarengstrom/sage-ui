@@ -8,6 +8,7 @@ import { Global } from "@emotion/react";
 import { css } from "@emotion/react";
 
 import { Inter, Roboto_Mono } from "@next/font/google";
+import { linkResolver } from "@/prismic-configuration";
 const inter = Inter({ subsets: ["latin"] });
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps }) {
         `}
       />
       <PrismicProvider
-        // linkResolver={linkResolver}
+        linkResolver={linkResolver}
         internalLinkComponent={Link}
         externalLinkComponent={(props) => (
           <a target="_blank" rel="noopener noreferrer" {...props} />

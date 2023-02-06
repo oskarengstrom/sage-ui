@@ -1,0 +1,17 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "feed"
+  },
+  "text_rt": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Esse enim eiusmod laborum ex irure culpa reprehenderit sit proident id anim."
+        }
+      }
+    ]
+  }
+}
