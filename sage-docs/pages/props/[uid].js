@@ -54,9 +54,11 @@ export async function getStaticProps({ params }) {
   });
   const allComponents = await client.getAllByType("component");
   const allMixinGroups = await client.getAllByType("mixin_group");
+  const allUtilities = await client.getAllByType("utility");
   const navBarData = {
     components: allComponents,
     mixinGroups: allMixinGroups,
+    utilities: allUtilities,
   };
   return {
     props: { data: prop.data, inputs, navBarData }, // will be passed to the page component as props

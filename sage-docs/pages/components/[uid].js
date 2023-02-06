@@ -5,6 +5,8 @@ import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
 import CustomRichText from "@/utils/CustomRichText";
 import IconArrowReturnRight from "@/components/icons/IconArrowReturnRight";
+import { useTheme } from "@emotion/react";
+import { ThemeContext } from "@emotion/react";
 
 export default function Component({
   data,
@@ -13,6 +15,7 @@ export default function Component({
   mixinGroups,
   navBarData,
 }) {
+  const theme = useTheme(ThemeContext);
   return (
     <Layout data={navBarData}>
       <Stack gap={2}>
@@ -22,14 +25,17 @@ export default function Component({
         </Stack>
 
         <Stack gap={1}>
-          <CustomRichText field={data.description_rt} />
+          <CustomRichText
+            field={data.description_rt}
+            color="palette.text.primary"
+          />
         </Stack>
 
         <Stack>
           <T variant="caption">Props</T>
           {mixinGroups.map((mixin) => (
             <React.Fragment key={mixin.uid}>
-              <T key={mixin.data.name} color="palette.text.secondary">
+              <T key={mixin.data.name} color="palette.text.primary">
                 <Link href={`/mixins/${mixin.uid}`}>[{mixin.data.name}]</Link>
               </T>
               {mixin.data.props.map((prop) => {
@@ -42,10 +48,13 @@ export default function Component({
                       flexDirection="row"
                       alignItems="center"
                       gap={0.5}
+                      ml={0.5}
                     >
-                      <IconArrowReturnRight />
+                      <IconArrowReturnRight
+                        color={theme.palette.icon.primary}
+                      />
 
-                      <T>
+                      <T variant="prop">
                         <Link href={`/props/${thisProp.uid}`}>
                           {thisProp.data.name}
                         </Link>
@@ -59,7 +68,7 @@ export default function Component({
           {props.map(
             (prop) =>
               prop && (
-                <T key={prop.uid}>
+                <T key={prop.uid} variant="prop">
                   <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
                 </T>
               )
@@ -101,9 +110,11 @@ export async function getStaticProps({ params }) {
   const allComponents = await client.getAllByType("component");
   const allMixinGroups = await client.getAllByType("mixin_group");
   const allProps = await client.getAllByType("prop");
+  const allUtilities = await client.getAllByType("utility");
   const navBarData = {
     components: allComponents,
     mixinGroups: allMixinGroups,
+    utilities: allUtilities,
   };
   return {
     props: { data: component.data, allProps, props, mixinGroups, navBarData }, // will be passed to the page component as props

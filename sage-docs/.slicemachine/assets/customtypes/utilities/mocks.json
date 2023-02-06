@@ -1,0 +1,22 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "trip"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "split",
+    "type": "Text"
+  },
+  "description_rt": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Fugiat irure proident quis ad nisi ipsum reprehenderit sit irure irure dolor Lorem consectetur sunt. Cupidatat ullamco ipsum adipisicing aliqua exercitation exercitation pariatur ut magna ullamco anim in eiusmod magna. Id tempor velit esse laborum exercitation."
+        }
+      }
+    ]
+  }
+}

@@ -13,15 +13,14 @@ body {
 }
 
 body {
-  color: black;
-  background: white;
+  color: red;
+  background: #171921;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
+}
+a:hover {
   text-decoration: underline;
 }
-/* a:hover {
-  text-decoration: underline;
-} */
-

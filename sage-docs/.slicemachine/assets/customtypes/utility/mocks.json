@@ -1,0 +1,22 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "pitch"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "column",
+    "type": "Text"
+  },
+  "description_rt": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Sint laborum nisi enim veniam consequat veniam labore commodo."
+        }
+      }
+    ]
+  }
+}

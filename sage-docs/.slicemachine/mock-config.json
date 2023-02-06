@@ -9,6 +9,8 @@
     "input": {},
     "mixin_group": {
       "props": {}
-    }
+    },
+    "utilities": {},
+    "utility": {}
   }
 }

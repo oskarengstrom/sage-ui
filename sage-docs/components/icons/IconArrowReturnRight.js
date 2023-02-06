@@ -1,10 +1,10 @@
 // icon:arrow-return-right | Bootstrap https://icons.getbootstrap.com/ | Bootstrap
 import * as React from "react";
 
-function IconArrowReturnRight(props) {
+function IconArrowReturnRight({ color, ...props }) {
   return (
     <svg
-      fill="currentColor"
+      fill={color}
       viewBox="0 0 16 16"
       height="0.65rem"
       width="0.65rem"

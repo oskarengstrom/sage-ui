@@ -254,12 +254,82 @@ export interface PropDocumentDataInputsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PropDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PropDocumentData>, "prop", Lang>;
-export type AllDocumentTypes = ComponentDocument | InputDocument | MixinGroupDocument | PropDocument;
+/** Content for Utilities documents */
+interface UtilitiesDocumentData {
+    /**
+     * Name field in *Utilities*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: utilities.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+    /**
+     * Description RT field in *Utilities*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: utilities.description_rt
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description_rt: prismicT.RichTextField;
+}
+/**
+ * Utilities document from Prismic
+ *
+ * - **API ID**: `utilities`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type UtilitiesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<UtilitiesDocumentData>, "utilities", Lang>;
+/** Content for Utility documents */
+interface UtilityDocumentData {
+    /**
+     * Name field in *Utility*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: utility.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+    /**
+     * Description RT field in *Utility*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: utility.description_rt
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description_rt: prismicT.RichTextField;
+}
+/**
+ * Utility document from Prismic
+ *
+ * - **API ID**: `utility`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type UtilityDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<UtilityDocumentData>, "utility", Lang>;
+export type AllDocumentTypes = ComponentDocument | InputDocument | MixinGroupDocument | PropDocument | UtilitiesDocument | UtilityDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ComponentDocumentData, ComponentDocumentDataPropsItem, ComponentDocument, InputDocumentData, InputDocument, MixinGroupDocumentData, MixinGroupDocumentDataPropsItem, MixinGroupDocumentDataSlicesSlice, MixinGroupDocument, PropDocumentData, PropDocumentDataInputsItem, PropDocument, AllDocumentTypes };
+        export type { ComponentDocumentData, ComponentDocumentDataPropsItem, ComponentDocument, InputDocumentData, InputDocument, MixinGroupDocumentData, MixinGroupDocumentDataPropsItem, MixinGroupDocumentDataSlicesSlice, MixinGroupDocument, PropDocumentData, PropDocumentDataInputsItem, PropDocument, UtilitiesDocumentData, UtilitiesDocument, UtilityDocumentData, UtilityDocument, AllDocumentTypes };
     }
 }
