@@ -29,18 +29,6 @@ export default function App({ Component, pageProps }) {
         externalLinkComponent={(props) => (
           <a target="_blank" rel="noopener noreferrer" {...props} />
         )}
-        richTextComponents={{
-          hyperlink: (props) => (
-            <a
-              href={props.node.data.url}
-              className="inline-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {props.children}
-            </a>
-          ),
-        }}
       >
         <Component {...pageProps} />
       </PrismicProvider>

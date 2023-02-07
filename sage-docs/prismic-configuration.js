@@ -5,28 +5,26 @@ import sm from "./sm.json";
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 export const linkResolver = (doc) => {
-  if (doc.link_type === "Document") {
+  if (doc.link_type !== "Media" && doc.link_type !== "Any") {
     switch (doc.type) {
-      case "page": {
-        return `/${doc.uid}`;
-      }
-      case "homepage": {
+      case "homepage":
         return `/`;
-      }
-
-      default: {
+      case "component":
+        return `/components/${doc.uid}`;
+      case "input":
+        return `/inputs/${doc.uid}`;
+      case "mixin_group":
+        return `/mixins/${doc.uid}`;
+      case "prop":
+        return `/props/${doc.uid}`;
+      case "utility":
+        return `/utilities/${doc.uid}`;
+      default:
         return `/${doc.uid}`;
-      }
     }
-  } else if (doc.link_type === "Web") {
-    return doc.url;
-  } else if (doc.link_type === "Media") {
-    return "/MEDIA";
-  } else if (doc.link_type === "Any") {
-    return null;
   }
 
-  return "";
+  return null;
 };
 
 export const createClient = (config = {}) => {
