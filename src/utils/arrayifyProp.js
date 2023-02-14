@@ -6,7 +6,7 @@ export const arrayifyProp = (val, interpolation) => {
   val.forEach((item, index) => {
     const isLast = val.length === index + 1;
     if (isLast) {
-      const loop = 4 - (index + 1);
+      const loop = 5 - (index + 1);
       for (let i = 0; i < loop; i++) {
         val.push(item);
       }

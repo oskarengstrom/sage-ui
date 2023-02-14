@@ -8,7 +8,7 @@ import isPropValid from '@emotion/is-prop-valid';
 var useSSRLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : function () {};
 
 var defaultTheme = {
-  bp: ["0rem", "36rem", "62rem", "75rem"],
+  bp: ["36rem", "62rem", "75rem", "85rem"],
   section: {
     maxWidth: "62rem",
     xPadding: ["1rem", "2rem"]
@@ -42,7 +42,7 @@ var responsiveProp = function responsiveProp(_ref) {
     });
   }
   val = Array.isArray(val) ? val : [val];
-  return /*#__PURE__*/css(func(val[0]), "@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[1]) || bpFb[1], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[2]) || bpFb[2], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[3]) || bpFb[3], "){", val[3] && func(val[3]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgZGVmYXVsdFRoZW1lIH0gZnJvbSBcIi4uL2NvbXBvbmVudHMvU2FnZVByb3ZpZGVyL2RlZmF1bHRUaGVtZVwiO1xuXG5leHBvcnQgY29uc3QgaW50ZXJwb2xhdGVkUHJvcCA9ICh2LCBpbnRlcnBvbGF0aW9uKSA9PiB7XG4gIGlmICh0eXBlb2YgdiA9PT0gXCJudW1iZXJcIikge1xuICAgIHJldHVybiB2ICsgaW50ZXJwb2xhdGlvbjtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gdjtcbiAgfVxufTtcblxuZXhwb3J0IGNvbnN0IHJlc3BvbnNpdmVQcm9wID0gKHsgZnVuYywgdmFsLCBpbnRlcnBvbGF0aW9uID0gZmFsc2UgfSkgPT4ge1xuICBjb25zdCB7IGJwIH0gPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuICBjb25zdCBicEZiID0gZGVmYXVsdFRoZW1lLmJwO1xuXG4gIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwpIHJldHVybjtcblxuICBpZiAoaW50ZXJwb2xhdGlvbikge1xuICAgIGlmICh0eXBlb2YgdmFsID09PSBcIm51bWJlclwiKSB2YWwgPSBpbnRlcnBvbGF0ZWRQcm9wKHZhbCwgaW50ZXJwb2xhdGlvbik7XG4gICAgaWYgKEFycmF5LmlzQXJyYXkodmFsKSlcbiAgICAgIHZhbC5mb3JFYWNoKCh4LCBpbmRleCkgPT4ge1xuICAgICAgICBpZiAodHlwZW9mIHggPT09IFwibnVtYmVyXCIpXG4gICAgICAgICAgdmFsW2luZGV4XSA9IGludGVycG9sYXRlZFByb3AoeCwgaW50ZXJwb2xhdGlvbik7XG4gICAgICB9KTtcbiAgfVxuXG4gIHZhbCA9IEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbCA6IFt2YWxdO1xuXG4gIHJldHVybiBjc3NgXG4gICAgJHtmdW5jKHZhbFswXSl9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMV0gfHwgYnBGYlsxXX0pIHtcbiAgICAgICR7dmFsWzFdICYmIGZ1bmModmFsWzFdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMl0gfHwgYnBGYlsyXX0pIHtcbiAgICAgICR7dmFsWzJdICYmIGZ1bmModmFsWzJdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bM10gfHwgYnBGYlszXX0pIHtcbiAgICAgICR7dmFsWzNdICYmIGZ1bmModmFsWzNdKX1cbiAgICB9XG4gIGA7XG59O1xuIl19 */");
+  return /*#__PURE__*/css(func(val[0]), "@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[0]) || bpFb[0], "){", val[1] && func(val[1]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[1]) || bpFb[1], "){", val[2] && func(val[2]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[2]) || bpFb[2], "){", val[3] && func(val[3]), ";}@media screen and (min-width: ", (bp === null || bp === void 0 ? void 0 : bp[3]) || bpFb[3], "){", val[4] && func(val[4]), ";}" + (process.env.NODE_ENV === "production" ? "" : ";label:responsiveProp;"), process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNpdmVQcm9wLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCWSIsImZpbGUiOiJyZXNwb25zaXZlUHJvcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRoZW1lQ29udGV4dCwgY3NzLCB1c2VUaGVtZSB9IGZyb20gXCJAZW1vdGlvbi9yZWFjdFwiO1xuaW1wb3J0IHsgZGVmYXVsdFRoZW1lIH0gZnJvbSBcIi4uL2NvbXBvbmVudHMvU2FnZVByb3ZpZGVyL2RlZmF1bHRUaGVtZVwiO1xuXG5leHBvcnQgY29uc3QgaW50ZXJwb2xhdGVkUHJvcCA9ICh2LCBpbnRlcnBvbGF0aW9uKSA9PiB7XG4gIGlmICh0eXBlb2YgdiA9PT0gXCJudW1iZXJcIikge1xuICAgIHJldHVybiB2ICsgaW50ZXJwb2xhdGlvbjtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gdjtcbiAgfVxufTtcblxuZXhwb3J0IGNvbnN0IHJlc3BvbnNpdmVQcm9wID0gKHsgZnVuYywgdmFsLCBpbnRlcnBvbGF0aW9uID0gZmFsc2UgfSkgPT4ge1xuICBjb25zdCB7IGJwIH0gPSB1c2VUaGVtZShUaGVtZUNvbnRleHQpO1xuICBjb25zdCBicEZiID0gZGVmYXVsdFRoZW1lLmJwO1xuXG4gIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwpIHJldHVybjtcblxuICBpZiAoaW50ZXJwb2xhdGlvbikge1xuICAgIGlmICh0eXBlb2YgdmFsID09PSBcIm51bWJlclwiKSB2YWwgPSBpbnRlcnBvbGF0ZWRQcm9wKHZhbCwgaW50ZXJwb2xhdGlvbik7XG4gICAgaWYgKEFycmF5LmlzQXJyYXkodmFsKSlcbiAgICAgIHZhbC5mb3JFYWNoKCh4LCBpbmRleCkgPT4ge1xuICAgICAgICBpZiAodHlwZW9mIHggPT09IFwibnVtYmVyXCIpXG4gICAgICAgICAgdmFsW2luZGV4XSA9IGludGVycG9sYXRlZFByb3AoeCwgaW50ZXJwb2xhdGlvbik7XG4gICAgICB9KTtcbiAgfVxuXG4gIHZhbCA9IEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbCA6IFt2YWxdO1xuXG4gIHJldHVybiBjc3NgXG4gICAgJHtmdW5jKHZhbFswXSl9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMF0gfHwgYnBGYlswXX0pIHtcbiAgICAgICR7dmFsWzFdICYmIGZ1bmModmFsWzFdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMV0gfHwgYnBGYlsxXX0pIHtcbiAgICAgICR7dmFsWzJdICYmIGZ1bmModmFsWzJdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bMl0gfHwgYnBGYlsyXX0pIHtcbiAgICAgICR7dmFsWzNdICYmIGZ1bmModmFsWzNdKX1cbiAgICB9XG5cbiAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAke2JwPy5bM10gfHwgYnBGYlszXX0pIHtcbiAgICAgICR7dmFsWzRdICYmIGZ1bmModmFsWzRdKX1cbiAgICB9XG4gIGA7XG59O1xuIl19 */");
 };
 
 // export const isValidColor = (strColor) => {
@@ -569,7 +569,7 @@ var useResponsive = function useResponsive() {
     bp = _useTheme.bp;
 
   // fallback if theme is not present
-  bp = bp ? bp : ["0rem", "36rem", "62rem", "75rem"];
+  bp = bp ? bp : defaultTheme.bp;
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     isMobile = _useState2[0],
@@ -585,12 +585,15 @@ var useResponsive = function useResponsive() {
   var calcBreakpoint = function calcBreakpoint() {
     var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
     if (width > stripUnit(remToPx(bp[3]))) {
+      setBreakpoint("wide");
+      setBreakpointIndex(4);
+    } else if (width > stripUnit(remToPx(bp[2]))) {
       setBreakpoint("xl");
       setBreakpointIndex(3);
-    } else if (width > stripUnit(remToPx(bp[2]))) {
+    } else if (width > stripUnit(remToPx(bp[1]))) {
       setBreakpoint("lr");
       setBreakpointIndex(2);
-    } else if (width > stripUnit(remToPx(bp[1]))) {
+    } else if (width > stripUnit(remToPx(bp[0]))) {
       setBreakpoint("md");
       setBreakpointIndex(1);
     } else {
@@ -722,7 +725,7 @@ var arrayifyProp = function arrayifyProp(val, interpolation) {
   val.forEach(function (item, index) {
     var isLast = val.length === index + 1;
     if (isLast) {
-      var loop = 4 - (index + 1);
+      var loop = 5 - (index + 1);
       for (var i = 0; i < loop; i++) {
         val.push(item);
       }
@@ -1475,18 +1478,22 @@ var mq = {
   only: {
     sm: function sm(_ref) {
       var theme = _ref.theme;
-      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[0] : fallback[0], " - 1px))");
     },
     md: function md(_ref2) {
       var theme = _ref2.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ") and (max-width: calc(").concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[0] : fallback[0], ") and (max-width: calc(").concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
     },
     lr: function lr(_ref3) {
       var theme = _ref3.theme;
-      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ") and (max-width: calc(").concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ") and (max-width: calc(").concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
     },
     xl: function xl(_ref4) {
       var theme = _ref4.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ") and (max-width: calc(").concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
+    },
+    wide: function wide(_ref5) {
+      var theme = _ref5.theme;
       return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
     },
     computer: "@media (hover: hover) and (pointer: fine)",
@@ -1495,30 +1502,38 @@ var mq = {
     retina: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
   },
   up: {
-    md: function md(_ref5) {
-      var theme = _ref5.theme;
+    md: function md(_ref6) {
+      var theme = _ref6.theme;
+      return "@media (min-width: ".concat(theme.bp ? theme.bp[0] : fallback[0], ")");
+    },
+    lr: function lr(_ref7) {
+      var theme = _ref7.theme;
       return "@media (min-width: ".concat(theme.bp ? theme.bp[1] : fallback[1], ")");
     },
-    lr: function lr(_ref6) {
-      var theme = _ref6.theme;
+    xl: function xl(_ref8) {
+      var theme = _ref8.theme;
       return "@media (min-width: ".concat(theme.bp ? theme.bp[2] : fallback[2], ")");
     },
-    xl: function xl(_ref7) {
-      var theme = _ref7.theme;
+    wide: function wide(_ref9) {
+      var theme = _ref9.theme;
       return "@media (min-width: ".concat(theme.bp ? theme.bp[3] : fallback[3], ")");
     }
   },
   down: {
-    sm: function sm(_ref8) {
-      var theme = _ref8.theme;
+    sm: function sm(_ref10) {
+      var theme = _ref10.theme;
+      return "@media (max-width: calc(".concat(theme.bp ? theme.bp[0] : fallback[0], " - 1px))");
+    },
+    md: function md(_ref11) {
+      var theme = _ref11.theme;
       return "@media (max-width: calc(".concat(theme.bp ? theme.bp[1] : fallback[1], " - 1px))");
     },
-    md: function md(_ref9) {
-      var theme = _ref9.theme;
+    lr: function lr(_ref12) {
+      var theme = _ref12.theme;
       return "@media (max-width: calc(".concat(theme.bp ? theme.bp[2] : fallback[2], " - 1px))");
     },
-    lr: function lr(_ref10) {
-      var theme = _ref10.theme;
+    xl: function xl(_ref13) {
+      var theme = _ref13.theme;
       return "@media (max-width: calc(".concat(theme.bp ? theme.bp[3] : fallback[3], " - 1px))");
     }
   },

@@ -29,16 +29,20 @@ export const responsiveProp = ({ func, val, interpolation = false }) => {
   return css`
     ${func(val[0])}
 
-    @media screen and (min-width: ${bp?.[1] || bpFb[1]}) {
+    @media screen and (min-width: ${bp?.[0] || bpFb[0]}) {
       ${val[1] && func(val[1])}
     }
 
-    @media screen and (min-width: ${bp?.[2] || bpFb[2]}) {
+    @media screen and (min-width: ${bp?.[1] || bpFb[1]}) {
       ${val[2] && func(val[2])}
     }
 
-    @media screen and (min-width: ${bp?.[3] || bpFb[3]}) {
+    @media screen and (min-width: ${bp?.[2] || bpFb[2]}) {
       ${val[3] && func(val[3])}
+    }
+
+    @media screen and (min-width: ${bp?.[3] || bpFb[3]}) {
+      ${val[4] && func(val[4])}
     }
   `;
 };

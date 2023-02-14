@@ -36,7 +36,8 @@ export const constants = {
 };
 
 export const docsTheme = {
-  bp: ["0rem", "36rem", "62rem", "75rem"],
+  // bp: ["0rem", "36rem", "62rem", "75rem"],
+  bp: ["36rem", "62rem", "75rem", "85rem"],
   section: {
     maxWidth: "80rem",
     xPadding: ["1rem"],

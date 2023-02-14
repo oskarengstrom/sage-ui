@@ -1,14 +1,18 @@
 import Layout from "@/components/Layout";
 import { createClient } from "@/prismic-configuration";
 import CustomRichText from "@/utils/CustomRichText";
-import { Stack } from "@oskarengstrom/sage-ui";
+import styled from "@emotion/styled";
+import { Stack, Typography } from "@oskarengstrom/sage-ui";
 
 export default function Home({ navBarData, homepage }) {
-  console.log(homepage);
+  // console.log(homepage);
   return (
     <Layout data={navBarData}>
       <Stack gap={1}>
         <CustomRichText field={homepage.data.text_rt} />
+        <Typography color={["red", null, null, "blue", "white"]}>
+          asdf
+        </Typography>
       </Stack>
     </Layout>
   );

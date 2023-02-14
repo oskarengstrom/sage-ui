@@ -7,6 +7,7 @@ import CustomRichText from "@/utils/CustomRichText";
 import IconArrowReturnRight from "@/components/icons/IconArrowReturnRight";
 import { useTheme } from "@emotion/react";
 import { ThemeContext } from "@emotion/react";
+import { PrismicLink } from "@prismicio/react";
 
 export default function Component({
   data,
@@ -70,6 +71,7 @@ export default function Component({
               prop && (
                 <T key={prop.uid} variant="prop">
                   <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
+                  {/* <PrismicLink field={prop.data}>{prop.data.name}</PrismicLink> */}
                 </T>
               )
           )}

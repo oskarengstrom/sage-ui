@@ -1,12 +1,13 @@
 import { ThemeContext, useTheme } from "@emotion/react";
 import { remToPx, stripUnit } from "polished";
 import React, { useEffect, useState } from "react";
+import { defaultTheme } from "../../components/SageProvider/defaultTheme";
 
 export const useResponsive = () => {
   let { bp } = useTheme(ThemeContext);
 
   // fallback if theme is not present
-  bp = bp ? bp : ["0rem", "36rem", "62rem", "75rem"];
+  bp = bp ? bp : defaultTheme.bp;
 
   const [isMobile, setMobile] = useState(false);
   const [breakpoint, setBreakpoint] = useState(false);
@@ -15,12 +16,15 @@ export const useResponsive = () => {
   const calcBreakpoint = () => {
     const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
     if (width > stripUnit(remToPx(bp[3]))) {
+      setBreakpoint("wide");
+      setBreakpointIndex(4);
+    } else if (width > stripUnit(remToPx(bp[2]))) {
       setBreakpoint("xl");
       setBreakpointIndex(3);
-    } else if (width > stripUnit(remToPx(bp[2]))) {
+    } else if (width > stripUnit(remToPx(bp[1]))) {
       setBreakpoint("lr");
       setBreakpointIndex(2);
-    } else if (width > stripUnit(remToPx(bp[1]))) {
+    } else if (width > stripUnit(remToPx(bp[0]))) {
       setBreakpoint("md");
       setBreakpointIndex(1);
     } else {

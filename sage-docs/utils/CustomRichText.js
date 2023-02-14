@@ -56,17 +56,16 @@ const CustomRichText = ({ field, ...rest }) => {
             </Typography>
           </Highlight>
         ),
-        hyperlink: (props) =>
-          console.log(props) && (
-            <a
-              href={props.node.data.url}
-              className="inline-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {props.children}
-            </a>
-          ),
+        hyperlink: (props) => (
+          <a
+            href={props.node.data.url}
+            className="inline-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {props.children}
+          </a>
+        ),
       }}
     />
   );

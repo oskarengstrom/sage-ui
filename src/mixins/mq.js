@@ -5,16 +5,20 @@ const fallback = defaultTheme.bp;
 const mq = {
   only: {
     sm: ({ theme }) =>
-      `@media (max-width: calc(${theme.bp ? theme.bp[1] : fallback[1]} - 1px))`,
+      `@media (max-width: calc(${theme.bp ? theme.bp[0] : fallback[0]} - 1px))`,
     md: ({ theme }) =>
+      `@media (min-width: ${
+        theme.bp ? theme.bp[0] : fallback[0]
+      }) and (max-width: calc(${theme.bp ? theme.bp[1] : fallback[1]} - 1px))`,
+    lr: ({ theme }) =>
       `@media (min-width: ${
         theme.bp ? theme.bp[1] : fallback[1]
       }) and (max-width: calc(${theme.bp ? theme.bp[2] : fallback[2]} - 1px))`,
-    lr: ({ theme }) =>
+    xl: ({ theme }) =>
       `@media (min-width: ${
         theme.bp ? theme.bp[2] : fallback[2]
       }) and (max-width: calc(${theme.bp ? theme.bp[3] : fallback[3]} - 1px))`,
-    xl: ({ theme }) =>
+    wide: ({ theme }) =>
       `@media (min-width: ${theme.bp ? theme.bp[3] : fallback[3]})`,
     computer: `@media (hover: hover) and (pointer: fine)`,
     touchDevice: `@media (hover: none) and (pointer: coarse)`,
@@ -23,18 +27,22 @@ const mq = {
   },
   up: {
     md: ({ theme }) =>
-      `@media (min-width: ${theme.bp ? theme.bp[1] : fallback[1]})`,
+      `@media (min-width: ${theme.bp ? theme.bp[0] : fallback[0]})`,
     lr: ({ theme }) =>
-      `@media (min-width: ${theme.bp ? theme.bp[2] : fallback[2]})`,
+      `@media (min-width: ${theme.bp ? theme.bp[1] : fallback[1]})`,
     xl: ({ theme }) =>
+      `@media (min-width: ${theme.bp ? theme.bp[2] : fallback[2]})`,
+    wide: ({ theme }) =>
       `@media (min-width: ${theme.bp ? theme.bp[3] : fallback[3]})`,
   },
   down: {
     sm: ({ theme }) =>
-      `@media (max-width: calc(${theme.bp ? theme.bp[1] : fallback[1]} - 1px))`,
+      `@media (max-width: calc(${theme.bp ? theme.bp[0] : fallback[0]} - 1px))`,
     md: ({ theme }) =>
-      `@media (max-width: calc(${theme.bp ? theme.bp[2] : fallback[2]} - 1px))`,
+      `@media (max-width: calc(${theme.bp ? theme.bp[1] : fallback[1]} - 1px))`,
     lr: ({ theme }) =>
+      `@media (max-width: calc(${theme.bp ? theme.bp[2] : fallback[2]} - 1px))`,
+    xl: ({ theme }) =>
       `@media (max-width: calc(${theme.bp ? theme.bp[3] : fallback[3]} - 1px))`,
   },
   supports: {

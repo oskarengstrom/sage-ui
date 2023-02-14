@@ -1,4 +1,3 @@
-import { docsTheme } from "@/docs-theme";
 import "@/styles/globals.css";
 import "@/styles/code-theme.css";
 import { SageProvider } from "@oskarengstrom/sage-ui";
@@ -6,9 +5,9 @@ import { PrismicProvider } from "@prismicio/react";
 import Link from "next/link";
 import { Global } from "@emotion/react";
 import { css } from "@emotion/react";
-
 import { Inter, Roboto_Mono } from "@next/font/google";
 import { linkResolver } from "@/prismic-configuration";
+import { docsTheme } from "@/docs-theme";
 const inter = Inter({ subsets: ["latin"] });
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 
