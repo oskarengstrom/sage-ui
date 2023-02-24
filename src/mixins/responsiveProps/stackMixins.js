@@ -38,4 +38,13 @@ const justifyContent = ({ justifyContent }) =>
     val: justifyContent,
   });
 
-export default [flexDirection, gap, alignItems, justifyContent];
+const flexWrap = ({ flexWrap }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        flex-wrap: ${x};
+      `,
+    val: flexWrap,
+  });
+
+export default [flexDirection, gap, alignItems, justifyContent, flexWrap];

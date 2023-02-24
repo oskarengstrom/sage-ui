@@ -88,6 +88,24 @@ const textTransform = ({ textTransform }) =>
     val: textTransform,
   });
 
+const whiteSpace = ({ whiteSpace }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        white-space: ${x};
+      `,
+    val: whiteSpace,
+  });
+
+const userSelect = ({ userSelect }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        user-select: ${x};
+      `,
+    val: userSelect,
+  });
+
 export default [
   fontFamily,
   fontSize,
@@ -98,4 +116,6 @@ export default [
   textAlign,
   textDecoration,
   textTransform,
+  whiteSpace,
+  userSelect,
 ];
