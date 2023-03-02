@@ -1,18 +1,19 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { useResponsive } from "../../hooks/useResponsive/useResponsive";
-import { ThemeContext, useTheme } from "@emotion/react";
-import { arrayifyProp } from "../../utils/arrayifyProp";
+// import { useResponsive } from "../../hooks/useResponsive/useResponsive";
+import { ThemeContext, css, useTheme } from "@emotion/react";
+// import { arrayifyProp } from "../../utils/arrayifyProp";
 import devMixins from "../../mixins/responsiveProps/devMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
+import { interpolatedProp, responsiveProp } from "../../utils/responsiveProp";
 
 const Section = React.forwardRef(
   (
     {
       maxWidth,
-      xPadding,
+      px,
       backgroundColor,
       background,
       children,
@@ -23,10 +24,7 @@ const Section = React.forwardRef(
     },
     ref
   ) => {
-    const { breakpointIndex } = useResponsive();
     const theme = useTheme(ThemeContext);
-
-    const xPadArr = arrayifyProp(theme?.section?.xPadding || 0);
 
     return (
       <Outer
@@ -38,10 +36,11 @@ const Section = React.forwardRef(
       >
         <Inner
           ref={ref}
-          maxWidth={maxWidth || theme?.section?.maxWidth}
-          xPadding={
-            arrayifyProp(xPadding)[breakpointIndex] || xPadArr[breakpointIndex]
-          }
+          maxWidth={interpolatedProp(
+            maxWidth || theme?.section?.maxWidth,
+            "rem"
+          )}
+          px={px || theme?.section?.px}
           {...restProps}
         >
           {children}
@@ -53,21 +52,27 @@ const Section = React.forwardRef(
 
 export default Section;
 
+const sectionSpecialProps = ({ px, maxWidth }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        max-width: calc(${maxWidth} + ${x} + ${x});
+        padding: 0 ${x};
+      `,
+    val: px,
+    interpolation: "rem",
+  });
+
 const Inner = styled.div`
   margin: 0 auto;
-  max-width: ${({ maxWidth, xPadding }) =>
-    `calc(${maxWidth} + ${xPadding} + ${xPadding})`};
-  padding: ${({ xPadding }) => `0 ${xPadding}`};
 
   ${devMixins}
   ${sizeMixins}
   ${spaceMixins}
+  ${sectionSpecialProps}
 `;
 
 const Outer = styled.section`
-  /* background: ${(props) =>
-    props.backgroundColor || props.theme?.palette?.background}; */
-
   ${devMixins}
   ${backgroundColorMixins}
 `;

@@ -36,11 +36,10 @@ export const constants = {
 };
 
 export const docsTheme = {
-  // bp: ["0rem", "36rem", "62rem", "75rem"],
   bp: ["36rem", "62rem", "75rem", "85rem"],
   section: {
-    maxWidth: "80rem",
-    xPadding: ["1rem"],
+    maxWidth: 80,
+    px: [1, 2, 4, 8],
   },
   palette: {
     background: constants.colors.vulcan[900],

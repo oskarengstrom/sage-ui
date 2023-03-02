@@ -4,6 +4,7 @@ import React from "react";
 import { Stack, Typography as T } from "@oskarengstrom/sage-ui";
 import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
+import PropItem from "@/components/PropItem";
 
 export default function Mixin({ data, props, navBarData }) {
   return (
@@ -16,9 +17,7 @@ export default function Mixin({ data, props, navBarData }) {
         <Stack>
           <T variant="caption">Props</T>
           {props.map((prop) => (
-            <T key={prop.data.name}>
-              <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
-            </T>
+            <PropItem prop={prop} />
           ))}
         </Stack>
       </Stack>

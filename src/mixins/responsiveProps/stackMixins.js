@@ -47,4 +47,20 @@ const flexWrap = ({ flexWrap }) =>
     val: flexWrap,
   });
 
-export default [flexDirection, gap, alignItems, justifyContent, flexWrap];
+const flexShrink = ({ flexShrink }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        flex-shrink: ${x};
+      `,
+    val: flexShrink,
+  });
+
+export default [
+  flexDirection,
+  gap,
+  alignItems,
+  justifyContent,
+  flexWrap,
+  flexShrink,
+];

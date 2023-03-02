@@ -8,6 +8,8 @@ import IconArrowReturnRight from "@/components/icons/IconArrowReturnRight";
 import { useTheme } from "@emotion/react";
 import { ThemeContext } from "@emotion/react";
 import { PrismicLink } from "@prismicio/react";
+import PropItem from "@/components/PropItem";
+import MixinItem from "@/components/MixinItem";
 
 export default function Component({
   data,
@@ -35,46 +37,11 @@ export default function Component({
         <Stack>
           <T variant="caption">Props</T>
           {mixinGroups.map((mixin) => (
-            <React.Fragment key={mixin.uid}>
-              <T key={mixin.data.name} color="palette.text.primary">
-                <Link href={`/mixins/${mixin.uid}`}>[{mixin.data.name}]</Link>
-              </T>
-              {mixin.data.props.map((prop) => {
-                const thisProp = allProps.find((p) => p.uid === prop.prop.uid);
-
-                return (
-                  thisProp && (
-                    <Stack
-                      key={thisProp.uid}
-                      flexDirection="row"
-                      alignItems="center"
-                      gap={0.5}
-                      ml={0.5}
-                    >
-                      <IconArrowReturnRight
-                        color={theme.palette.icon.primary}
-                      />
-
-                      <T variant="prop">
-                        <Link href={`/props/${thisProp.uid}`}>
-                          {thisProp.data.name}
-                        </Link>
-                      </T>
-                    </Stack>
-                  )
-                );
-              })}
-            </React.Fragment>
+            <MixinItem mixin={mixin} allProps={allProps} />
           ))}
-          {props.map(
-            (prop) =>
-              prop && (
-                <T key={prop.uid} variant="prop">
-                  <Link href={`/props/${prop.uid}`}>{prop.data.name}</Link>
-                  {/* <PrismicLink field={prop.data}>{prop.data.name}</PrismicLink> */}
-                </T>
-              )
-          )}
+          {props.map((prop) => (
+            <PropItem prop={prop} />
+          ))}
         </Stack>
       </Stack>
     </Layout>

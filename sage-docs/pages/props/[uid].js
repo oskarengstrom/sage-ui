@@ -3,6 +3,7 @@ import { Stack, Typography as T } from "@oskarengstrom/sage-ui";
 import { createClient } from "@/prismic-configuration";
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import InputItem from "@/components/InputItem";
 
 export default function Prop({ data, inputs, navBarData }) {
   return (
@@ -17,12 +18,7 @@ export default function Prop({ data, inputs, navBarData }) {
         <Stack>
           <T variant="caption">Input types</T>
           {inputs.map((input) => (
-            <T>
-              <Link href={`/inputs/${input.uid}`}>
-                {input.data.name}
-                {data.responsive && "[]"}
-              </Link>
-            </T>
+            <InputItem input={input} responsive={data.responsive} />
           ))}
         </Stack>
       </Stack>
