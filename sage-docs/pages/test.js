@@ -11,7 +11,7 @@ export default function Test() {
   console.log(theme);
 
   return (
-    <Section>
+    <Section py={2}>
       <Stack gap={1}>asdf</Stack>
     </Section>
   );

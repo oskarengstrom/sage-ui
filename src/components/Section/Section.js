@@ -57,7 +57,8 @@ const sectionSpecialProps = ({ px, maxWidth }) =>
     func: (x) =>
       css`
         max-width: calc(${maxWidth} + ${x} + ${x});
-        padding: 0 ${x};
+        padding-left: ${x};
+        padding-right: ${x};
       `,
     val: px,
     interpolation: "rem",
