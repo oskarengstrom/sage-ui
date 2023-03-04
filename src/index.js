@@ -18,6 +18,7 @@ import Typography from "./components/Typography/Typography";
 export { Typography };
 export { default as Stack } from "./components/Stack/Stack";
 export { default as KeepAspectRatio } from "./components/KeepAspectRatio/KeepAspectRatio";
+export { default as Mq } from "./components/Mq/Mq";
 
 // mixin exports
 export { default as mq } from "./mixins/mq";
@@ -28,3 +29,4 @@ export { default as sizeMixins } from "./mixins/responsiveProps/sizeMixins";
 export { default as spaceMixins } from "./mixins/responsiveProps/spaceMixins";
 export { default as typographyMixins } from "./mixins/responsiveProps/typographyMixins";
 export { default as backgroundColorMixins } from "./mixins/responsiveProps/backgroundColorMixins";
+export { default as displayMixins } from "./mixins/responsiveProps/displayMixins";

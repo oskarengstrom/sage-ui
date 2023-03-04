@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { createClient } from "@/prismic-configuration";
 import CustomRichText from "@/utils/CustomRichText";
 import styled from "@emotion/styled";
-import { Stack, Typography, Test } from "@oskarengstrom/sage-ui";
+import { Stack } from "@oskarengstrom/sage-ui";
 
 export default function Home({ navBarData, homepage }) {
   // console.log(homepage);
@@ -10,8 +10,6 @@ export default function Home({ navBarData, homepage }) {
     <Layout data={navBarData}>
       <Stack gap={1}>
         <CustomRichText field={homepage.data.text_rt} />
-
-        <Test>asdf</Test>
       </Stack>
     </Layout>
   );

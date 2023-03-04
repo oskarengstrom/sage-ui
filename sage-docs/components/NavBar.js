@@ -10,7 +10,6 @@ export default function NavBar({ data }) {
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    console.log(breakpoint);
     breakpoint === "sm" ? setShowMenu(false) : setShowMenu(true);
   }, [breakpoint]);
 

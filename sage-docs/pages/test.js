@@ -4,15 +4,22 @@ import CustomRichText from "@/utils/CustomRichText";
 import { ThemeContext } from "@emotion/react";
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
-import { Stack, Section } from "@oskarengstrom/sage-ui";
+import { Stack, Section, Box, Typography } from "@oskarengstrom/sage-ui";
+
+// const breakpoints = [576, 768, 992, 1200];
+// const mq = (bp) => `@media (max-width: 800px)`;
+
+const styles = {
+  position: ["absolute"],
+  right: [0, 100, 300],
+};
 
 export default function Test() {
   const theme = useTheme(ThemeContext);
-  console.log(theme);
 
   return (
     <Section py={2}>
-      <Stack gap={1}>asdf</Stack>
+      <Typography {...styles}>string</Typography>
     </Section>
   );
 }

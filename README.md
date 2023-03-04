@@ -6,6 +6,16 @@ UI library for KIND projects.
 
 `npm i @oskarengstrom/sage-ui`
 
+Define compiler in Next.js:
+
+```
+const nextConfig = {
+  compiler: {
+    emotion: true,
+  },
+};
+```
+
 ## Develop
 
 Run `npm run i-all` first time.
@@ -49,7 +59,7 @@ Order is important:
 ### Publish
 
 1. Bump version in package.json
-2. `npm publish` or `npm publish --@oskarengstrom:registry=https://registry.npmjs.org --access public`
+2. ``or`npm publish --@oskarengstrom:registry=https://registry.npmjs.org --access public`
 3. push to git
 
 Create tokens:
