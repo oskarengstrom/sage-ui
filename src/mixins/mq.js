@@ -51,3 +51,23 @@ const mq = {
 };
 
 export default mq;
+
+// CSS-style syntax:
+//
+// const Component = styled.div`
+//   ${mq.only.sm} {
+//     color: green;
+//   }
+// `;
+
+// Object-style syntax:
+//
+// <div
+//   css={(theme) => ({
+//     [mq.down.sm({ theme })]: {
+//       color: "green",
+//     },
+//   })}
+// >
+//   ...
+// </div>

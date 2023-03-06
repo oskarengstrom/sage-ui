@@ -4,7 +4,7 @@ import CustomRichText from "@/utils/CustomRichText";
 import { ThemeContext } from "@emotion/react";
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
-import { Stack, Section, Box, Typography } from "@oskarengstrom/sage-ui";
+import { Stack, Section, Box, Typography, Grid } from "@oskarengstrom/sage-ui";
 
 // const breakpoints = [576, 768, 992, 1200];
 // const mq = (bp) => `@media (max-width: 800px)`;
@@ -19,7 +19,10 @@ export default function Test() {
 
   return (
     <Section py={2}>
-      <Typography {...styles}>string</Typography>
+      <Grid base={6} gap={1} dev>
+        <Grid.Item span={1}>asda asdasd asd as d</Grid.Item>
+        <Grid.Item span={3}>asdf</Grid.Item>
+      </Grid>
     </Section>
   );
 }

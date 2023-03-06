@@ -7,8 +7,45 @@ import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import displayMixins from "../../mixins/responsiveProps/displayMixins";
 
-const Grid = styled.div`
-  ${devMixins}
+const PsuedoGrid = (props) => {
+  const { base, gap, ...rest } = props;
+  return (
+    <StyledGrid
+      {...props}
+      css={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      {[...Array(base)].map((_, i) => (
+        <Item
+          key={i}
+          span={1}
+          css={{
+            backgroundColor: "rgba(255, 0, 0, 0.1)",
+            boxShadow: "inset 0px 0px 0px 1px rgba(255, 0, 0, 0.2),",
+          }}
+        />
+      ))}
+    </StyledGrid>
+  );
+};
+
+const Grid = ({ children, ...props }) => {
+  const { dev } = props;
+  return (
+    <StyledGrid {...props}>
+      {dev && <PsuedoGrid {...props} />}
+      {children}
+    </StyledGrid>
+  );
+};
+
+const StyledGrid = styled.div`
+  ${({ dev }) => dev && `position: relative;`}
   ${gridMixins}
   ${sizeMixins}
   ${spaceMixins}
