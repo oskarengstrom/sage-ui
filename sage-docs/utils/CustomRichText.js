@@ -50,11 +50,11 @@ const CustomRichText = ({ field, ...rest }) => {
           </Typography>
         ),
         preformatted: ({ children }) => (
-          <Highlight>
-            <Typography variant="pre" as="pre" {...rest}>
-              {children}
-            </Typography>
-          </Highlight>
+          // <Highlight>
+          <Typography variant="pre" as="pre" {...rest}>
+            {children}
+          </Typography>
+          // </Highlight>
         ),
         hyperlink: (props) => (
           <a
