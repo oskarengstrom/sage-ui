@@ -19,7 +19,7 @@ export default function Test() {
 
   return (
     <Section py={2}>
-      <Grid base={6} gap={1} dev>
+      <Grid base={4} gap={1} dev>
         <Grid.Item span={1}>asda asdasd asd as d</Grid.Item>
         <Grid.Item span={3}>asdf</Grid.Item>
       </Grid>

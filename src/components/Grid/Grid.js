@@ -6,9 +6,14 @@ import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import displayMixins from "../../mixins/responsiveProps/displayMixins";
+import { useResponsive } from "../../hooks/useResponsive/useResponsive";
+import { useEffect } from "react";
+import { arrayifyProp } from "../../utils/arrayifyProp";
 
 const PsuedoGrid = (props) => {
   const { base, gap, ...rest } = props;
+  const { breakpointIndex } = useResponsive();
+
   return (
     <StyledGrid
       {...props}
@@ -20,7 +25,7 @@ const PsuedoGrid = (props) => {
         height: "100%",
       }}
     >
-      {[...Array(base)].map((_, i) => (
+      {[...Array(arrayifyProp(base)[breakpointIndex])].map((_, i) => (
         <Item
           key={i}
           span={1}
