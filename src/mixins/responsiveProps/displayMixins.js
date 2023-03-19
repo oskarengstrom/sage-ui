@@ -97,6 +97,38 @@ const insetY = ({ insetY }) =>
     interpolation: "rem",
   });
 
+const pointerEvents = ({ pointerEvents }) =>
+  responsiveProp({
+    func: (x) => css`
+      pointer-events: ${x};
+    `,
+    val: pointerEvents,
+  });
+
+const cursor = ({ cursor }) =>
+  responsiveProp({
+    func: (x) => css`
+      cursor: ${x};
+    `,
+    val: cursor,
+  });
+
+const opacity = ({ opacity }) =>
+  responsiveProp({
+    func: (x) => css`
+      opacity: ${x};
+    `,
+    val: opacity,
+  });
+
+const transition = ({ transition }) =>
+  responsiveProp({
+    func: (x) => css`
+      transition: ${x};
+    `,
+    val: transition,
+  });
+
 export default [
   visibility,
   display,
@@ -109,4 +141,8 @@ export default [
   inset,
   insetX,
   insetY,
+  pointerEvents,
+  cursor,
+  opacity,
+  transition,
 ];

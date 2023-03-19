@@ -26,4 +26,53 @@ const boxShadow = ({ boxShadow }) =>
     val: boxShadow,
   });
 
-export default [transform, borderRadius, boxShadow];
+const flex = ({ flex }) =>
+  responsiveProp({
+    func: (x) => css`
+      flex: ${x};
+    `,
+    val: flex,
+  });
+
+const flexBasis = ({ flexBasis }) =>
+  responsiveProp({
+    func: (x) => css`
+      flex-basis: ${x};
+    `,
+    val: flexBasis,
+    interpolation: "rem",
+  });
+
+const flexShrink = ({ flexShrink }) =>
+  responsiveProp({
+    func: (x) => css`
+      flex-shrink: ${x};
+    `,
+    val: flexShrink,
+  });
+
+const alignSelf = ({ alignSelf }) =>
+  responsiveProp({
+    func: (x) => css`
+      align-self: ${x};
+    `,
+    val: alignSelf,
+  });
+const outline = ({ outline }) =>
+  responsiveProp({
+    func: (x) => css`
+      outline: ${x};
+    `,
+    val: outline,
+  });
+
+export default [
+  transform,
+  borderRadius,
+  boxShadow,
+  flex,
+  flexBasis,
+  flexShrink,
+  alignSelf,
+  outline,
+];

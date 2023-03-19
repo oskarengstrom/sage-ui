@@ -20,6 +20,26 @@ const gap = ({ gap }) =>
     interpolation: "rem",
   });
 
+const rowGap = ({ rowGap }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        row-gap: ${x};
+      `,
+    val: rowGap,
+    interpolation: "rem",
+  });
+
+const columnGap = ({ columnGap }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        column-gap: ${x};
+      `,
+    val: columnGap,
+    interpolation: "rem",
+  });
+
 const alignItems = ({ alignItems }) =>
   responsiveProp({
     func: (x) =>
@@ -47,13 +67,13 @@ const flexWrap = ({ flexWrap }) =>
     val: flexWrap,
   });
 
-const flexShrink = ({ flexShrink }) =>
+const alignContent = ({ alignContent }) =>
   responsiveProp({
     func: (x) =>
       css`
-        flex-shrink: ${x};
+        align-content: ${x};
       `,
-    val: flexShrink,
+    val: alignContent,
   });
 
 export default [
@@ -62,5 +82,7 @@ export default [
   alignItems,
   justifyContent,
   flexWrap,
-  flexShrink,
+  alignContent,
+  rowGap,
+  columnGap,
 ];
