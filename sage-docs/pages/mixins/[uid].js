@@ -1,4 +1,3 @@
-import { components, mixins } from "@/db/props";
 import Link from "next/link";
 import React from "react";
 import { Stack, Typography as T } from "@oskarengstrom/sage-ui";

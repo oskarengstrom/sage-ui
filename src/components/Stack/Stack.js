@@ -5,6 +5,7 @@ import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import displayMixins from "../../mixins/responsiveProps/displayMixins";
+import containerMixins from "../../mixins/responsiveProps/containerMixins";
 
 const Stack = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const Stack = styled.div`
   ${stackMixins}
   ${backgroundColorMixins}
   ${displayMixins}
+  ${containerMixins}
 `;
 
 Stack.defaultProps = {

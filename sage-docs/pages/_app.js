@@ -5,9 +5,9 @@ import { PrismicProvider } from "@prismicio/react";
 import Link from "next/link";
 import { Global } from "@emotion/react";
 import { css } from "@emotion/react";
-import { Inter, Roboto_Mono } from "@next/font/google";
 import { linkResolver } from "@/prismic-configuration";
 import { docsTheme } from "@/docs-theme";
+import { Inter, Roboto_Mono } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 

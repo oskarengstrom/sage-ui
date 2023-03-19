@@ -1,28 +1,45 @@
-import Layout from "@/components/Layout";
-import { createClient } from "@/prismic-configuration";
-import CustomRichText from "@/utils/CustomRichText";
-import { ThemeContext } from "@emotion/react";
-import { useTheme } from "@emotion/react";
+import { responsiveProp } from "@/../dist/index.cjs";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Stack, Section, Box, Typography, Grid } from "@oskarengstrom/sage-ui";
 
 // const breakpoints = [576, 768, 992, 1200];
 // const mq = (bp) => `@media (max-width: 800px)`;
 
-const styles = {
-  position: ["absolute"],
-  right: [0, 100, 300],
-};
-
 export default function Test() {
-  const theme = useTheme(ThemeContext);
-
   return (
-    <Section py={2}>
-      <Grid base={4} gap={1} dev>
-        <Grid.Item span={1}>asda asdasd asd as d</Grid.Item>
-        <Grid.Item span={3}>asdf</Grid.Item>
-      </Grid>
-    </Section>
+    <>
+      {/* <Comp color="blue">asdf</Comp> */}
+      <Comp color={["blue", "red", "green"]}>asdf</Comp>
+    </>
   );
 }
+
+export function _responsive(
+  media, // [360, 600, 900, 1200, 1800, 2400],
+  values, // props.$border // [1, 2, 3, 4]
+  callback
+) {
+  const statements = values?.map(callback) || [];
+
+  return statements.map((statement, mediaIndex) => {
+    if (mediaIndex === 0) return statement;
+
+    return {
+      [`@media screen and (min-width: ${media[mediaIndex - 1]}px)`]: statement,
+    };
+  });
+}
+
+const mixin = ({ theme, color }) => {
+  console.log(theme.bp);
+  console.log(color);
+
+  return _responsive(theme.bp, color, (value) =>
+    value ? { "&&": { color: value } } : { "&&": { color: 0 } }
+  );
+};
+
+const Comp = styled.div`
+  ${mixin}
+`;

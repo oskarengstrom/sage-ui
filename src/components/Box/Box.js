@@ -5,6 +5,7 @@ import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import displayMixins from "../../mixins/responsiveProps/displayMixins";
+import containerMixins from "../../mixins/responsiveProps/containerMixins";
 
 const Box = styled.div`
   ${devMixins}
@@ -13,6 +14,7 @@ const Box = styled.div`
   ${spaceMixins}
   ${backgroundColorMixins}
   ${displayMixins}
+  ${containerMixins}
 `;
 
 export default Box;

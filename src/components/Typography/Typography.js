@@ -7,6 +7,7 @@ import devMixins from "../../mixins/responsiveProps/devMixins";
 import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import displayMixins from "../../mixins/responsiveProps/displayMixins";
+import containerMixins from "../../mixins/responsiveProps/containerMixins";
 
 const Typography = React.forwardRef(
   ({ variant: variantFromProps, children, color, ...restProps }, ref) => {
@@ -54,6 +55,7 @@ const TypographyStyled = styled("div", {
   ${spaceMixins}
   ${backgroundColorMixins}
   ${displayMixins}
+  ${containerMixins}
 `;
 
 export default Typography;

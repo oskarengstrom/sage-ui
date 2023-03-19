@@ -25,13 +25,21 @@ const position = ({ position }) =>
     val: position,
   });
 
+const zIndex = ({ zIndex }) =>
+  responsiveProp({
+    func: (x) => css`
+      z-index: ${x};
+    `,
+    val: zIndex,
+  });
+
 const top = ({ top }) =>
   responsiveProp({
     func: (x) => css`
       top: ${x};
     `,
     val: top,
-    interpolation: "px",
+    interpolation: "rem",
   });
 
 const right = ({ right }) =>
@@ -40,7 +48,7 @@ const right = ({ right }) =>
       right: ${x};
     `,
     val: right,
-    interpolation: "px",
+    interpolation: "rem",
   });
 const bottom = ({ bottom }) =>
   responsiveProp({
@@ -48,15 +56,57 @@ const bottom = ({ bottom }) =>
       bottom: ${x};
     `,
     val: bottom,
-    interpolation: "px",
+    interpolation: "rem",
   });
+
 const left = ({ left }) =>
   responsiveProp({
     func: (x) => css`
       left: ${x};
     `,
     val: left,
-    interpolation: "px",
+    interpolation: "rem",
   });
 
-export default [visibility, display, position, top, right, bottom, left];
+const inset = ({ inset }) =>
+  responsiveProp({
+    func: (x) => css`
+      inset: ${x};
+    `,
+    val: inset,
+    interpolation: "rem",
+  });
+
+const insetX = ({ insetX }) =>
+  responsiveProp({
+    func: (x) => css`
+      left: ${x};
+      right: ${x};
+    `,
+    val: insetX,
+    interpolation: "rem",
+  });
+
+const insetY = ({ insetY }) =>
+  responsiveProp({
+    func: (x) => css`
+      top: ${x};
+      bottom: ${x};
+    `,
+    val: insetY,
+    interpolation: "rem",
+  });
+
+export default [
+  visibility,
+  display,
+  position,
+  zIndex,
+  top,
+  right,
+  bottom,
+  left,
+  inset,
+  insetX,
+  insetY,
+];

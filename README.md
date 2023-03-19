@@ -59,7 +59,7 @@ Order is important:
 ### Publish
 
 1. Bump version in package.json
-2. ``or`npm publish --@oskarengstrom:registry=https://registry.npmjs.org --access public`
+2. `npm publish` or `npm publish --@oskarengstrom:registry=https://registry.npmjs.org --access public`
 3. push to git
 
 Create tokens:

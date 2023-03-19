@@ -9,6 +9,7 @@ import displayMixins from "../../mixins/responsiveProps/displayMixins";
 import { useResponsive } from "../../hooks/useResponsive/useResponsive";
 import { useEffect } from "react";
 import { arrayifyProp } from "../../utils/arrayifyProp";
+import containerMixins from "../../mixins/responsiveProps/containerMixins";
 
 const PsuedoGrid = (props) => {
   const { base, gap, ...rest } = props;
@@ -56,6 +57,7 @@ const StyledGrid = styled.div`
   ${spaceMixins}
   ${backgroundColorMixins}
   ${displayMixins}
+  ${containerMixins}
 `;
 
 const Item = styled.div`
@@ -65,6 +67,7 @@ const Item = styled.div`
   ${spaceMixins}
   ${backgroundColorMixins}
   ${displayMixins}
+  ${containerMixins}
 `;
 
 Grid.Item = Item;
