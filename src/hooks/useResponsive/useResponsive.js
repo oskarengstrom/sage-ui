@@ -33,13 +33,13 @@ export const useResponsive = () => {
     }
   };
 
-  useEffect(() => {
+  useSSRLayoutEffect(() => {
     calcBreakpoint();
     window.addEventListener("resize", calcBreakpoint);
     return () => window.removeEventListener("resize", calcBreakpoint);
   }, []);
 
-  useEffect(() => {
+  useSSRLayoutEffect(() => {
     const userAgent =
       typeof window.navigator === "undefined" ? "" : navigator.userAgent;
     const mobile = Boolean(

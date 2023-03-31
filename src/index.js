@@ -5,7 +5,9 @@ export { isValidColor } from "./utils/isValidColor";
 export { findValueInObject } from "./utils/findValueInObject";
 export { useLogEffect } from "./utils/useLogEffect";
 export { useHover } from "./utils/useHover";
+export { useElementSize } from "./utils/useElementSize";
 export { useResponsive } from "./hooks/useResponsive/useResponsive";
+export { useKeyDown } from "./hooks/useKeyDown/useKeyDown";
 export { default as useScramble } from "./hooks/useScramble/useScramble";
 
 // component exports
