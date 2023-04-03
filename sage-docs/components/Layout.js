@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, SageProvider, Section } from "@oskarengstrom/sage-ui";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 
 export default function Layout({ data, children }) {
   return (

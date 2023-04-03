@@ -1,11 +1,8 @@
 import "@/styles/globals.css";
 import "@/styles/code-theme.css";
 import { SageProvider } from "@oskarengstrom/sage-ui";
-import { PrismicProvider } from "@prismicio/react";
-import Link from "next/link";
 import { Global } from "@emotion/react";
 import { css } from "@emotion/react";
-import { linkResolver } from "@/prismic-configuration";
 import { docsTheme } from "@/docs-theme";
 import { Inter, Roboto_Mono } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -22,15 +19,15 @@ export default function App({ Component, pageProps }) {
           }
         `}
       />
-      <PrismicProvider
+      {/* <PrismicProvider
         linkResolver={linkResolver}
         internalLinkComponent={Link}
         externalLinkComponent={(props) => (
           <a target="_blank" rel="noopener noreferrer" {...props} />
         )}
-      >
-        <Component {...pageProps} />
-      </PrismicProvider>
+      > */}
+      <Component {...pageProps} />
+      {/* </PrismicProvider> */}
     </SageProvider>
   );
 }
