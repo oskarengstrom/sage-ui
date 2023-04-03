@@ -1,15 +1,8 @@
 import styled from "@emotion/styled";
-import gridMixins from "../../mixins/responsiveProps/gridMixins";
-import gridItemMixins from "../../mixins/responsiveProps/gridItemMixins";
-import devMixins from "../../mixins/responsiveProps/devMixins";
-import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
-import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
-import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
-import displayMixins from "../../mixins/responsiveProps/displayMixins";
 import { useResponsive } from "../../hooks/useResponsive/useResponsive";
-import { useEffect } from "react";
 import { arrayifyProp } from "../../utils/arrayifyProp";
-import containerMixins from "../../mixins/responsiveProps/containerMixins";
+import genericProps from "../../props/genericProps";
+import gridProps from "../../props/gridProps";
 
 const PsuedoGrid = (props) => {
   const { base, gap, ...rest } = props;
@@ -52,22 +45,12 @@ const Grid = ({ children, ...props }) => {
 
 const StyledGrid = styled.div`
   ${({ dev }) => dev && `position: relative;`}
-  ${gridMixins}
-  ${sizeMixins}
-  ${spaceMixins}
-  ${backgroundColorMixins}
-  ${displayMixins}
-  ${containerMixins}
+  ${gridProps}
+  ${genericProps}
 `;
 
 const Item = styled.div`
-  ${devMixins}
-  ${gridItemMixins}
-  ${sizeMixins}
-  ${spaceMixins}
-  ${backgroundColorMixins}
-  ${displayMixins}
-  ${containerMixins}
+  ${genericProps}
 `;
 
 Grid.Item = Item;

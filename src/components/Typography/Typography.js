@@ -2,12 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { ThemeContext, useTheme } from "@emotion/react";
 import isPropValid from "@emotion/is-prop-valid";
-import typographyMixins from "../../mixins/responsiveProps/typographyMixins";
-import devMixins from "../../mixins/responsiveProps/devMixins";
-import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
-import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
-import displayMixins from "../../mixins/responsiveProps/displayMixins";
-import containerMixins from "../../mixins/responsiveProps/containerMixins";
+import genericProps from "../../props/genericProps";
+import typographyProps from "../../props/typographyProps";
 
 const Typography = React.forwardRef(
   ({ variant: variantFromProps, children, color, ...restProps }, ref) => {
@@ -50,12 +46,8 @@ const props = [
 const TypographyStyled = styled("div", {
   shouldForwardProp: (prop) => isPropValid(prop) && !props.includes(prop),
 })`
-  ${devMixins}
-  ${typographyMixins}
-  ${spaceMixins}
-  ${backgroundColorMixins}
-  ${displayMixins}
-  ${containerMixins}
+  ${typographyProps}
+  ${genericProps}
 `;
 
 export default Typography;

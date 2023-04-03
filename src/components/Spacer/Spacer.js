@@ -1,16 +1,8 @@
 import styled from "@emotion/styled";
-import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
-import devMixins from "../../mixins/responsiveProps/devMixins";
-import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
-import displayMixins from "../../mixins/responsiveProps/displayMixins";
+import genericProps from "../../props/genericProps";
 
 const Spacer = styled.div`
-  ${devMixins}
-
-  ${backgroundColorMixins}
-
-  ${sizeMixins}
-  ${displayMixins}
+  ${genericProps}
 `;
 
 Spacer.defaultProps = {

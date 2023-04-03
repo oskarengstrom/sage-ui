@@ -61,4 +61,22 @@ const minHeight = ({ minHeight }) =>
     interpolation: "rem",
   });
 
-export default [width, maxWidth, minWidth, height, maxHeight, minHeight];
+const aspectRatio = ({ aspectRatio }) =>
+  responsiveProp({
+    func: (x) =>
+      css`
+        aspect-ratio: ${x};
+      `,
+    val: aspectRatio,
+    interpolation: "rem",
+  });
+
+export default [
+  width,
+  maxWidth,
+  minWidth,
+  height,
+  maxHeight,
+  minHeight,
+  aspectRatio,
+];

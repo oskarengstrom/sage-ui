@@ -2,6 +2,7 @@ import { ThemeContext, useTheme } from "@emotion/react";
 import { remToPx, stripUnit } from "polished";
 import React, { useEffect, useState } from "react";
 import { defaultTheme } from "../../components/SageProvider/defaultTheme";
+import useSSRLayoutEffect from "../../utils/useSSRLayoutEffect";
 
 export const useResponsive = () => {
   let { bp } = useTheme(ThemeContext);

@@ -8,6 +8,8 @@ import spaceMixins from "../../mixins/responsiveProps/spaceMixins";
 import sizeMixins from "../../mixins/responsiveProps/sizeMixins";
 import backgroundColorMixins from "../../mixins/responsiveProps/backgroundColorMixins";
 import { interpolatedProp, responsiveProp } from "../../utils/responsiveProp";
+import genericProps from "../../props/genericProps";
+import { arrayProp } from "../../utils/arrayProp";
 
 const Section = React.forwardRef(
   (
@@ -52,28 +54,25 @@ const Section = React.forwardRef(
 
 export default Section;
 
-const sectionSpecialProps = ({ px, maxWidth }) =>
-  responsiveProp({
+const sectionSpecialProps = ({ theme, px: value, maxWidth }) =>
+  arrayProp({
+    theme,
+    value,
     func: (x) =>
-      css`
+      `
         max-width: calc(${maxWidth} + ${x} + ${x});
         padding-left: ${x};
         padding-right: ${x};
       `,
-    val: px,
     interpolation: "rem",
   });
 
 const Inner = styled.div`
   margin: 0 auto;
-
-  ${devMixins}
-  ${sizeMixins}
-  ${spaceMixins}
+  ${genericProps}
   ${sectionSpecialProps}
 `;
 
 const Outer = styled.section`
-  ${devMixins}
-  ${backgroundColorMixins}
+  ${genericProps}
 `;
