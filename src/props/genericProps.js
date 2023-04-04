@@ -102,6 +102,15 @@ const flexShrink = ({ theme, flexShrink: value }) =>
     `,
   });
 
+const flexGrow = ({ theme, flexGrow: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      flex-grow: ${x};
+    `,
+  });
+
 const alignSelf = ({ theme, alignSelf: value }) =>
   arrayProp({
     theme,
@@ -569,6 +578,7 @@ export default [
   flex,
   flexBasis,
   flexShrink,
+  flexGrow,
   alignSelf,
   outline,
 

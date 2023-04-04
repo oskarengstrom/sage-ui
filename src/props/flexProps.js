@@ -77,6 +77,16 @@ const flexWrap = ({ theme, flexWrap: value }) =>
       `,
   });
 
+const flexFlow = ({ theme, flexFlow: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) =>
+      `
+        flex-flow: ${x};
+      `,
+  });
+
 const alignContent = ({ theme, alignContent: value }) =>
   arrayProp({
     theme,
@@ -94,6 +104,7 @@ export default [
   alignItems,
   justifyContent,
   flexWrap,
+  flexFlow,
   alignContent,
   rowGap,
   columnGap,

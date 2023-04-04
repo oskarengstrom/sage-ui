@@ -57,6 +57,26 @@ const placeItems = ({ theme, placeItems: value }) =>
       `,
   });
 
+const alignItems = ({ theme, alignItems: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) =>
+      `
+        align-items: ${x};
+      `,
+  });
+
+const justifyItems = ({ theme, justifyItems: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) =>
+      `
+        justify-items: ${x};
+      `,
+  });
+
 const gridTemplateAreas = ({ theme, gridTemplateAreas: value }) =>
   arrayProp({
     theme,
@@ -104,6 +124,8 @@ export default [
   columnGap,
   rowGap,
   placeItems,
+  alignItems,
+  justifyItems,
   gridTemplateAreas,
   gridTemplateRows,
   gridTemplateColumns,

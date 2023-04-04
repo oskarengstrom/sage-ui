@@ -3,6 +3,7 @@ import {
   Box,
   Section,
   Stack,
+  Typography,
   arrayProp,
   genericProps,
 } from "@oskarengstrom/sage-ui";
@@ -10,10 +11,14 @@ import {
 export default function Home() {
   return (
     <Section>
-      <Stack flexDirection="row">
-        <Box>asdf</Box>
-        <Box>asdf</Box>
-        <Box>asdf</Box>
+      <Stack flexDirection="row" gap={2}>
+        <Box backgroundColor="red">
+          <Typography fontSize={2} lineHeight={2}>
+            asdf
+          </Typography>
+        </Box>
+        <Box backgroundColor="red">asdf</Box>
+        <Box backgroundColor="red">asdf</Box>
       </Stack>
     </Section>
   );

@@ -45,9 +45,6 @@ const props = [
 
 const TypographyStyled = styled("div", {
   shouldForwardProp: (prop) => isPropValid(prop) && !props.includes(prop),
-})`
-  ${typographyProps}
-  ${genericProps}
-`;
+})([typographyProps, genericProps]);
 
 export default Typography;

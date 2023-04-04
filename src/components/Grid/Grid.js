@@ -49,9 +49,7 @@ const StyledGrid = styled.div`
   ${genericProps}
 `;
 
-const Item = styled.div`
-  ${genericProps}
-`;
+const Item = styled.div(genericProps);
 
 Grid.Item = Item;
 export default Grid;
