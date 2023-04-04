@@ -30,12 +30,28 @@ const backgroundColor = ({ theme, backgroundColor: value }) =>
       `background-color: ${isValidColor(x) ? x : findValueInObject(x, theme)};`,
   });
 
+const objectFit = ({ theme, objectFit: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `object-fit: ${x};`,
+  });
+
 const transform = ({ theme, transform: value }) =>
   arrayProp({
     theme,
     value,
     func: (x) => `
       transform: ${x};
+    `,
+  });
+
+const transformOrigin = ({ theme, transformOrigin: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      transform-origin: ${x};
     `,
   });
 
@@ -545,7 +561,9 @@ export default [
   backgroundColor,
 
   // Container
+  objectFit,
   transform,
+  transformOrigin,
   borderRadius,
   boxShadow,
   flex,
