@@ -18,6 +18,7 @@ export { defaultTheme } from "./components/SageProvider/defaultTheme";
 export { default as Grid } from "./components/Grid/Grid";
 export { default as Box } from "./components/Box/Box";
 export { default as Section } from "./components/Section/Section";
+export { default as XPad } from "./components/XPad/XPad";
 export { default as Spacer } from "./components/Spacer/Spacer";
 import Typography from "./components/Typography/Typography";
 export { Typography };

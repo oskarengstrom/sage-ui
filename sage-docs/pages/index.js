@@ -4,23 +4,25 @@ import {
   Section,
   Stack,
   Typography,
-  arrayProp,
   genericProps,
+  XPad,
 } from "@oskarengstrom/sage-ui";
 
 export default function Home() {
   return (
-    <Section>
-      <Stack flexDirection="row" gap={2}>
-        <Box backgroundColor="red">
-          <Typography fontSize={2} lineHeight={2}>
-            asdf
-          </Typography>
-        </Box>
-        <Box backgroundColor="red">asdf</Box>
-        <Box backgroundColor="red">asdf</Box>
-      </Stack>
-    </Section>
+    <Box as="section">
+      <XPad>
+        <Stack flexDirection="row" gap={2} dev>
+          <Box backgroundColor="red">
+            <Typography fontSize={2} lineHeight={2}>
+              asdf
+            </Typography>
+          </Box>
+          <Box backgroundColor="red">asdf</Box>
+          <Box backgroundColor="red">asdf</Box>
+        </Stack>
+      </XPad>
+    </Box>
   );
 }
 
