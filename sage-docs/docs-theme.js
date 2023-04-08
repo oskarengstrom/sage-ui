@@ -12,7 +12,7 @@ export const constants = {
 export const docsTheme = {
   bp: ["500px", "700px", "900px", "1100px"],
   section: {
-    maxWidth: "500px",
+    maxWidth: "1300px",
     px: [1, 2, 4, 8],
   },
   palette: {

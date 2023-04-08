@@ -701,14 +701,18 @@ var useResponsive = function useResponsive() {
     _useState2 = _slicedToArray(_useState, 2),
     isMobile = _useState2[0],
     setMobile = _useState2[1];
-  var _useState3 = useState(false),
+  var _useState3 = useState(undefined),
     _useState4 = _slicedToArray(_useState3, 2),
-    breakpoint = _useState4[0],
-    setBreakpoint = _useState4[1];
+    isTouchDevice = _useState4[0],
+    setIsTouchDevice = _useState4[1];
   var _useState5 = useState(false),
     _useState6 = _slicedToArray(_useState5, 2),
-    breakpointIndex = _useState6[0],
-    setBreakpointIndex = _useState6[1];
+    breakpoint = _useState6[0],
+    setBreakpoint = _useState6[1];
+  var _useState7 = useState(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    breakpointIndex = _useState8[0],
+    setBreakpointIndex = _useState8[1];
   var calcBreakpoint = function calcBreakpoint() {
     var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
     if (width > stripUnit(remToPx(bp[3]))) {
@@ -740,7 +744,15 @@ var useResponsive = function useResponsive() {
     var mobile = Boolean(userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i));
     setMobile(mobile);
   }, []);
+  useEffect$1(function () {
+    var isMobileCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var isTouchDeviceCheck = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    var isIPadInLandscapeCheck = window.matchMedia("(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)").matches;
+    var isTouchScreenDeviceCheck = window.matchMedia("(pointer: coarse)").matches;
+    setIsTouchDevice(isMobileCheck || isTouchDeviceCheck || isIPadInLandscapeCheck || isTouchScreenDeviceCheck);
+  }, []);
   return {
+    isTouchDevice: isTouchDevice,
     isMobile: isMobile,
     breakpoint: breakpoint,
     breakpointIndex: breakpointIndex
@@ -1083,14 +1095,28 @@ var zIndex$1 = function zIndex(_ref18) {
   });
 };
 var top$1 = function top(_ref19) {
-  var theme = _ref19.theme;
-    _ref19.top;
-  return arrayProp(theme);
+  var theme = _ref19.theme,
+    value = _ref19.top;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      top: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
 };
 var right$1 = function right(_ref20) {
-  var theme = _ref20.theme;
-    _ref20.right;
-  return arrayProp(theme);
+  var theme = _ref20.theme,
+    value = _ref20.right;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      right: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
 };
 var bottom$1 = function bottom(_ref21) {
   var theme = _ref21.theme,
@@ -1117,9 +1143,16 @@ var left$1 = function left(_ref22) {
   });
 };
 var inset$1 = function inset(_ref23) {
-  var theme = _ref23.theme;
-    _ref23.inset;
-  return arrayProp(theme);
+  var theme = _ref23.theme,
+    value = _ref23.inset;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      inset: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
 };
 var insetX$1 = function insetX(_ref24) {
   var theme = _ref24.theme,

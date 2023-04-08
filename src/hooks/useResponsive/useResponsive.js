@@ -11,6 +11,7 @@ export const useResponsive = () => {
   bp = bp ? bp : defaultTheme.bp;
 
   const [isMobile, setMobile] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(undefined);
   const [breakpoint, setBreakpoint] = useState(false);
   const [breakpointIndex, setBreakpointIndex] = useState(false);
 
@@ -51,5 +52,28 @@ export const useResponsive = () => {
     setMobile(mobile);
   }, []);
 
-  return { isMobile, breakpoint, breakpointIndex };
+  useEffect(() => {
+    const isMobileCheck =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    const isTouchDeviceCheck =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+    const isIPadInLandscapeCheck = window.matchMedia(
+      "(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)"
+    ).matches;
+    const isTouchScreenDeviceCheck =
+      window.matchMedia("(pointer: coarse)").matches;
+
+    setIsTouchDevice(
+      isMobileCheck ||
+        isTouchDeviceCheck ||
+        isIPadInLandscapeCheck ||
+        isTouchScreenDeviceCheck
+    );
+  }, []);
+
+  return { isTouchDevice, isMobile, breakpoint, breakpointIndex };
 };

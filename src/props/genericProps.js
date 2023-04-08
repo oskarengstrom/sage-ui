@@ -165,7 +165,9 @@ const zIndex = ({ theme, zIndex: value }) =>
   });
 
 const top = ({ theme, top: value }) =>
-  arrayProp(theme, value, {
+  arrayProp({
+    theme,
+    value,
     func: (x) => `
       top: ${x};
     `,
@@ -173,7 +175,9 @@ const top = ({ theme, top: value }) =>
   });
 
 const right = ({ theme, right: value }) =>
-  arrayProp(theme, value, {
+  arrayProp({
+    theme,
+    value,
     func: (x) => `
       right: ${x};
     `,
@@ -201,7 +205,9 @@ const left = ({ theme, left: value }) =>
   });
 
 const inset = ({ theme, inset: value }) =>
-  arrayProp(theme, value, {
+  arrayProp({
+    theme,
+    value,
     func: (x) => `
       inset: ${x};
     `,
