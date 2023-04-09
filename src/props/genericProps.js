@@ -30,6 +30,17 @@ const backgroundColor = ({ theme, backgroundColor: value }) =>
       `background-color: ${isValidColor(x) ? x : findValueInObject(x, theme)};`,
   });
 
+const color = ({ theme, color: value }) => {
+  return arrayProp({
+    theme,
+    value,
+    func: (x) =>
+      `
+            color: ${isValidColor(x) ? x : findValueInObject(x, theme)};
+          `,
+  });
+};
+
 const objectFit = ({ theme, objectFit: value }) =>
   arrayProp({
     theme,
@@ -582,6 +593,7 @@ export default [
   // background color
   background,
   backgroundColor,
+  color,
 
   // Container
   objectFit,
