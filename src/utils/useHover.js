@@ -8,7 +8,7 @@ export function useHover() {
   useEffect(
     () => {
       const node = ref.current;
-      if (node) {
+      if (node && typeof window !== "undefined") {
         node.addEventListener("mouseover", handleMouseOver);
         node.addEventListener("mouseout", handleMouseOut);
         return () => {

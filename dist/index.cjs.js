@@ -647,7 +647,7 @@ function useHover() {
   };
   React.useEffect(function () {
     var node = ref.current;
-    if (node) {
+    if (node && typeof window !== "undefined") {
       node.addEventListener("mouseover", handleMouseOver);
       node.addEventListener("mouseout", handleMouseOut);
       return function () {
