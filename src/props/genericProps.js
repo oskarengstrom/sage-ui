@@ -55,6 +55,14 @@ const transformOrigin = ({ theme, transformOrigin: value }) =>
     `,
   });
 
+const border = ({ theme, border: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      border: ${x};
+    `,
+  });
 const borderRadius = ({ theme, borderRadius: value }) =>
   arrayProp({
     theme,
@@ -579,6 +587,7 @@ export default [
   objectFit,
   transform,
   transformOrigin,
+  border,
   borderRadius,
   boxShadow,
   flex,
