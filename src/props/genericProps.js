@@ -146,6 +146,14 @@ const outline = ({ theme, outline: value }) =>
       outline: ${x};
     `,
   });
+const overflow = ({ theme, overflow: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      overflow: ${x};
+    `,
+  });
 
 const visibility = ({ theme, visibility: value }) =>
   arrayProp({
@@ -608,6 +616,7 @@ export default [
   flexGrow,
   alignSelf,
   outline,
+  overflow,
 
   // display
   visibility,
