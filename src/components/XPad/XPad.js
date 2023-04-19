@@ -4,6 +4,7 @@ import { ThemeContext, css, useTheme } from "@emotion/react";
 import { interpolatedProp, responsiveProp } from "../../utils/responsiveProp";
 import genericProps from "../../props/genericProps";
 import { arrayProp } from "../../utils/arrayProp";
+import { propFilter } from "../../utils/propFilter";
 
 const XPad = React.forwardRef(({ maxWidth, px, children, ...props }, ref) => {
   const theme = useTheme(ThemeContext);
@@ -36,4 +37,6 @@ const sectionSpecialProps = ({ theme, px: value, maxWidth }) =>
     interpolation: "rem",
   });
 
-const XPadStyled = styled.div([sectionSpecialProps, genericProps]);
+const XPadStyled = styled("div", {
+  shouldForwardProp: propFilter,
+})([sectionSpecialProps, genericProps]);

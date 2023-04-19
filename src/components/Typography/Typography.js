@@ -4,6 +4,7 @@ import { ThemeContext, useTheme } from "@emotion/react";
 import isPropValid from "@emotion/is-prop-valid";
 import genericProps from "../../props/genericProps";
 import typographyProps from "../../props/typographyProps";
+import { propFilter } from "../../utils/propFilter";
 
 const Typography = React.forwardRef(
   ({ variant: variantFromProps, children, color, ...restProps }, ref) => {
@@ -32,19 +33,8 @@ const Typography = React.forwardRef(
   }
 );
 
-const props = [
-  "fontSize",
-  "fontWeight",
-  "lineHeight",
-  "fontFamily",
-  "color",
-  "textAlign",
-  "textDecoration",
-  "textTransform",
-];
-
 const TypographyStyled = styled("div", {
-  shouldForwardProp: (prop) => isPropValid(prop) && !props.includes(prop),
+  shouldForwardProp: propFilter,
 })([typographyProps, genericProps]);
 
 export default Typography;

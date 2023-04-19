@@ -3,6 +3,7 @@ import { useResponsive } from "../../hooks/useResponsive/useResponsive";
 import { arrayifyProp } from "../../utils/arrayifyProp";
 import genericProps from "../../props/genericProps";
 import gridProps from "../../props/gridProps";
+import { propFilter } from "../../utils/propFilter";
 
 const PsuedoGrid = (props) => {
   const { base, gap, ...rest } = props;
@@ -43,13 +44,17 @@ const Grid = ({ children, ...props }) => {
   );
 };
 
-const StyledGrid = styled.div`
+const StyledGrid = styled("div", {
+  shouldForwardProp: propFilter,
+})`
   ${({ dev }) => dev && `position: relative;`}
   ${gridProps}
   ${genericProps}
 `;
 
-const Item = styled.div(genericProps);
+const Item = styled("div", {
+  shouldForwardProp: propFilter,
+})(genericProps);
 
 Grid.Item = Item;
 export default Grid;
