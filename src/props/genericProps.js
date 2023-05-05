@@ -74,6 +74,47 @@ const border = ({ theme, border: value }) =>
       border: ${x};
     `,
   });
+
+const borderTop = ({ theme, borderTop: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      border-top: ${x};
+    `,
+    interpolation: "rem",
+  });
+
+const borderRight = ({ theme, borderRight: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      border-right: ${x};
+    `,
+    interpolation: "rem",
+  });
+
+const borderBottom = ({ theme, borderBottom: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      border-bottom: ${x};
+    `,
+    interpolation: "rem",
+  });
+
+const borderLeft = ({ theme, borderLeft: value }) =>
+  arrayProp({
+    theme,
+    value,
+    func: (x) => `
+      border-left: ${x};
+    `,
+    interpolation: "rem",
+  });
+
 const borderRadius = ({ theme, borderRadius: value }) =>
   arrayProp({
     theme,
@@ -608,6 +649,10 @@ export default [
   transform,
   transformOrigin,
   border,
+  borderTop,
+  borderRight,
+  borderBottom,
+  borderLeft,
   borderRadius,
   boxShadow,
   flex,

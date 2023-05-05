@@ -982,9 +982,57 @@ var border = function border(_ref8) {
     }
   });
 };
-var borderRadius$1 = function borderRadius(_ref9) {
+var borderTop = function borderTop(_ref9) {
   var theme = _ref9.theme,
-    value = _ref9.borderRadius;
+    value = _ref9.borderTop;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      border-top: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
+};
+var borderRight = function borderRight(_ref10) {
+  var theme = _ref10.theme,
+    value = _ref10.borderRight;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      border-right: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
+};
+var borderBottom = function borderBottom(_ref11) {
+  var theme = _ref11.theme,
+    value = _ref11.borderBottom;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      border-bottom: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
+};
+var borderLeft = function borderLeft(_ref12) {
+  var theme = _ref12.theme,
+    value = _ref12.borderLeft;
+  return arrayProp({
+    theme: theme,
+    value: value,
+    func: function func(x) {
+      return "\n      border-left: ".concat(x, ";\n    ");
+    },
+    interpolation: "rem"
+  });
+};
+var borderRadius$1 = function borderRadius(_ref13) {
+  var theme = _ref13.theme,
+    value = _ref13.borderRadius;
   return arrayProp({
     theme: theme,
     value: value,
@@ -994,9 +1042,9 @@ var borderRadius$1 = function borderRadius(_ref9) {
     interpolation: "rem"
   });
 };
-var boxShadow$1 = function boxShadow(_ref10) {
-  var theme = _ref10.theme,
-    value = _ref10.boxShadow;
+var boxShadow$1 = function boxShadow(_ref14) {
+  var theme = _ref14.theme,
+    value = _ref14.boxShadow;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1005,9 +1053,9 @@ var boxShadow$1 = function boxShadow(_ref10) {
     }
   });
 };
-var flex$1 = function flex(_ref11) {
-  var theme = _ref11.theme,
-    value = _ref11.flex;
+var flex$1 = function flex(_ref15) {
+  var theme = _ref15.theme,
+    value = _ref15.flex;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1016,9 +1064,9 @@ var flex$1 = function flex(_ref11) {
     }
   });
 };
-var flexBasis$1 = function flexBasis(_ref12) {
-  var theme = _ref12.theme,
-    value = _ref12.flexBasis;
+var flexBasis$1 = function flexBasis(_ref16) {
+  var theme = _ref16.theme,
+    value = _ref16.flexBasis;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1028,9 +1076,9 @@ var flexBasis$1 = function flexBasis(_ref12) {
     interpolation: "rem"
   });
 };
-var flexShrink$1 = function flexShrink(_ref13) {
-  var theme = _ref13.theme,
-    value = _ref13.flexShrink;
+var flexShrink$1 = function flexShrink(_ref17) {
+  var theme = _ref17.theme,
+    value = _ref17.flexShrink;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1039,9 +1087,9 @@ var flexShrink$1 = function flexShrink(_ref13) {
     }
   });
 };
-var flexGrow = function flexGrow(_ref14) {
-  var theme = _ref14.theme,
-    value = _ref14.flexGrow;
+var flexGrow = function flexGrow(_ref18) {
+  var theme = _ref18.theme,
+    value = _ref18.flexGrow;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1050,9 +1098,9 @@ var flexGrow = function flexGrow(_ref14) {
     }
   });
 };
-var alignSelf$1 = function alignSelf(_ref15) {
-  var theme = _ref15.theme,
-    value = _ref15.alignSelf;
+var alignSelf$1 = function alignSelf(_ref19) {
+  var theme = _ref19.theme,
+    value = _ref19.alignSelf;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1061,9 +1109,9 @@ var alignSelf$1 = function alignSelf(_ref15) {
     }
   });
 };
-var outline$1 = function outline(_ref16) {
-  var theme = _ref16.theme,
-    value = _ref16.outline;
+var outline$1 = function outline(_ref20) {
+  var theme = _ref20.theme,
+    value = _ref20.outline;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1072,9 +1120,9 @@ var outline$1 = function outline(_ref16) {
     }
   });
 };
-var overflow = function overflow(_ref17) {
-  var theme = _ref17.theme,
-    value = _ref17.overflow;
+var overflow = function overflow(_ref21) {
+  var theme = _ref21.theme,
+    value = _ref21.overflow;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1083,9 +1131,9 @@ var overflow = function overflow(_ref17) {
     }
   });
 };
-var visibility$1 = function visibility(_ref18) {
-  var theme = _ref18.theme,
-    value = _ref18.visibility;
+var visibility$1 = function visibility(_ref22) {
+  var theme = _ref22.theme,
+    value = _ref22.visibility;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1094,9 +1142,9 @@ var visibility$1 = function visibility(_ref18) {
     }
   });
 };
-var display$1 = function display(_ref19) {
-  var theme = _ref19.theme,
-    value = _ref19.display;
+var display$1 = function display(_ref23) {
+  var theme = _ref23.theme,
+    value = _ref23.display;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1105,9 +1153,9 @@ var display$1 = function display(_ref19) {
     }
   });
 };
-var position$1 = function position(_ref20) {
-  var theme = _ref20.theme,
-    value = _ref20.position;
+var position$1 = function position(_ref24) {
+  var theme = _ref24.theme,
+    value = _ref24.position;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1116,9 +1164,9 @@ var position$1 = function position(_ref20) {
     }
   });
 };
-var zIndex$1 = function zIndex(_ref21) {
-  var theme = _ref21.theme,
-    value = _ref21.zIndex;
+var zIndex$1 = function zIndex(_ref25) {
+  var theme = _ref25.theme,
+    value = _ref25.zIndex;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1127,9 +1175,9 @@ var zIndex$1 = function zIndex(_ref21) {
     }
   });
 };
-var top$1 = function top(_ref22) {
-  var theme = _ref22.theme,
-    value = _ref22.top;
+var top$1 = function top(_ref26) {
+  var theme = _ref26.theme,
+    value = _ref26.top;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1139,9 +1187,9 @@ var top$1 = function top(_ref22) {
     interpolation: "rem"
   });
 };
-var right$1 = function right(_ref23) {
-  var theme = _ref23.theme,
-    value = _ref23.right;
+var right$1 = function right(_ref27) {
+  var theme = _ref27.theme,
+    value = _ref27.right;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1151,9 +1199,9 @@ var right$1 = function right(_ref23) {
     interpolation: "rem"
   });
 };
-var bottom$1 = function bottom(_ref24) {
-  var theme = _ref24.theme,
-    value = _ref24.bottom;
+var bottom$1 = function bottom(_ref28) {
+  var theme = _ref28.theme,
+    value = _ref28.bottom;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1163,9 +1211,9 @@ var bottom$1 = function bottom(_ref24) {
     interpolation: "rem"
   });
 };
-var left$1 = function left(_ref25) {
-  var theme = _ref25.theme,
-    value = _ref25.left;
+var left$1 = function left(_ref29) {
+  var theme = _ref29.theme,
+    value = _ref29.left;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1175,9 +1223,9 @@ var left$1 = function left(_ref25) {
     interpolation: "rem"
   });
 };
-var inset$1 = function inset(_ref26) {
-  var theme = _ref26.theme,
-    value = _ref26.inset;
+var inset$1 = function inset(_ref30) {
+  var theme = _ref30.theme,
+    value = _ref30.inset;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1187,9 +1235,9 @@ var inset$1 = function inset(_ref26) {
     interpolation: "rem"
   });
 };
-var insetX$1 = function insetX(_ref27) {
-  var theme = _ref27.theme,
-    value = _ref27.insetX;
+var insetX$1 = function insetX(_ref31) {
+  var theme = _ref31.theme,
+    value = _ref31.insetX;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1199,9 +1247,9 @@ var insetX$1 = function insetX(_ref27) {
     interpolation: "rem"
   });
 };
-var insetY$1 = function insetY(_ref28) {
-  var theme = _ref28.theme,
-    value = _ref28.insetY;
+var insetY$1 = function insetY(_ref32) {
+  var theme = _ref32.theme,
+    value = _ref32.insetY;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1211,9 +1259,9 @@ var insetY$1 = function insetY(_ref28) {
     interpolation: "rem"
   });
 };
-var pointerEvents$1 = function pointerEvents(_ref29) {
-  var theme = _ref29.theme,
-    value = _ref29.pointerEvents;
+var pointerEvents$1 = function pointerEvents(_ref33) {
+  var theme = _ref33.theme,
+    value = _ref33.pointerEvents;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1222,9 +1270,9 @@ var pointerEvents$1 = function pointerEvents(_ref29) {
     }
   });
 };
-var cursor$1 = function cursor(_ref30) {
-  var theme = _ref30.theme,
-    value = _ref30.cursor;
+var cursor$1 = function cursor(_ref34) {
+  var theme = _ref34.theme,
+    value = _ref34.cursor;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1233,9 +1281,9 @@ var cursor$1 = function cursor(_ref30) {
     }
   });
 };
-var opacity$1 = function opacity(_ref31) {
-  var theme = _ref31.theme,
-    value = _ref31.opacity;
+var opacity$1 = function opacity(_ref35) {
+  var theme = _ref35.theme,
+    value = _ref35.opacity;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1244,9 +1292,9 @@ var opacity$1 = function opacity(_ref31) {
     }
   });
 };
-var transition$1 = function transition(_ref32) {
-  var theme = _ref32.theme,
-    value = _ref32.transition;
+var transition$1 = function transition(_ref36) {
+  var theme = _ref36.theme,
+    value = _ref36.transition;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1255,9 +1303,9 @@ var transition$1 = function transition(_ref32) {
     }
   });
 };
-var span$1 = function span(_ref33) {
-  var theme = _ref33.theme,
-    value = _ref33.span;
+var span$1 = function span(_ref37) {
+  var theme = _ref37.theme,
+    value = _ref37.span;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1266,9 +1314,9 @@ var span$1 = function span(_ref33) {
     }
   });
 };
-var placeSelf$1 = function placeSelf(_ref34) {
-  var theme = _ref34.theme,
-    value = _ref34.placeSelf;
+var placeSelf$1 = function placeSelf(_ref38) {
+  var theme = _ref38.theme,
+    value = _ref38.placeSelf;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1277,9 +1325,9 @@ var placeSelf$1 = function placeSelf(_ref34) {
     }
   });
 };
-var order$1 = function order(_ref35) {
-  var theme = _ref35.theme,
-    value = _ref35.order;
+var order$1 = function order(_ref39) {
+  var theme = _ref39.theme,
+    value = _ref39.order;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1288,9 +1336,9 @@ var order$1 = function order(_ref35) {
     }
   });
 };
-var gridColumn$1 = function gridColumn(_ref36) {
-  var theme = _ref36.theme,
-    value = _ref36.gridColumn;
+var gridColumn$1 = function gridColumn(_ref40) {
+  var theme = _ref40.theme,
+    value = _ref40.gridColumn;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1299,9 +1347,9 @@ var gridColumn$1 = function gridColumn(_ref36) {
     }
   });
 };
-var gridRow$1 = function gridRow(_ref37) {
-  var theme = _ref37.theme,
-    value = _ref37.gridRow;
+var gridRow$1 = function gridRow(_ref41) {
+  var theme = _ref41.theme,
+    value = _ref41.gridRow;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1310,9 +1358,9 @@ var gridRow$1 = function gridRow(_ref37) {
     }
   });
 };
-var gridArea$1 = function gridArea(_ref38) {
-  var theme = _ref38.theme,
-    value = _ref38.gridArea;
+var gridArea$1 = function gridArea(_ref42) {
+  var theme = _ref42.theme,
+    value = _ref42.gridArea;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1321,9 +1369,9 @@ var gridArea$1 = function gridArea(_ref38) {
     }
   });
 };
-var width$1 = function width(_ref39) {
-  var theme = _ref39.theme,
-    value = _ref39.width;
+var width$1 = function width(_ref43) {
+  var theme = _ref43.theme,
+    value = _ref43.width;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1334,9 +1382,9 @@ var width$1 = function width(_ref39) {
     interpolation: "rem"
   });
 };
-var maxWidth$1 = function maxWidth(_ref40) {
-  var theme = _ref40.theme,
-    value = _ref40.maxWidth;
+var maxWidth$1 = function maxWidth(_ref44) {
+  var theme = _ref44.theme,
+    value = _ref44.maxWidth;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1346,9 +1394,9 @@ var maxWidth$1 = function maxWidth(_ref40) {
     interpolation: "rem"
   });
 };
-var minWidth$1 = function minWidth(_ref41) {
-  var theme = _ref41.theme,
-    value = _ref41.minWidth;
+var minWidth$1 = function minWidth(_ref45) {
+  var theme = _ref45.theme,
+    value = _ref45.minWidth;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1358,9 +1406,9 @@ var minWidth$1 = function minWidth(_ref41) {
     interpolation: "rem"
   });
 };
-var height$1 = function height(_ref42) {
-  var theme = _ref42.theme,
-    value = _ref42.height;
+var height$1 = function height(_ref46) {
+  var theme = _ref46.theme,
+    value = _ref46.height;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1370,9 +1418,9 @@ var height$1 = function height(_ref42) {
     interpolation: "rem"
   });
 };
-var maxHeight$1 = function maxHeight(_ref43) {
-  var theme = _ref43.theme,
-    value = _ref43.maxHeight;
+var maxHeight$1 = function maxHeight(_ref47) {
+  var theme = _ref47.theme,
+    value = _ref47.maxHeight;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1382,9 +1430,9 @@ var maxHeight$1 = function maxHeight(_ref43) {
     interpolation: "rem"
   });
 };
-var minHeight$1 = function minHeight(_ref44) {
-  var theme = _ref44.theme,
-    value = _ref44.minHeight;
+var minHeight$1 = function minHeight(_ref48) {
+  var theme = _ref48.theme,
+    value = _ref48.minHeight;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1394,9 +1442,9 @@ var minHeight$1 = function minHeight(_ref44) {
     interpolation: "rem"
   });
 };
-var aspectRatio$1 = function aspectRatio(_ref45) {
-  var theme = _ref45.theme,
-    value = _ref45.aspectRatio;
+var aspectRatio$1 = function aspectRatio(_ref49) {
+  var theme = _ref49.theme,
+    value = _ref49.aspectRatio;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1406,9 +1454,9 @@ var aspectRatio$1 = function aspectRatio(_ref45) {
     interpolation: "rem"
   });
 };
-var m$1 = function m(_ref46) {
-  var theme = _ref46.theme,
-    value = _ref46.m;
+var m$1 = function m(_ref50) {
+  var theme = _ref50.theme,
+    value = _ref50.m;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1418,9 +1466,9 @@ var m$1 = function m(_ref46) {
     interpolation: "rem"
   });
 };
-var mx$1 = function mx(_ref47) {
-  var theme = _ref47.theme,
-    value = _ref47.mx;
+var mx$1 = function mx(_ref51) {
+  var theme = _ref51.theme,
+    value = _ref51.mx;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1430,9 +1478,9 @@ var mx$1 = function mx(_ref47) {
     interpolation: "rem"
   });
 };
-var my$1 = function my(_ref48) {
-  var theme = _ref48.theme,
-    value = _ref48.my;
+var my$1 = function my(_ref52) {
+  var theme = _ref52.theme,
+    value = _ref52.my;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1442,9 +1490,9 @@ var my$1 = function my(_ref48) {
     interpolation: "rem"
   });
 };
-var mt$1 = function mt(_ref49) {
-  var theme = _ref49.theme,
-    value = _ref49.mt;
+var mt$1 = function mt(_ref53) {
+  var theme = _ref53.theme,
+    value = _ref53.mt;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1454,9 +1502,9 @@ var mt$1 = function mt(_ref49) {
     interpolation: "rem"
   });
 };
-var mr$1 = function mr(_ref50) {
-  var theme = _ref50.theme,
-    value = _ref50.mr;
+var mr$1 = function mr(_ref54) {
+  var theme = _ref54.theme,
+    value = _ref54.mr;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1466,9 +1514,9 @@ var mr$1 = function mr(_ref50) {
     interpolation: "rem"
   });
 };
-var mb$1 = function mb(_ref51) {
-  var theme = _ref51.theme,
-    value = _ref51.mb;
+var mb$1 = function mb(_ref55) {
+  var theme = _ref55.theme,
+    value = _ref55.mb;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1478,9 +1526,9 @@ var mb$1 = function mb(_ref51) {
     interpolation: "rem"
   });
 };
-var ml$1 = function ml(_ref52) {
-  var theme = _ref52.theme,
-    value = _ref52.ml;
+var ml$1 = function ml(_ref56) {
+  var theme = _ref56.theme,
+    value = _ref56.ml;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1490,9 +1538,9 @@ var ml$1 = function ml(_ref52) {
     interpolation: "rem"
   });
 };
-var p$1 = function p(_ref53) {
-  var theme = _ref53.theme,
-    value = _ref53.p;
+var p$1 = function p(_ref57) {
+  var theme = _ref57.theme,
+    value = _ref57.p;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1502,9 +1550,9 @@ var p$1 = function p(_ref53) {
     interpolation: "rem"
   });
 };
-var px$1 = function px(_ref54) {
-  var theme = _ref54.theme,
-    value = _ref54.px;
+var px$1 = function px(_ref58) {
+  var theme = _ref58.theme,
+    value = _ref58.px;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1514,9 +1562,9 @@ var px$1 = function px(_ref54) {
     interpolation: "rem"
   });
 };
-var py$1 = function py(_ref55) {
-  var theme = _ref55.theme,
-    value = _ref55.py;
+var py$1 = function py(_ref59) {
+  var theme = _ref59.theme,
+    value = _ref59.py;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1526,9 +1574,9 @@ var py$1 = function py(_ref55) {
     interpolation: "rem"
   });
 };
-var pt$1 = function pt(_ref56) {
-  var theme = _ref56.theme,
-    value = _ref56.pt;
+var pt$1 = function pt(_ref60) {
+  var theme = _ref60.theme,
+    value = _ref60.pt;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1538,9 +1586,9 @@ var pt$1 = function pt(_ref56) {
     interpolation: "rem"
   });
 };
-var pr$1 = function pr(_ref57) {
-  var theme = _ref57.theme,
-    value = _ref57.pr;
+var pr$1 = function pr(_ref61) {
+  var theme = _ref61.theme,
+    value = _ref61.pr;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1550,9 +1598,9 @@ var pr$1 = function pr(_ref57) {
     interpolation: "rem"
   });
 };
-var pb$1 = function pb(_ref58) {
-  var theme = _ref58.theme,
-    value = _ref58.pb;
+var pb$1 = function pb(_ref62) {
+  var theme = _ref62.theme,
+    value = _ref62.pb;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1562,9 +1610,9 @@ var pb$1 = function pb(_ref58) {
     interpolation: "rem"
   });
 };
-var pl$1 = function pl(_ref59) {
-  var theme = _ref59.theme,
-    value = _ref59.pl;
+var pl$1 = function pl(_ref63) {
+  var theme = _ref63.theme,
+    value = _ref63.pl;
   return arrayProp({
     theme: theme,
     value: value,
@@ -1578,7 +1626,7 @@ var genericProps = [dev,
 // background color
 background$1, backgroundColor$1, color$2,
 // Container
-objectFit, transform$1, transformOrigin, border, borderRadius$1, boxShadow$1, flex$1, flexBasis$1, flexShrink$1, flexGrow, alignSelf$1, outline$1, overflow,
+objectFit, transform$1, transformOrigin, border, borderTop, borderRight, borderBottom, borderLeft, borderRadius$1, boxShadow$1, flex$1, flexBasis$1, flexShrink$1, flexGrow, alignSelf$1, outline$1, overflow,
 // display
 visibility$1, display$1, position$1, zIndex$1, top$1, right$1, bottom$1, left$1, inset$1, insetX$1, insetY$1, pointerEvents$1, cursor$1, opacity$1, transition$1,
 // Grid Item
