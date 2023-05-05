@@ -23,6 +23,8 @@ export { default as Spacer } from "./components/Spacer/Spacer";
 import Typography from "./components/Typography/Typography";
 export { Typography };
 export { default as Stack } from "./components/Stack/Stack";
+export { default as Column } from "./components/Column/Column";
+export { default as Row } from "./components/Row/Row";
 export { default as KeepAspectRatio } from "./components/KeepAspectRatio/KeepAspectRatio";
 // export { default as Mq } from "./components/Mq/Mq";
 export { default as Theme } from "./components/Theme/Theme";

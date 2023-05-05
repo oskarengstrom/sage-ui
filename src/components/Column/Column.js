@@ -3,12 +3,12 @@ import genericProps from "../../props/genericProps";
 import flexProps from "../../props/flexProps";
 import { propFilter } from "../../utils/propFilter";
 
-const Stack = styled("div", {
+const Column = styled("div", {
   shouldForwardProp: propFilter,
 })([flexProps, genericProps]);
 
-Stack.defaultProps = {
+Column.defaultProps = {
   flexDirection: "column",
 };
 
-export default Stack;
+export default Column;

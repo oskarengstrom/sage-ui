@@ -2499,9 +2499,33 @@ var Stack = /*#__PURE__*/_styled("div", process.env.NODE_ENV === "production" ? 
   shouldForwardProp: propFilter,
   target: "e1nhy00x0",
   label: "Stack"
-})([flexProps, genericProps], process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlN0YWNrLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1jIiwiZmlsZSI6IlN0YWNrLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgZ2VuZXJpY1Byb3BzIGZyb20gXCIuLi8uLi9wcm9wcy9nZW5lcmljUHJvcHNcIjtcbmltcG9ydCBmbGV4UHJvcHMgZnJvbSBcIi4uLy4uL3Byb3BzL2ZsZXhQcm9wc1wiO1xuaW1wb3J0IGlzUHJvcFZhbGlkIGZyb20gXCJAZW1vdGlvbi9pcy1wcm9wLXZhbGlkXCI7XG5pbXBvcnQgeyBwcm9wRmlsdGVyIH0gZnJvbSBcIi4uLy4uL3V0aWxzL3Byb3BGaWx0ZXJcIjtcblxuY29uc3QgU3RhY2sgPSBzdHlsZWQoXCJkaXZcIiwge1xuICBzaG91bGRGb3J3YXJkUHJvcDogcHJvcEZpbHRlcixcbn0pKFtmbGV4UHJvcHMsIGdlbmVyaWNQcm9wc10pO1xuXG5TdGFjay5kZWZhdWx0UHJvcHMgPSB7XG4gIGZsZXhEaXJlY3Rpb246IFwiY29sdW1uXCIsXG59O1xuXG5leHBvcnQgZGVmYXVsdCBTdGFjaztcbiJdfQ== */");
+})([flexProps, genericProps], process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlN0YWNrLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtjIiwiZmlsZSI6IlN0YWNrLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCI7XG5pbXBvcnQgZ2VuZXJpY1Byb3BzIGZyb20gXCIuLi8uLi9wcm9wcy9nZW5lcmljUHJvcHNcIjtcbmltcG9ydCBmbGV4UHJvcHMgZnJvbSBcIi4uLy4uL3Byb3BzL2ZsZXhQcm9wc1wiO1xuaW1wb3J0IHsgcHJvcEZpbHRlciB9IGZyb20gXCIuLi8uLi91dGlscy9wcm9wRmlsdGVyXCI7XG5cbmNvbnN0IFN0YWNrID0gc3R5bGVkKFwiZGl2XCIsIHtcbiAgc2hvdWxkRm9yd2FyZFByb3A6IHByb3BGaWx0ZXIsXG59KShbZmxleFByb3BzLCBnZW5lcmljUHJvcHNdKTtcblxuU3RhY2suZGVmYXVsdFByb3BzID0ge1xuICBmbGV4RGlyZWN0aW9uOiBcImNvbHVtblwiLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgU3RhY2s7XG4iXX0= */");
 Stack.defaultProps = {
   flexDirection: "column"
+};
+
+var Column = /*#__PURE__*/_styled("div", process.env.NODE_ENV === "production" ? {
+  shouldForwardProp: propFilter,
+  target: "e1b9k2eu0"
+} : {
+  shouldForwardProp: propFilter,
+  target: "e1b9k2eu0",
+  label: "Column"
+})([flexProps, genericProps], process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNvbHVtbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLZSIsImZpbGUiOiJDb2x1bW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCBnZW5lcmljUHJvcHMgZnJvbSBcIi4uLy4uL3Byb3BzL2dlbmVyaWNQcm9wc1wiO1xuaW1wb3J0IGZsZXhQcm9wcyBmcm9tIFwiLi4vLi4vcHJvcHMvZmxleFByb3BzXCI7XG5pbXBvcnQgeyBwcm9wRmlsdGVyIH0gZnJvbSBcIi4uLy4uL3V0aWxzL3Byb3BGaWx0ZXJcIjtcblxuY29uc3QgQ29sdW1uID0gc3R5bGVkKFwiZGl2XCIsIHtcbiAgc2hvdWxkRm9yd2FyZFByb3A6IHByb3BGaWx0ZXIsXG59KShbZmxleFByb3BzLCBnZW5lcmljUHJvcHNdKTtcblxuQ29sdW1uLmRlZmF1bHRQcm9wcyA9IHtcbiAgZmxleERpcmVjdGlvbjogXCJjb2x1bW5cIixcbn07XG5cbmV4cG9ydCBkZWZhdWx0IENvbHVtbjtcbiJdfQ== */");
+Column.defaultProps = {
+  flexDirection: "column"
+};
+
+var Row = /*#__PURE__*/_styled("div", process.env.NODE_ENV === "production" ? {
+  shouldForwardProp: propFilter,
+  target: "e1yfu7i80"
+} : {
+  shouldForwardProp: propFilter,
+  target: "e1yfu7i80",
+  label: "Row"
+})([flexProps, genericProps], process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJvdy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLWSIsImZpbGUiOiJSb3cuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJAZW1vdGlvbi9zdHlsZWRcIjtcbmltcG9ydCBnZW5lcmljUHJvcHMgZnJvbSBcIi4uLy4uL3Byb3BzL2dlbmVyaWNQcm9wc1wiO1xuaW1wb3J0IGZsZXhQcm9wcyBmcm9tIFwiLi4vLi4vcHJvcHMvZmxleFByb3BzXCI7XG5pbXBvcnQgeyBwcm9wRmlsdGVyIH0gZnJvbSBcIi4uLy4uL3V0aWxzL3Byb3BGaWx0ZXJcIjtcblxuY29uc3QgUm93ID0gc3R5bGVkKFwiZGl2XCIsIHtcbiAgc2hvdWxkRm9yd2FyZFByb3A6IHByb3BGaWx0ZXIsXG59KShbZmxleFByb3BzLCBnZW5lcmljUHJvcHNdKTtcblxuUm93LmRlZmF1bHRQcm9wcyA9IHtcbiAgZmxleERpcmVjdGlvbjogXCJyb3dcIixcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFJvdztcbiJdfQ== */");
+Row.defaultProps = {
+  flexDirection: "row"
 };
 
 var _excluded = ["ratio", "children"];
@@ -3133,4 +3157,4 @@ var outline = function outline(_ref8) {
 };
 var containerMixins = [transform, borderRadius, boxShadow, flex, flexBasis, flexShrink, alignSelf, outline];
 
-export { Box, Grid, KeepAspectRatio, SageProvider, Section, Spacer, Stack, Theme, Typography, XPad, arrayProp, backgroundColorMixins, containerMixins, defaultTheme, devMixins, displayMixins, findValueInObject, flexProps, genericProps, gridItemMixins, gridMixins, gridProps, isValidColor, mq, responsiveProp, sizeMixins, spaceMixins, typographyMixins, typographyProps, useElementSize, useHover, useKeyDown, useLogEffect, useResponsive, useSSRLayoutEffect, useScramble };
+export { Box, Column, Grid, KeepAspectRatio, Row, SageProvider, Section, Spacer, Stack, Theme, Typography, XPad, arrayProp, backgroundColorMixins, containerMixins, defaultTheme, devMixins, displayMixins, findValueInObject, flexProps, genericProps, gridItemMixins, gridMixins, gridProps, isValidColor, mq, responsiveProp, sizeMixins, spaceMixins, typographyMixins, typographyProps, useElementSize, useHover, useKeyDown, useLogEffect, useResponsive, useSSRLayoutEffect, useScramble };
